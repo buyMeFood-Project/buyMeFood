@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SingUp</title>
+    <link rel="stylesheet" href="../main.css">
+</head>
+<body>
+    <header style="text-align: center;">
+        <h2>GNB</h2>
+    </header>
+    <h2>회원가입</h2>
+    <form>
+    <label for="username">이름:</label>
+    <input type="text" id="username" name="username"  minlength="2" maxlength="10" required>
+    <br>
+    <label for="userid">아이디:</label>
+    <input type="text" id="userid" name="userid" required>
+    <br>
+    <label for="password">비밀번호:</label>
+    <input type="password" id="password" name="password" required>
+    <br>
+    <label for="phonenum">휴대폰번호:</label>
+    <input type="number" inputmode="numeric" id="phonenum" name="phonenum" maxlength="11" required>
+    <br>
+    <label for="useremail">이메일:</label>
+    <span>
+    <input type="text" id="useremail" name="useremail" required> 
+    @
+    <input type="text" id="emaildomain" name="emaildomain" required>
+    </span>
+    <div>
+        <button type="button">돌아가기</button>
+        <button type="submit" onclick="signUp()">회원가입</button>
+    </div>
+    </form>
+
+    <script src="signUp.js"></script>
+</body>
+</html>
