@@ -1,0 +1,20 @@
+#container {
+    width: 1000px;
+    height: 700px;
+    margin: 20px auto;
+}
+#mypage {
+    height: 200px;
+}
+#mypage #myinfo {
+    float: left;
+    width: 800px;
+    height: 200px;
+}
+#mypage #user_emoji{
+    float:left;
+    font-size: 100px;
+}
+#mypage #state {
+    text-align: right;
+}
