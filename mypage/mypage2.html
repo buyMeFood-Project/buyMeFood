@@ -5,41 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        #container {
-            display: grid;
-            margin: 20px auto;
-            width: 1000px;
-            grid-template-columns:1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-        }
-        .mypage {
-            height: 200px;
-            
-        }
-        #mypage_top {
-            background-color: red;
-            grid-column: 1/3;
-        }
-        #mypage_nav {
-            background-color: yellow;
-        }
-        #mypage_content {
-            background-color: blue;
-        }
-        footer {
-            
-        }
-    </style>
+    <link rel="stylesheet" href="mypage2.css">
 </head>
 <body>
     <div id="container">
         <div class="mypage" id="mypage_top"> <!-- 상단은 flex로 -->
-            <div id="myinfo"></div>
-            <div id="util"></div>
+            <div id="myinfo">
+                <div id="user_emoji">😀</div>
+                <h2 id="top">마이페이지</h2>
+                <div id="userId">민초 부먹</div>
+                <button id="editbtn">✏️</button>
+            </div>
+            <div id="util">
+                <a href="">로그아웃</a>
+                <a href="">마이페이지</a>
+            </div>
         </div>
         <div class="mypage" id="mypage_nav">
-
+            <div> 마이 페이지 </div>
+            <ul>
+                <li><a href="">찜 목록</a></li>
+                <li><a href="">내 게시글</a></li>
+            </ul>
         </div>
         <div class="mypage" id="mypage_content">
 
