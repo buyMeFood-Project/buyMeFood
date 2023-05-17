@@ -5,8 +5,7 @@
 */
 
 let infoArea = document.getElementById("myinfo");
-const username = document.getElementById("userId").textContent;
-
+/*
 const btn = document.getElementById("emoji_btn");
 const picker = new EmojiButton({
     position: 'bottom-start'
@@ -19,15 +18,20 @@ btn.addEventListener('click', () => {
 picker.on('emoji', emoji => {
     const text_box = document.querySelector('#message');
     text_box.value += emoji;
-});
+});*/
 
-userId:document.getElementById("userId").innerHTML = "백연정";
-//    = localStorage.getItem('userList');
+// userId:document.getElementById("userId").textContent = "백연정";
+const loginUser = (JSON.parse(localStorage.getItem('userList')))[0].username;
+function test(){
+    alert(loginUser);
+}
+userId:document.getElementById("userId").textContent = loginUser;
+const username = document.getElementById("userId").textContent;
 
-
+/*
 function emoji_picker() {
     picker.togglePicker(btn);
-}
+}*/
 
 function changeInfo() {
     infoArea.innerHTML = '\
@@ -36,7 +40,7 @@ function changeInfo() {
             <h2 id="top">마이페이지</h2>\
             <form id="userId">\
                 <div id="user_emoji">😀</div>\
-                <input type="text" value="'+username+ '">\
+                <input type="text" value="'+ username + '">\
                 <button type="button" id="emoji_btn" onclick="emoji_picker()">button</button>\
                 <button id="donebtn" onclick="changeDone()">확인</button>\
             </form>\
@@ -49,7 +53,7 @@ function changeDone() {
         <div id="myinfo">\
             <div id="user_emoji">😀</div>\
             <h2 id="top">마이페이지</h2>\
-            <div id="userId" value="' +username+ '"></div>\
+            <div id="userId" value="' + loginUser + '"></div>\
             <button id="editbtn" onclick="changeInfo()">✏️</button>\
         </div>\
     ';    
