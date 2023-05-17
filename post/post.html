@@ -37,6 +37,32 @@
             padding: 0;
             list-style: none;
         }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            text-align: center;
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 25%;
+            border-top: 15px solid orange; /* Add border-top property */
+        }
+
+        .modal-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -62,6 +88,16 @@
             <button type="button" class="pages" value="nextPage">></button>
         </span>
     </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <p id="alertContent"></p>
+            <div class="modal-buttons">
+                <button id="confirm">확인</button>
+            </div>
+        </div>
+    </div>
+    
     <script src="post.js"></script>
 </body>
 </html>

@@ -62,7 +62,7 @@ if(postList != null){
                     <div id="${postToken}" class="content">
                         <label for="newReply">댓글:</label>
                         <input type="text" id="newReply_${postToken}">
-                        <button type="submit" class="newComment" name="${postToken}" required>등록</button>
+                        <button class="newComment" name="${postToken}" required>등록</button>
                         <ul>${comment}</ul>
                     </div>
                 </form>
@@ -102,16 +102,29 @@ $(".newComment").click(function() {
     let comment = $('#newReply_' + token).val();
     let postList = JSON.parse(localStorage.getItem('postList'));
     
-    for(let i = 0; i < postList.length; i++){
-        if(postList[i].postToken === token){
-            postList[i].comments.push({
-                writer: userName,
-                comment: comment});
-            localStorage.setItem('postList', JSON.stringify(postList));
-            break;
+    if(comment === ''){
+        event.preventDefault();
+        document.querySelector('#alertContent').innerHTML = "댓글을 작성한 후 등록해주세요.";
+        document.querySelector('#myModal').style.display = 'block';
+    }
+    else{
+        for(let i = 0; i < postList.length; i++){
+            if(postList[i].postToken === token){
+                postList[i].comments.push({
+                    writer: userName,
+                    comment: comment});
+                localStorage.setItem('postList', JSON.stringify(postList));
+                break;
+            }
         }
     }
 });
+
+// Confirm btn function to close alert modal
+document.querySelector('#confirm').addEventListener('click', function(){
+    document.querySelector('#myModal').style.display = 'none';
+});
+
 
 // Pagination
 $(".pages").click(function(){
