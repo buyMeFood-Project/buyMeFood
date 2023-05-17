@@ -1,0 +1,33 @@
+#ResImage {
+    text-align: center;
+  }
+
+  button {
+  }
+
+  img {
+    width: 300px;
+    height: 360px;
+  }
+
+  hr {
+    width: 1000px;
+    margin-left: -30px;
+  }
+  #Info {
+    margin-left: 200px;
+  }
+  #ResName {
+  }
+  #Score {
+  }
+  #Like {
+  }
+
+  map {
+    display: inline-block;
+  }
+  table {
+    width: 400px;
+    height: 300px;
+  }
