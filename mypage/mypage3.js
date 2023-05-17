@@ -5,20 +5,25 @@
 */
 
 let infoArea = document.getElementById("myinfo");
-/*
+
 const btn = document.getElementById("emoji_btn");
 const picker = new EmojiButton({
     position: 'bottom-start'
 });
 
-btn.addEventListener('click', () => {
-    picker.togglePicker(btn);
-});
+// btn.addEventListener('click', () => {
+//     picker.togglePicker(btn);
+// });
 
 picker.on('emoji', emoji => {
     const text_box = document.querySelector('#message');
     text_box.value += emoji;
-});*/
+});
+
+function emoji_picker() {
+    picker.togglePicker(btn);
+}
+
 
 // userId:document.getElementById("userId").textContent = "백연정";
 const loginUser = (JSON.parse(localStorage.getItem('userList')))[0].username;
@@ -28,10 +33,6 @@ function test(){
 userId:document.getElementById("userId").textContent = loginUser;
 const username = document.getElementById("userId").textContent;
 
-/*
-function emoji_picker() {
-    picker.togglePicker(btn);
-}*/
 
 function changeInfo() {
     infoArea.innerHTML = '\
