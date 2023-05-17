@@ -12,7 +12,7 @@ $('#pwInfo').click(function(){
     document.querySelector('#forPW').style.display = "block";
 });
 
-// Change option between phone num and email for find id
+// Change option between phoneNum and email for find id
 $('#byPhoneNum').click(function(){
     $('#changeable').html("휴대폰: ");
 });
@@ -28,11 +28,11 @@ $('#findId').click(function(){
     const findOption = document.querySelector("#findOption").value;
     let phoneNumOption = document.querySelector("#byPhoneNum");
     if(searchName === '' || findOption === ''){
-        alert("공란이 존재합니다. 확인 후 다시 입력해주세요.");
+        modalControl('공란이 존재합니다. <br> 확인 후 다시 입력해주세요.');
     }
     else{
         if(userList === null){
-            alert("존재하지 않는 정보입니다.");
+            modalControl('일치하는 정보가 없습니다. <br> 확인 후 다시 입력해주세요.');
         }
         else{
             let isExist = false;
@@ -66,7 +66,7 @@ $('#findId').click(function(){
                 </div>');
             }
             else{
-                alert("존재하지 않는 정보입니다.");
+                modalControl('일치하는 정보가 없습니다. <br> 확인 후 다시 입력해주세요.');
             }
         }
     }
@@ -79,11 +79,11 @@ $('#findPW').click(function() {
     const searchEmail = document.querySelector("#searchEmail").value;
 
     if(searchName === '' || searchID === '' || searchEmail === ''){
-        alert("공란이 존재합니다. 확인 후 다시 입력해주세요.");
+        modalControl('공란이 존재합니다. <br> 확인 후 다시 입력해주세요.');
     }
     else{
         if(userList === null){
-            alert("존재하지 않는 정보입니다.");
+            modalControl('일치하는 정보가 없습니다. <br> 확인 후 다시 입력해주세요.');
         }
         else{
             let sw = 0;
@@ -104,8 +104,20 @@ $('#findPW').click(function() {
                 }
             }
             if(sw == 0){
-                alert("존재하지 않는 정보입니다");
+                modalControl('일치하는 정보가 없습니다. <br> 확인 후 다시 입력해주세요.');
             }
         }
     }
+});
+
+// function to set alert message inside alert modal
+function modalControl(message){
+    event.preventDefault();
+    document.querySelector('#alertContent').innerHTML = message;
+    document.querySelector('#myModal').style.display = 'block';
+}
+
+// Confirm btn function to close alert modal
+document.querySelector('#confirm').addEventListener('click', function(){
+    document.querySelector('#myModal').style.display = 'none';
 });
