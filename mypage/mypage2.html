@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mypage2.css">
+</head>
+<body>
+    <header style="text-align: center;">
+        <h2> GNB </h2>
+    </header>
+    <div id="container">
+        <div class="mypage" id="mypage_top"> <!-- 상단은 flex로 -->
+        <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
+            <div id="myinfo">
+                <div id="user_emoji">😀</div>
+                <h2 id="top">마이페이지</h2>
+                <div id="userId"></div>
+                <button id="editbtn" onclick="changeInfo()">✏️</button>
+            </div>
+            <div id="util">
+                <a href="">로그아웃</a>
+                <a href="">마이페이지</a>
+            </div>
+        </div>
+        <div class="mypage" id="mypage_nav">
+            <div> 마이 페이지 </div>
+            <ul>
+                <li><div onclick="likeList()">찜 목록</div></li>
+                <li><div onclick="myPost()">내 게시글</div></li>
+            </ul>
+        </div>
+        <div class="mypage" id="mypage_content">
+
+        </div>
+    </div>
+    <footer>
+        <h2> footer </h2>
+    </footer>
+    <script src="mypage.js"></script>
+</body>
+</html>
