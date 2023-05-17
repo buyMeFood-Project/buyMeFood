@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input id="btnAtt" type="file">
+  <button onclick="doAction()">click me</button>
+  <button type="submit" onclick="feature_addPost_bslee()">등록</button>
+  <img id="imageTest" src="">
+</body>
+<script>
+  function doAction(){
+
+    var string = document.getElementById("btnAtt").value;
+    alert(string.substring(12));
+    document.getElementById("imageTest").src="./"+string.substring(12);
+  }
+  
+  function feature_addPost_bslee() {
+  let newPost = {
+
+    btnAtt: document.getElementById("btnAtt").value,
+  };
+
+  if (localStorage.getItem("postList") == null) {
+    if (localStorage.getItem("postList") == null) {
+      localStorage.setItem("postList", JSON.stringify([newPost]));
+    }
+  } else {
+    let postList = JSON.parse(localStorage.getItem("postList"));
+    postList.push(newPost);
+    localStorage.setItem("postList", JSON.stringify(postList));
+  }
+  window.location.reload();
+}
+
+</script>
+</html>

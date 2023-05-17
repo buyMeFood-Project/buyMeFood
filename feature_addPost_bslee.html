@@ -1,26 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<style>
-
-    #f1{
-        width: 300px;
-        margin: 30px auto;
-
-    }
-    div.p1{
-        
-        width:300px;
-        margin: 0 auto;
-    }
-
-</style>
+<link rel="stylesheet" href="feature_addPost_bslee.css">
+<script src="feature_addPost_bslee.js"></script>
 <body>
+    <div id="sform">
     <header style="text-align: center;">
         <h2>GNB</h2>
     </header>
@@ -28,31 +18,46 @@
         <label for="storeName">가게명 :</label>
         <input id="storeName" name="storeName" type="text">
         <br>
-        <label for="stars">별점 :</label>
-            <input type="radio" id="stars" name="stars" value="5" />
-            <label for="5-stars" class="star">&#9733;</label>
-            <input type="radio" id="stars" name="stars" value="4" />
-            <label for="4-stars" class="star">&#9733;</label>
-            <input type="radio" id="stars" name="stars" value="3" />
-            <label for="3-stars" class="star">&#9733;</label>
-            <input type="radio" id="stars" name="stars" value="2" />
-            <label for="2-stars" class="star">&#9733;</label>
-            <input type="radio" id="star" name="stars" value="1" />
-            <label for="1-star" class="star">&#9733;</label>
-            <br>
-            <label for="content">내용 :</label>
-            <input type="text" id="content" name="content"></div>
-            <button type="submit" onclick="feature_addPost_bslee()">등록</button>
-    </form>
-    <div class="p1">맛집 검색 결과</div>
-<!--    
-       
-           
+        <label>별점 :</label>
+        <label for="1-star" class="star">&#9733;</label>
+        <input type="radio" id="stars" name="stars" value="1" />
+        <label for="2-stars" class="star">&#9733;</label>
+        <input type="radio" id="stars" name="stars" value="2" />
+        <label for="3-stars" class="star">&#9733;</label>
+        <input type="radio" id="stars" name="stars" value="3" />
+        <label for="4-stars" class="star">&#9733;</label>
+        <input type="radio" id="stars" name="stars" value="4" />
+        <label for="5-stars" class="star">&#9733;</label>
+        <input type="radio" id="stars" name="stars" value="5" />
+        <br>
+        <label for="content">내용 :</label>
+        <input type="text" id="content" name="content">
+        <br>
+        <div id='image_preview'>
+            <div>
+                <image id="preView1" ></image>
+            </div>
+            <div>
+                <image id="preView2"></image>
+            </div>
+            <div>
+                <image id="preView3"></image>
+            </div>
+            <input type='file' onchange="readURL(this);" id='image1'  />
+            <input type='file' onchange="readURL(this);" id='image2' />
+            <input type='file' id='image3' />
 
-            <div id="f1"><input type="file" multiple></div> -->
-             
-       
+        </div>
+        <br>
+        <button type="submit" onclick="feature_addPost_bslee()">등록</button>
+        <footer style="text-align: center;">
+            <h2>footer</h2>
+        </footer>
+    </form>
+</div>
+
 
 </body>
-<script src="feature_addPost_bslee.js"></script>
+
+
 </html>
