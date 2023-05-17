@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판</title>
+    <style>
+        p{
+            margin:2px;
+        }
+        #likeBtn:hover span{
+            display: none;
+            
+        }
+        #likeBtn:hover::before{    
+            content: "♥";
+            font-size: 18px;
+            color: red;
+        }
+        #replyBtn:hover{
+            font-weight: bold;
+        }
+        div{
+            margin: 2% auto;
+        }
+        img{
+            size: 10%;
+        }
+        .content {
+            margin:2px auto;
+            display: none;
+            background-color: #f1f1f1;
+        }
+        ul{
+            margin: 1px;
+            padding: 0;
+            list-style: none;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header style="text-align: center;">
+        <h2>GNB</h2>
+    </header>
+    <div>
+        <button type="submit" onclick="posting()">등록</button>
+    </div>
+    
+    <form id="postArea">
+         
+    </form>
+
+    <button>게시글 작성</button>
+    <div>
+        <span>
+            <button type="button" class="pages" value="prePage"><</button>
+            <span id="pagination"> 
+                <button type="button" class="pages" value="1">1</button> 
+            </span>
+            <button type="button" class="pages" value="nextPage">></button>
+        </span>
+    </div>
+    <script src="post.js"></script>
+</body>
+</html>
