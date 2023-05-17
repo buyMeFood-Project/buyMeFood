@@ -1,16 +1,104 @@
-<style>
-    #f1 {
-        width: 300px;
-        margin: 30px auto;
-    }
+#f1 {
+    width: 300px;
+    margin: 30px auto;
+}
 
-    div.p1 {
-        width: 300px;
-        margin: 0 auto;
-    }
-    #sform {
-        display: inline-block;
-        text-align: center;
-      }
+div.p1 {
+    width: 300px;
+    margin: 0 auto;
+}
 
-</style>
+table {
+    width: 100%;
+}
+
+td {
+    text-align: center;
+    width: 20%;
+}
+
+.center {
+    width: 60%;
+    padding: 0;
+    height: 50px;
+}
+
+#gnb_label {
+    width: 60%;
+    height: 20px;
+    font-size: small;
+    color: gray;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+}
+
+#search {
+    width: 400px;
+    height: 35px;
+    margin: 5px auto;
+}
+
+#navi {
+    display: flex;
+    padding-left: 0px;
+    margin: 3px 0px;
+}
+
+#navi li {
+    list-style: none;
+    margin: 0px auto;
+    float: left;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: orangered;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+#footer_line {
+    margin: 3px 0px;
+    padding-left: 0px;
+}
+
+#footer_line li {
+    list-style: none;
+    display: inline-block;
+    font-weight: bold;
+}
+
+#footer_info {
+    display: inline-block;
+    font-size: 14px;
+    text-align: left;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+#contaner {
+    margin: 20px auto;
+    width: 1000px;
+}
+
+#body2 {
+    margin: 20px auto;
+    width: 300px;
+    padding-top: 200px;
+}
+#image_preview{
+    margin: 0 auto;
+    width: 200px;
+}
+#submit1{
+    padding-top: 20px;
+    padding-left: 150px;
+}

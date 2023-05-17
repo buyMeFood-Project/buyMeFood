@@ -9,52 +9,109 @@
 </head>
 <link rel="stylesheet" href="feature_addPost_bslee.css">
 <script src="feature_addPost_bslee.js"></script>
+
 <body>
     <div id="sform">
-    <header style="text-align: center;">
-        <h2>GNB</h2>
-    </header>
-    <form>
-        <label for="storeName">가게명 :</label>
-        <input id="storeName" name="storeName" type="text">
-        <br>
-        <label>별점 :</label>
-        <label for="1-star" class="star">&#9733;</label>
-        <input type="radio" id="stars" name="stars" value="1" />
-        <label for="2-stars" class="star">&#9733;</label>
-        <input type="radio" id="stars" name="stars" value="2" />
-        <label for="3-stars" class="star">&#9733;</label>
-        <input type="radio" id="stars" name="stars" value="3" />
-        <label for="4-stars" class="star">&#9733;</label>
-        <input type="radio" id="stars" name="stars" value="4" />
-        <label for="5-stars" class="star">&#9733;</label>
-        <input type="radio" id="stars" name="stars" value="5" />
-        <br>
-        <label for="content">내용 :</label>
-        <input type="text" id="content" name="content">
-        <br>
-        <div id='image_preview'>
-            <div>
-                <image id="preView1" ></image>
+        <header>
+            <nav>
+                <table>
+                    <tr>
+                        <td rowspan="3"><a href=""><img src="logo.jpg" width="150px"></a></td>
+                        <td id="gnb_label">알파코 주변 맛집을 추천해드릴게요!</td>
+                        <td rowspan="3" id="login"><a href="">로그인</a></td>
+                    </tr>
+                    <tr>
+                        <td class="center">
+                            <form id="searchForm">
+                                <input type="text" id="search" placeholder="음식이나 음식점을 검색해보세요">
+                                <input type="submit" value="검색">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="center">
+                            <ul id="navi">
+                                <li><a href=""> 맛집 추천 </a></li>
+                                <li><a href=""> 게시판 </a></li>
+                                <li><a href=""> 룰렛 추천 </a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </nav>
+        </header>
+        <div id="contaner">
+            <form id="body1">
+                <div id="body2">
+                <label for="storeName">가게명 :</label>
+                <input id="storeName" name="storeName" type="text">
+                <br>
+                <label>별점 :</label>
+                <label for="1-star" class="star">&#9733;</label>
+                <input type="radio" id="stars" name="stars" value="1" />
+                <label for="2-stars" class="star">&#9733;</label>
+                <input type="radio" id="stars" name="stars" value="2" />
+                <label for="3-stars" class="star">&#9733;</label>
+                <input type="radio" id="stars" name="stars" value="3" />
+                <label for="4-stars" class="star">&#9733;</label>
+                <input type="radio" id="stars" name="stars" value="4" />
+                <label for="5-stars" class="star">&#9733;</label>
+                <input type="radio" id="stars" name="stars" value="5" />
+                <br>
+                <label for="content">내용 :</label>
+                <input type="text" id="content" name="content">
+                <span id='image_preview'>
+                    <div>
+                        <image id="preView1"></image>
+                    </div>
+                    <div>
+                        <image id="preView2"></image>
+                    </div>
+                    <div>
+                        <image id="preView3"></image>
+                    </div>
+                    <input type='file' onchange="readURL(this);" id='image1' />
+                    <input type='file' onchange="readURL(this);" id='image2' />
+                    <input type='file' id='image3' />
+                    </span>
+                    <br>
+                    <div id="submit1"><button type="submit" onclick="feature_addPost_bslee()">등록</button></div>
             </div>
-            <div>
-                <image id="preView2"></image>
-            </div>
-            <div>
-                <image id="preView3"></image>
-            </div>
-            <input type='file' onchange="readURL(this);" id='image1'  />
-            <input type='file' onchange="readURL(this);" id='image2' />
-            <input type='file' id='image3' />
-
+                <br>
+           
+                </div>
+                <br>
+               
+            </form>
         </div>
-        <br>
-        <button type="submit" onclick="feature_addPost_bslee()">등록</button>
-        <footer style="text-align: center;">
-            <h2>footer</h2>
+        <footer>
+            <hr>
+            <ul id="footer_line">
+                <li>회사소개</li>
+                <span>|</span>
+                <li>이용약관</li>
+                <span>|</span>
+                <li>개인정보처리방침</li>
+                <span>|</span>
+                <li>고객센터</li>
+            </ul>
+            <hr>
+            <img src="logo.jpg" width="70px" height="70px" id="footer_logo">
+            <div id="footer_info">
+                | 상호명 : 맛난거4조 <br>
+                | 사업자등록번호 : 000-00-000 <br>
+                | 대표자 : 맛난거4조 <br>
+                | 개인정보관리책임자 : 디지털하나로
+            </div>
+            <div id="footer_info">
+                | 주소 : (00000) 서울시 성동구 아차산로 111 <br>
+                | TEL : 02-000-0000 | FAX : (02)000-0000 | Email : matna4jo@business.com <br>
+                <br>
+                Copyright 2023 맛난거4조 Corp. All Rights Reserved.
+            </div>
         </footer>
-    </form>
-</div>
+
+    </div>
 
 
 </body>
