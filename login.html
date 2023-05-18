@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <style>
+        h3 {
+            text-align: center;
+        }
+        form {
+            border: 1px solid black;
+            padding: 30px;
+            width: 306px;
+            height: 205px;
+            border-radius: 10px;
+            margin: 0px auto;
+        }
+        .user_input {
+            width: 300px;
+            height: 40px;
+            margin-bottom: 5px;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+        #login_btn {
+            width: 300px;
+            height: 40px;
+            box-sizing: content-box;
+            background-color: orange;
+            border: 1px solid orange;
+            border-radius: 5px;
+            font-weight: bold;
+            color: white;
+            margin: 10px 0px;
+            padding: 1px 2px;
+            font-size: large;
+        }
+        label {
+            font-size: small;
+        }
+        #navi {
+            text-align: center;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+            font-size: small;
+        }
+    </style>
+</head>
+<body>
+    <h3>로그인</h3>
+    <form id="login">
+        <input type="text" placeholder="아이디를 입력해주세요" name="userId" class="user_input" id="userId"><br>
+        <input type="password" placeholder="비밀번호를 입력해주세요" name="userPw" class="user_input" id="userPw"><br>
+        <label for="remember_login">
+            <input type="checkbox" id="remember_login"> 로그인 상태 유지
+        </label><br>
+        <button type="button" id="login_btn">로그인</button>
+        <div id="navi">
+            <a href=""> 회원가입 </a> |
+            <a href=""> 아이디 찾기 </a> |
+            <a href=""> 비밀번호 찾기 </a>
+        </div>
+
+    </form>
+    <script src="login.js"></script>
+</body>
+</html>

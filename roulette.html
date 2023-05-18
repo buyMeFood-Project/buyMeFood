@@ -27,7 +27,7 @@
             line-height: 1;
             text-align: center;
         }
-        #search_input {
+        #search {
             width: 400px;
             height: 35px;
             margin: 5px auto;
@@ -47,29 +47,19 @@
             font-weight: bold;
             color: orangered;
         }
-
-        footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
+        #roulette {
             width: 100%;
             text-align: center;
         }
-        #footer_line {
-            margin: 3px 0px;
-            padding-left: 0px;
-        }
-        #footer_line li {
-            list-style: none;
-            display: inline-block;
+        #menu_btn {
+            width: 184px;
+            height: 86px;
             font-weight: bold;
+            font-size: large;
         }
-        #footer_info {
-            display: inline-block;
-            font-size: 14px;
-            text-align: left;
-            margin-left: 20px;
-            margin-bottom: 10px;
+        #place_list {
+            display: flex;
+            justify-content: space-evenly;
         }
     </style>
 </head>
@@ -85,8 +75,8 @@
                 <tr>
                     <td class="center">
                         <form id="searchForm">
-                            <input type="text" id="search_input" placeholder="음식이나 음식점을 검색해보세요">
-                            <button type="button" id="search_btn">검색</button>
+                            <input type="text" id="search" placeholder="음식이나 음식점을 검색해보세요">
+                            <input type="submit" value="검색">
                         </form>
                     </td>
                 </tr>
@@ -102,32 +92,11 @@
             </table>
         </nav>
     </header>
-    <footer>
-        <hr>
-        <ul id="footer_line">
-            <li>회사소개</li>
-            <span>|</span>
-            <li>이용약관</li>
-            <span>|</span>
-            <li>개인정보처리방침</li>
-            <span>|</span>
-            <li>고객센터</li>
-        </ul>
-        <hr>
-        <img src="logo.jpg" width="70px" height="70px" id="footer_logo">
-        <div id="footer_info">
-            | 상호명 : 맛난거4조 <br>
-            | 사업자등록번호 : 000-00-000 <br>
-            | 대표자 : 맛난거4조 <br>
-            | 개인정보관리책임자 : 디지털하나로
-        </div>        
-        <div id="footer_info">
-            | 주소 : (00000) 서울시 성동구 아차산로 111 <br>
-            | TEL : 02-000-0000 | FAX : (02)000-0000 | Email : matna4jo@business.com <br>
-            <br>
-            Copyright 2023 맛난거4조 Corp. All Rights Reserved.
-        </div>
-    </footer>
-    <script src="main.js"></script>
+    <div id="roulette">
+        <h2>오늘 뭐 먹지?</h2>
+        <button type="button" id="menu_btn">클릭</button>
+    </div>
+    <div id="place_list"></div>
+    <script src="roulette.js"></script>
 </body>
 </html>
