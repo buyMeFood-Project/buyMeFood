@@ -8,23 +8,23 @@
     <link rel="stylesheet" href="mypage3.css">
 </head>
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
     <header style="text-align: center;">
         <h2> GNB </h2>
     </header>
-    <div id="container">
-        <div class="mypage" id="mypage_top"> <!-- 상단은 flex로 -->
-        <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
-            <div id="myinfo">
-                <div id="user_emoji">😀</div>
-                <h2 id="top">마이페이지</h2>
-                <div id="userId"></div>
-                <button id="editbtn" onclick="changeInfo()">✏️</button>
-            </div>
-            <div id="util">
-                <a href="">로그아웃</a>
-                <a href="">마이페이지</a>
-            </div>
+    <div id="mypage_top"> <!-- 상단은 flex로 -->
+        <div id="myinfo">
+            <div id="user_emoji">😀</div>
+            <h2 id="top">마이페이지</h2>
+            <span id="userId"></span>
+            <button id="editbtn" onclick="changeInfo()">✏️</button>
         </div>
+        <div id="util">
+            <a href="">로그아웃</a>
+            <a href="">마이페이지</a>
+        </div>
+    </div>
+    <div id="container">    
         <div class="mypage" id="mypage_nav">
             <div> 마이 페이지 </div>
             <ul>

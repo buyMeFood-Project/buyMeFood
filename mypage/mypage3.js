@@ -36,27 +36,22 @@ const username = document.getElementById("userId").textContent;
 
 function changeInfo() {
     infoArea.innerHTML = '\
-        <div id="myinfo">\
-            <div id="user_emoji"></div>\
-            <h2 id="top">마이페이지</h2>\
-            <form id="userId">\
-                <div id="user_emoji">😀</div>\
-                <input type="text" value="'+ username + '">\
-                <button type="button" id="emoji_btn" onclick="emoji_picker()">button</button>\
-                <button id="donebtn" onclick="changeDone()">확인</button>\
-            </form>\
-        </div>\
+        <div id="user_emoji">😀</div>\
+        <h2 id="top">마이페이지</h2>\
+        <form id="userForm">\
+            <input type="text" value="'+ username + '">\
+            <button type="button" id="emoji_btn" onclick="emoji_picker()">button</button>\
+            <button id="donebtn" onclick="changeDone()">확인</button>\
+        </form>\
     ';
 }
 
 function changeDone() {
     infoArea.innerHTML = '\
-        <div id="myinfo">\
-            <div id="user_emoji">😀</div>\
-            <h2 id="top">마이페이지</h2>\
-            <div id="userId" value="' + loginUser + '"></div>\
-            <button id="editbtn" onclick="changeInfo()">✏️</button>\
-        </div>\
+        <div id="user_emoji">😀</div>\
+        <h2 id="top">마이페이지</h2>\
+        <span id="userId" value="' + loginUser + '"></span>\
+        <button id="editbtn" onclick="changeInfo()">✏️</button>\
     ';    
 }
 
