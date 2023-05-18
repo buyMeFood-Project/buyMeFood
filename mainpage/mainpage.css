@@ -1,0 +1,40 @@
+header {
+    text-align: center;
+    height: 50px;
+}
+#container {
+    width: 1000px;
+    height: 800px;
+    margin: 20px auto;
+}
+#container #comment1 {
+    margin-left: 35px;
+}
+.food_list {
+    list-style: none;
+}
+.food_list img {
+    width: 300px; height: 260px;
+}
+.food_list li {
+    float: left;
+    padding: 0px 10px;
+    padding-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+}
+.food_list .food_type {
+    color: gray;
+    font-size: small;
+    line-height: 1px;
+}
+.food_list .rest_info {
+    font-weight: 800;
+    font-size: larger;
+}
+.food_list .rest_info .rest_rate {
+    color: rgb(255, 204, 34);
+}
+footer {
+    border-top: 1px solid #000;
+}
