@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판</title>
+    <style>
+        p{
+            margin:2px;
+        }
+        #likeBtn:hover span{
+            display: none;
+            
+        }
+        #likeBtn:hover::before{    
+            content: "♥";
+            font-size: 18px;
+            color: red;
+        }
+        #replyBtn:hover{
+            font-weight: bold;
+        }
+        div{
+            margin: 2% auto;
+        }
+        img{
+            size: 10%;
+        }
+        .commentArea {
+            margin:2px auto;
+            display: none;
+            background-color: #f1f1f1;
+        }
+        ul{
+            margin: 1px;
+            padding: 0;
+            list-style: none;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            text-align: center;
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            border-radius: 10px;
+            width: 25%;
+            border-top: 30px solid orange; /* Add border-top property */
+        }
+
+        .modal-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header style="text-align: center;">
+        <h2>GNB</h2>
+    </header>
+    <div>
+        <button type="submit" onclick="posting()">등록</button>
+    </div>
+    
+    <form id="postArea">
+         <div class="post" id="post1" style="display:none">
+            <form>
+                <p id="storeName"></p>
+                <p id="info"></p>
+                <p id="content"></p>
+                <span id="images"></span>
+                <br>
+                <span>
+                    <button class="likeBtn" type="button" name="">
+                    <span>♡</span>
+                    </button>
+                    (<h10 id="likeCounts"></h10>)
+                    <button type="button" class="replyBtn" name="">댓글</button>
+                    (<h10 id="replyCounts"></h10>)
+                </span>
+                <div id="" class="commentArea">
+                    <label for="newReply">댓글:</label>
+                    <input type="text" id="newReply">
+                    <button class="newComment" type="button" name="" required>등록</button>
+                    <ul id="comment" class="comments"></ul>
+                </div>
+            </form>
+         </div>
+         <div class="post" id="post2" style="display:none">
+            <form>
+                <p id="storeName"></p>
+                <p id="author"></p>
+                <p id="content"></p>
+                <span id="images"></span>
+                <br>
+                <span>
+                    <button class="likeBtn" type="button" name="">
+                    <span>♡</span>
+                    </button>
+                    (<h10 id="likeCounts"></h10>)
+                    <button type="button" class="replyBtn" name="">댓글</button>
+                    (<h10 id="replyCounts"></h10>)
+                </span>
+                <div id="" class="commentArea">
+                    <label for="newReply">댓글:</label>
+                    <input type="text" id="newReply">
+                    <button class="newComment" type="button" name="" required>등록</button>
+                    <ul id="comment" class="comments"></ul>
+                </div>
+            </form>
+         </div>
+         <div class="post" id="post3" style="display:none">
+            <form>
+                <p id="storeName"></p>
+                <p id="author"></p>
+                <p id="content"></p>
+                <span id="images"></span>
+                <br>
+                <span>
+                    <button class="likeBtn" type="button" name="">
+                    <span>♡</span>
+                    </button>
+                    (<h10 id="likeCounts"></h10>)
+                    <button type="button" class="replyBtn" name="">댓글</button>
+                    (<h10 id="replyCounts"></h10>)
+                </span>
+                <div id="" class="commentArea">
+                    <label for="newReply">댓글:</label>
+                    <input type="text" id="newReply">
+                    <button class="newComment" type="button" name="" required>등록</button>
+                    <ul id="comment" class="comments"></ul>
+                </div>
+            </form>
+         </div>
+    </form>
+
+    <button>게시글 작성</button>
+    <div>
+        <span>
+            <button type="button" class="pages" value="prePage"><</button>
+            <span id="pagination"> 
+                <button type="button" class="pages" value="1">1</button> 
+            </span>
+            <button type="button" class="pages" value="nextPage">></button>
+        </span>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <p id="alertContent"></p>
+            <div class="modal-buttons">
+                <button id="confirm">확인</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="post.js"></script>
+</body>
+</html>
