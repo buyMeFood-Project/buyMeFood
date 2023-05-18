@@ -1,0 +1,191 @@
+#f1 {
+    width: 300px;
+    margin: 30px auto;
+}
+
+div.p1 {
+    width: 300px;
+    margin: 0 auto;
+}
+.gnb{
+    width: 100%;
+}
+
+th{
+    text-align: left;
+}
+
+td {
+    text-align: center;
+    width: 20%;
+}
+
+.center {
+    width: 60%;
+    padding: 0;
+    height: 50px;
+}
+
+#gnb_label {
+    width: 60%;
+    height: 20px;
+    font-size: small;
+    color: gray;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+}
+
+#search {
+    width: 400px;
+    height: 35px;
+    margin: 5px auto;
+}
+
+#navi {
+    display: flex;
+    padding-left: 0px;
+    margin: 3px 0px;
+}
+
+#navi li {
+    list-style: none;
+    margin: 0px auto;
+    float: left;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: orangered;
+}
+
+footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+#footer_line {
+    margin: 3px 0px;
+    padding-left: 0px;
+}
+
+#footer_line li {
+    list-style: none;
+    display: inline-block;
+    font-weight: bold;
+}
+
+#footer_info {
+    display: inline-block;
+    font-size: 14px;
+    text-align: left;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+#contaner {
+    margin: 20px auto;
+    width: 500px;
+    padding-right: 100px;
+}
+
+#body2 {
+    margin: 20px auto;
+    width: 1000px;
+}
+#image_preview{
+    margin: 0 auto;
+    width: 200px;
+}
+#submit1{
+    padding-top: 20px;
+
+}
+label{
+    font-size: 30px;
+    font-family: 'Black Han Sans', sans-serif;
+    color:orange;
+}
+
+.star-rating {
+    border:solid 0px #ccc;
+    display:flex;
+    flex-direction: row-reverse;
+    font-size:1.7em;
+    justify-content:space-around;
+    padding:0 .2em;
+    text-align:center;
+    width:5em;
+    padding-bottom: 14px;
+  }
+  
+  .star-rating input {
+    display:none;
+  }
+  
+  .star-rating label {
+    color:#ccc;
+    cursor:pointer;
+  }
+  
+  .star-rating :checked ~ label {
+    color:#f0dc2b;
+}
+
+  .star-rating label:hover,
+  .star-rating label:hover ~ label {
+    color:orange;
+}
+  .imagePreView{
+    display: flex;
+  }
+#test1{
+    display: block;
+}
+
+#body3{
+    border: 1px solid; 
+    color: orange;
+    width: 70%;
+    height: 50%;
+}
+.postWord{
+    font-size: 25px;
+    font-family: 'Black Han Sans', sans-serif;
+    color:orange;
+}
+
+input[type=text]{
+	width:100%;
+	border:5px solid orange;
+	border-radius:4px;
+	margin: 8px 0;
+	outline: none;
+	padding:8px;
+	box-sizing: border-box;
+	transition:.3s;
+}
+
+
+input[type=text]:focus{
+	border-color:yellow;
+	box-shadow:0 0 8px 0 red;
+}
+textarea {
+	width:100%;
+	border:5px solid orange;
+	border-radius:4px;
+	margin: 8px 0;
+	outline: none;
+	padding:8px;
+	box-sizing: border-box;
+	transition:.3s;
+}
+textarea:focus {
+	border-color:yellow;
+	box-shadow:0 0 8px 0 red;
+}
