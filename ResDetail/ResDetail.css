@@ -1,0 +1,36 @@
+#resImage {
+  text-align: center;
+}
+
+button {
+}
+
+img {
+  width: 300px;
+  height: 360px;
+}
+
+hr {
+  width: 1000px;
+  margin-left: -30px;
+}
+#Info {
+  margin-left: 200px;
+}
+.restaurant_name {
+  position: inline-block;
+}
+.Score {
+  display: inline;
+}
+.restaurant_title {
+  display: block;
+}
+
+map {
+  display: inline-block;
+}
+table {
+  width: 400px;
+  height: 300px;
+}
