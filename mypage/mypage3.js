@@ -27,16 +27,14 @@ function emoji_picker() {
 
 // userId:document.getElementById("userId").textContent = "백연정";
 const loginUser = (JSON.parse(localStorage.getItem('userList')))[0].username;
-function test(){
-    alert(loginUser);
-}
+
 userId:document.getElementById("userId").textContent = loginUser;
 const username = document.getElementById("userId").textContent;
 
-
 function changeInfo() {
     infoArea.innerHTML = '\
-        <div id="user_emoji">😀</div>\
+        <div id="user_emoji">\
+        <input type="text" id="message"></div>\
         <h2 id="top">마이페이지</h2>\
         <form id="userForm">\
             <input type="text" value="'+ username + '">\
