@@ -77,9 +77,14 @@ a[href] {
     padding-left: 15px;
     line-height: 35px;
     height: 100px;
+    
 }
 #mypage_nav ul li > div{
-    text-align: left;    
+    text-align: left;
+    cursor: pointer;
+}
+#mypage_nav ul li > div:hover {
+    color: red;
 }
 #mypage_content {
     border: 1px solid black;
