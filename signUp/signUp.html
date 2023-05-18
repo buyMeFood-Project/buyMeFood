@@ -5,115 +5,124 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SingUp</title>
-    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="signUp.css" />
   </head>
   <body>
     <header style="text-align: center">
       <h2>GNB</h2>
     </header>
-    <h2>회원가입</h2>
-    <h3>회원정보</h3>
-    <hr />
-    <form>
-      <table>
-        <tr>
-          <td rowspan="2">
-            <label for="username"> 이름 * </label>
-          </td>
-          <td>
-            <input
-              type="text"
-              id="username"
-              name="username"
-              minlength="2"
-              maxlength="10"
-              placeholder="이름을 입력해주세요."
-              required
-            />
-            <button onclick="checkNameDuplicate()">중복확인</button>
-            <form id="name_duplication"></form>
-          </td>
-        </tr>
-        <tr>
-          <td>* 2~10자 이내, 공백 불가능</td>
-        </tr>
-        <tr>
-          <td rowspan="2">
-            <label for="userid"> 아이디 * </label>
-          </td>
-          <td>
-            <input
-              type="text"
-              id="userid"
-              name="userid"
-              placeholder="아이디를 입력해주세요."
-              required
-            />
-            <button onclick="checkIDDuplicate()">중복확인</button>
-            <form id="id_duplication"></form>
-          </td>
-        </tr>
-        <tr>
-          <td>* 영문문자, 숫자 사용, 공백 불가능</td>
-        </tr>
-        <tr>
-          <td rowspan="2">
-            <label for="password"> 비밀번호 * </label>
-          </td>
-          <td>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="비밀번호를 입력해주세요."
-              required
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>* 8~20자 영문문자, 숫자, 특수문자를 사용하세요.</td>
-        </tr>
-        <tr>
-          <td>
-            <label for="phonenum"> 휴대폰번호 * </label>
-          </td>
-          <td>
-            <input
-              type="number"
-              inputmode="numeric"
-              id="phonenum"
-              name="phonenum"
-              maxlength="11"
-              placeholder="휴대폰번호를 입력해주세요."
-              required
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label for="useremail"> 이메일 * </label>
-          </td>
-          <td>
-            <span>
-              <input type="text" id="useremail" name="useremail" required />
-              @
-              <!-- <input type="text" id="emaildomain" name="emaildomain" required /> -->
-              <select>
-                <option>naver.com</option>
-                <option>gmail.com</option>
-              </select>
-            </span>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2">
-            <button type="button">돌아가기</button>
-            <button type="submit" onclick="signUp()">회원가입</button>
-          </td>
-        </tr>
-      </table>
-    </form>
+    <main>
+      <h3>회원정보</h3>
+      <p>*필수작성</p>
+      <hr />
+      <form id="box">
+        <table>
+          <tr>
+            <td id="label" rowspan="2">
+              <label for="username"> 이름<b>*</b> </label>
+            </td>
+            <td>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                minlength="2"
+                maxlength="10"
+                placeholder="이름을 입력해주세요."
+                required
+              />
+              <button id="button_dup" onclick="checkNameDuplicate()">
+                중복확인
+              </button>
+              <form id="name_duplication"></form>
+            </td>
+          </tr>
+          <tr>
+            <td id="condition">* 2~10자 이내, 공백 불가능</td>
+          </tr>
+          <tr>
+            <td id="label" rowspan="2">
+              <label for="userid"> 아이디<b>*</b> </label>
+            </td>
+            <td>
+              <input
+                type="text"
+                id="userid"
+                name="userid"
+                placeholder="아이디를 입력해주세요."
+                required
+              />
+              <button id="button_dup" onclick="checkIDDuplicate()">
+                중복확인
+              </button>
+              <form id="id_duplication"></form>
+            </td>
+          </tr>
+          <tr>
+            <td id="condition">* 영문문자, 숫자 사용, 공백 불가능</td>
+          </tr>
+          <tr>
+            <td id="label" rowspan="2">
+              <label for="password"> 비밀번호<b>*</b> </label>
+            </td>
+            <td>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="비밀번호를 입력해주세요."
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td id="condition">
+              * 8~20자 영문문자, 숫자, 특수문자를 사용하세요.
+            </td>
+          </tr>
+          <tr>
+            <td id="label">
+              <label for="phonenum"> 휴대폰번호<b>*</b> </label>
+            </td>
+            <td>
+              <input
+                type="number"
+                inputmode="numeric"
+                id="phonenum"
+                name="phonenum"
+                maxlength="11"
+                placeholder="휴대폰번호를 입력해주세요."
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td id="label">
+              <label for="useremail"> 이메일<b>*</b> </label>
+            </td>
+            <td>
+              <span>
+                <input type="text" id="useremail" name="useremail" required />
+                @
+                <!-- <input type="text" id="emaildomain" name="emaildomain" required /> -->
+                <select>
+                  <option>naver.com</option>
+                  <option>gmail.com</option>
+                </select>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" id="button">
+              <button type="button">돌아가기</button>
+              <button type="submit" onclick="signUp()">회원가입</button>
+            </td>
+          </tr>
+        </table>
+      </form>
 
-    <script src="signUp.js"></script>
+      <script src="signUp.js"></script>
+    </main>
   </body>
 </html>
