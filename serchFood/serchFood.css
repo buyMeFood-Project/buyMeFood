@@ -1,0 +1,122 @@
+
+#container {
+    width: 1000px;
+    height: 800px;
+    margin: 20px auto;
+}
+#container #comment1 {
+    margin-left: 35px;
+}
+.food_list {
+    list-style: none;
+}
+.food_list img {
+    width: 300px; height: 260px;
+}
+.food_list li {
+    float: left;
+    padding: 0px 10px;
+    padding-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+}
+.food_list .food_type {
+    color: gray;
+    font-size: small;
+    line-height: 1px;
+}
+.food_list .rest_info {
+    font-weight: 800;
+    font-size: larger;
+}
+.food_list .rest_info .rest_rate {
+    color: rgb(255, 204, 34);
+}
+#f1 {
+    width: 300px;
+    margin: 30px auto;
+}
+
+div.p1 {
+    width: 300px;
+    margin: 0 auto;
+}
+.gnb{
+    width: 100%;
+}
+
+th{
+    text-align: left;
+}
+
+td {
+    text-align: center;
+    width: 20%;
+}
+
+.center {
+    width: 60%;
+    padding: 0;
+    height: 50px;
+}
+
+#gnb_label {
+    width: 60%;
+    height: 20px;
+    font-size: small;
+    color: gray;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+}
+
+#search {
+    width: 400px;
+    height: 35px;
+    margin: 5px auto;
+}
+
+#navi {
+    display: flex;
+    padding-left: 0px;
+    margin: 3px 0px;
+}
+
+#navi li {
+    list-style: none;
+    margin: 0px auto;
+    float: left;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: orangered;
+}
+
+footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+#footer_line {
+    margin: 3px 0px;
+    padding-left: 0px;
+}
+
+#footer_line li {
+    list-style: none;
+    display: inline-block;
+    font-weight: bold;
+}
+
+#footer_info {
+    display: inline-block;
+    font-size: 14px;
+    text-align: left;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
