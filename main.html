@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 100%;
+        }
+        td {
+            text-align: center;
+            width: 20%;
+        }
+        .center {
+            width: 60%;
+            padding: 0;
+            height: 50px;
+        }
+        #gnb_label {
+            width: 60%;
+            height: 20px;
+            font-size: small;
+            color: gray;
+            font-weight: bold;
+            line-height: 1;
+            text-align: center;
+        }
+        #search_input {
+            width: 400px;
+            height: 35px;
+            margin: 5px auto;
+        }
+        #navi {
+            display: flex;
+            padding-left: 0px;
+            margin: 3px 0px;
+        }
+        #navi li {
+            list-style: none;
+            margin: 0px auto;
+            float: left;
+        }
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            color: orangered;
+        }
+
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+        #footer_line {
+            margin: 3px 0px;
+            padding-left: 0px;
+        }
+        #footer_line li {
+            list-style: none;
+            display: inline-block;
+            font-weight: bold;
+        }
+        #footer_info {
+            display: inline-block;
+            font-size: 14px;
+            text-align: left;
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <table>
+                <tr>
+                    <td rowspan="3"><a href=""><img src="logo.jpg" width="150px"></a></td>
+                    <td id="gnb_label">알파코 주변 맛집을 추천해드릴게요!</td>
+                    <td rowspan="3" id="login"><a href="">로그인</a></td>
+                </tr>
+                <tr>
+                    <td class="center">
+                        <form id="searchForm">
+                            <input type="text" id="search_input" placeholder="음식이나 음식점을 검색해보세요">
+                            <button type="button" id="search_btn">검색</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="center">
+                        <ul id="navi">
+                            <li><a href=""> 맛집 추천 </a></li>
+                            <li><a href=""> 게시판 </a></li>
+                            <li><a href=""> 룰렛 추천 </a></li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </nav>
+    </header>
+    <footer>
+        <hr>
+        <ul id="footer_line">
+            <li>회사소개</li>
+            <span>|</span>
+            <li>이용약관</li>
+            <span>|</span>
+            <li>개인정보처리방침</li>
+            <span>|</span>
+            <li>고객센터</li>
+        </ul>
+        <hr>
+        <img src="logo.jpg" width="70px" height="70px" id="footer_logo">
+        <div id="footer_info">
+            | 상호명 : 맛난거4조 <br>
+            | 사업자등록번호 : 000-00-000 <br>
+            | 대표자 : 맛난거4조 <br>
+            | 개인정보관리책임자 : 디지털하나로
+        </div>        
+        <div id="footer_info">
+            | 주소 : (00000) 서울시 성동구 아차산로 111 <br>
+            | TEL : 02-000-0000 | FAX : (02)000-0000 | Email : matna4jo@business.com <br>
+            <br>
+            Copyright 2023 맛난거4조 Corp. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
