@@ -5,73 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        table {
-            width: 100%;
-        }
-        td {
-            text-align: center;
-            width: 20%;
-        }
-        .center {
-            width: 60%;
-            padding: 0;
-            height: 50px;
-        }
-        #gnb_label {
-            width: 60%;
-            height: 20px;
-            font-size: small;
-            color: gray;
-            font-weight: bold;
-            line-height: 1;
-            text-align: center;
-        }
-        #search_input {
-            width: 400px;
-            height: 35px;
-            margin: 5px auto;
-        }
-        #navi {
-            display: flex;
-            padding-left: 0px;
-            margin: 3px 0px;
-        }
-        #navi li {
-            list-style: none;
-            margin: 0px auto;
-            float: left;
-        }
-        a {
-            text-decoration: none;
-            font-weight: bold;
-            color: orangered;
-        }
-
-        footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            text-align: center;
-        }
-        #footer_line {
-            margin: 3px 0px;
-            padding-left: 0px;
-        }
-        #footer_line li {
-            list-style: none;
-            display: inline-block;
-            font-weight: bold;
-        }
-        #footer_info {
-            display: inline-block;
-            font-size: 14px;
-            text-align: left;
-            margin-left: 20px;
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <header>
@@ -102,6 +36,67 @@
             </table>
         </nav>
     </header>
+    <div id="container">
+        <div id="comment1"> 알파코 주변 맛집 </div>
+            <ul class="food_list">
+            <li>
+                <img id="src1">
+                <p class="food_type" id="food1"></p>
+                <div class="rest_info"> 
+                    <span class="rest_name" id="food_name1"></span>
+                    <span class="star">⭐</span>
+                    <span class="rest_rate" id="food_rate1"></span>
+                </div>
+            </li>
+            <li>
+                <img id="src2">
+                <p class="food_type" id="food2"></p>
+                <div class="rest_info"> 
+                    <span class="rest_name" id="food_name2"></span>
+                    <span class="star">⭐</span>
+                    <span class="rest_rate" id="food_rate2"></span>                    
+                </div>
+            </li>
+            <li>
+                <img id="src3">
+                <p class="food_type" id="food3"></p>
+                <div class="rest_info"> 
+                    <span class="rest_name" id="food_name3"></span>
+                    <span class="star">⭐</span>
+                    <span class="rest_rate" id="food_rate3"></span>
+                </div>
+            </li>
+            </ul>
+            <ul class="food_list">
+            <li>
+                <img id="src4">
+                <p class="food_type" id="food4"></p>
+                <div class="rest_info"> 
+                    <span class="rest_name" id="food_name4"></span>
+                    <span class="star">⭐</span>
+                    <span class="rest_rate" id="food_rate4"></span>
+                </div>
+            </li>
+            <li>
+                <img id="src5">
+                <p class="food_type" id="food5"></p>
+                <div class="rest_info"> 
+                    <span class="rest_name" id="food_name5"></span>
+                    <span class="star">⭐</span>
+                    <span class="rest_rate" id="food_rate5"></span>
+                </div>
+            </li>
+            <li>
+                <img id="src6">
+                <p class="food_type" id="food6"></p>
+                <div class="rest_info"> 
+                    <span class="rest_name" id="food_name6"></span>
+                    <span class="star">⭐</span>
+                    <span class="rest_rate" id="food_rate6"></span>                    
+                </div>
+            </li>
+            </ul>
+        </div>
     <footer>
         <hr>
         <ul id="footer_line">
