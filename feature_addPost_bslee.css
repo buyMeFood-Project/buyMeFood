@@ -7,9 +7,12 @@ div.p1 {
     width: 300px;
     margin: 0 auto;
 }
-
-table {
+.gnb{
     width: 100%;
+}
+
+th{
+    text-align: left;
 }
 
 td {
@@ -58,7 +61,7 @@ a {
 }
 
 footer {
-    position: fixed;
+    position: relative;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -86,13 +89,13 @@ footer {
 
 #contaner {
     margin: 20px auto;
-    width: 1000px;
+    width: 500px;
+    padding-right: 100px;
 }
 
 #body2 {
     margin: 20px auto;
-    width: 300px;
-    padding-top: 200px;
+    width: 1000px;
 }
 #image_preview{
     margin: 0 auto;
@@ -100,5 +103,89 @@ footer {
 }
 #submit1{
     padding-top: 20px;
-    padding-left: 150px;
+
+}
+label{
+    font-size: 30px;
+    font-family: 'Black Han Sans', sans-serif;
+    color:orange;
+}
+
+.star-rating {
+    border:solid 0px #ccc;
+    display:flex;
+    flex-direction: row-reverse;
+    font-size:1.7em;
+    justify-content:space-around;
+    padding:0 .2em;
+    text-align:center;
+    width:5em;
+    padding-bottom: 14px;
+  }
+  
+  .star-rating input {
+    display:none;
+  }
+  
+  .star-rating label {
+    color:#ccc;
+    cursor:pointer;
+  }
+  
+  .star-rating :checked ~ label {
+    color:#f0dc2b;
+}
+
+  .star-rating label:hover,
+  .star-rating label:hover ~ label {
+    color:orange;
+}
+  .imagePreView{
+    display: flex;
+  }
+#test1{
+    display: block;
+}
+
+#body3{
+    border: 1px solid; 
+    color: orange;
+    width: 70%;
+    height: 50%;
+}
+.postWord{
+    font-size: 25px;
+    font-family: 'Black Han Sans', sans-serif;
+    color:orange;
+}
+
+input[type=text]{
+	width:100%;
+	border:5px solid orange;
+	border-radius:4px;
+	margin: 8px 0;
+	outline: none;
+	padding:8px;
+	box-sizing: border-box;
+	transition:.3s;
+}
+
+
+input[type=text]:focus{
+	border-color:yellow;
+	box-shadow:0 0 8px 0 red;
+}
+textarea {
+	width:100%;
+	border:5px solid orange;
+	border-radius:4px;
+	margin: 8px 0;
+	outline: none;
+	padding:8px;
+	box-sizing: border-box;
+	transition:.3s;
+}
+textarea:focus {
+	border-color:yellow;
+	box-shadow:0 0 8px 0 red;
 }

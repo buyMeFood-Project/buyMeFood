@@ -8,13 +8,14 @@
     <title>Document</title>
 </head>
 <link rel="stylesheet" href="feature_addPost_bslee.css">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
 <script src="feature_addPost_bslee.js"></script>
 
 <body>
-    <div id="sform">
+
         <header>
             <nav>
-                <table>
+                <table class="gnb">
                     <tr>
                         <td rowspan="3"><a href=""><img src="logo.jpg" width="150px"></a></td>
                         <td id="gnb_label">알파코 주변 맛집을 추천해드릴게요!</td>
@@ -43,73 +44,94 @@
         <div id="contaner">
             <form id="body1">
                 <div id="body2">
-                <label for="storeName">가게명 :</label>
-                <input id="storeName" name="storeName" type="text">
-                <br>
-                <label>별점 :</label>
-                <label for="1-star" class="star">&#9733;</label>
-                <input type="radio" id="stars" name="stars" value="1" />
-                <label for="2-stars" class="star">&#9733;</label>
-                <input type="radio" id="stars" name="stars" value="2" />
-                <label for="3-stars" class="star">&#9733;</label>
-                <input type="radio" id="stars" name="stars" value="3" />
-                <label for="4-stars" class="star">&#9733;</label>
-                <input type="radio" id="stars" name="stars" value="4" />
-                <label for="5-stars" class="star">&#9733;</label>
-                <input type="radio" id="stars" name="stars" value="5" />
-                <br>
-                <label for="content">내용 :</label>
-                <input type="text" id="content" name="content">
-                <span id='image_preview'>
-                    <div>
-                        <image id="preView1"></image>
-                    </div>
-                    <div>
-                        <image id="preView2"></image>
-                    </div>
-                    <div>
-                        <image id="preView3"></image>
-                    </div>
-                    <input type='file' onchange="readURL(this);" id='image1' />
-                    <input type='file' onchange="readURL(this);" id='image2' />
-                    <input type='file' id='image3' />
-                    </span>
-                    <br>
-                    <div id="submit1"><button type="submit" onclick="feature_addPost_bslee()">등록</button></div>
-            </div>
-                <br>
-           
+                    <div id="body3">
+                        <div class="postWord">
+                            <h1>게시판 등록</h1>
+                        </div>
+                    <table>
+                    <tr>
+                        <th> <label for="storeName">가게명 &nbsp:&nbsp&nbsp</label></td>
+                        <th> <input id="storeName" name="storeName" type="text"></td>
+                    </tr>
+                    <tr>   
+                            <th><label>&nbsp&nbsp&nbsp별점&nbsp&nbsp:</label></td>
+                        <th>
+                            <div class="star-rating">
+                            <input type="radio" id="1-star" name="stars" value="5" />
+                            <label for="1-star" class="star">&#9733;</label>
+                            <input type="radio" id="2-star" name="stars" value="4" />
+                            <label for="2-star" class="star">&#9733;</label>
+                            <input type="radio" id="3-star" name="stars" value="3" />
+                            <label for="3-star" class="star">&#9733;</label>
+                            <input type="radio" id="4-star" name="stars" value="2" />
+                            <label for="4-star" class="star">&#9733;</label>
+                            <input type="radio" id="5-star" name="stars" value="1" />
+                            <label for="5-star" class="star">&#9733;</label>
+                          </th>
+                <tr>
+                    <th><label for="content">&nbsp&nbsp&nbsp내용&nbsp&nbsp:</label></th>
+                    <th><textarea style="resize:none" id="content" name="content" cols="50" rows="10" width="200px"
+                            class="form-control"></textarea></th>
+                </tr>
+            </table>
+
+
+            <div class="imagePreView">
+                <div id="test1">
+                    <div id="image_container1">  </div>
+                    <input type="file" id="image1" accept="image/*" onchange="setThumbnail1(event);"/>
                 </div>
+                       
+                  <div id="test1">
+                    <div id="image_container2"></div>
+                    <input type="file" id="image2" accept="image/*" onchange="setThumbnail2(event);"/>
+                </div>
+                <div id="text1">
+                    <div id="image_container3"></div>
+                    <input type="file" id="image3" accept="image/*" onchange="setThumbnail3(event);"/>
+                </div>
+                 
+            </div>
                 <br>
-               
-            </form>
+                <div id="submit1"><button type="submit" onclick="feature_addPost_bslee()">등록</button></div>
+            </div>
+            </div>
+
         </div>
-        <footer>
-            <hr>
-            <ul id="footer_line">
-                <li>회사소개</li>
-                <span>|</span>
-                <li>이용약관</li>
-                <span>|</span>
-                <li>개인정보처리방침</li>
-                <span>|</span>
-                <li>고객센터</li>
-            </ul>
-            <hr>
-            <img src="logo.jpg" width="70px" height="70px" id="footer_logo">
-            <div id="footer_info">
-                | 상호명 : 맛난거4조 <br>
-                | 사업자등록번호 : 000-00-000 <br>
-                | 대표자 : 맛난거4조 <br>
-                | 개인정보관리책임자 : 디지털하나로
-            </div>
-            <div id="footer_info">
-                | 주소 : (00000) 서울시 성동구 아차산로 111 <br>
-                | TEL : 02-000-0000 | FAX : (02)000-0000 | Email : matna4jo@business.com <br>
-                <br>
-                Copyright 2023 맛난거4조 Corp. All Rights Reserved.
-            </div>
-        </footer>
+        
+        <br>
+
+    </div>
+    <br>
+
+    </form>
+    </div>
+    <footer>
+        <hr>
+        <ul id="footer_line">
+            <li>회사소개</li>
+            <span>|</span>
+            <li>이용약관</li>
+            <span>|</span>
+            <li>개인정보처리방침</li>
+            <span>|</span>
+            <li>고객센터</li>
+        </ul>
+        <hr>
+        <img src="logo.jpg" width="70px" height="70px" id="footer_logo">
+        <div id="footer_info">
+            | 상호명 : 맛난거4조 <br>
+            | 사업자등록번호 : 000-00-000 <br>
+            | 대표자 : 맛난거4조 <br>
+            | 개인정보관리책임자 : 디지털하나로
+        </div>
+        <div id="footer_info">
+            | 주소 : (00000) 서울시 성동구 아차산로 111 <br>
+            | TEL : 02-000-0000 | FAX : (02)000-0000 | Email : matna4jo@business.com <br>
+            <br>
+            Copyright 2023 맛난거4조 Corp. All Rights Reserved.
+        </div>
+    </footer>
 
     </div>
 

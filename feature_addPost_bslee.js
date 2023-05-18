@@ -19,28 +19,50 @@ function feature_addPost_bslee() {
   }
   window.location.reload();
 }
-function readURL(input) {
-  if (input.files && input.files[0]) {
-    var reader = new FileReader();
-    reader.onload = function(e) {
-      document.getElementById('preView1').src = e.target.result;
-    };
-    reader.readAsDataURL(input.files[0]);
-  } else {
-    document.getElementById('preView1').src = "";
-  }
-}
-function readURL(input) {
-    if (input.files && input.files[0]) {
-      var reader = new FileReader();
-      reader.onload = function(e) {
-        document.getElementById('preView2').src = e.target.result;
-      };
-      reader.readAsDataURL(input.files[0]);
-    } else {
-      document.getElementById('preView2').src = "";
-    }
-  }
+
+function setThumbnail1(event) {
+       var reader = new FileReader();
+
+        reader.onload = function(event) {
+          var img = document.createElement("img");
+          img.setAttribute("src", event.target.result);
+          // 이미지안에 표시되는 체크박스의 속성
+          var img_style = 'width:100%;height:100%;z-index:none';
+          img.setAttribute("style",img_style);
+          document.querySelector("div#image_container1").appendChild(img);
+        };
+
+        reader.readAsDataURL(event.target.files[0]);
+      }
+function setThumbnail2(event) {
+        var reader = new FileReader();
+ 
+         reader.onload = function(event) {
+           var img = document.createElement("img");
+           img.setAttribute("src", event.target.result);
+           // 이미지안에 표시되는 체크박스의 속성
+          var img_style = 'width:100%;height:100%;z-index:none';
+          img.setAttribute("style",img_style);
+           document.querySelector("div#image_container2").appendChild(img);
+         };
+ 
+         reader.readAsDataURL(event.target.files[0]);
+       }
+function setThumbnail3(event) {
+        var reader = new FileReader();
+ 
+         reader.onload = function(event) {
+           var img = document.createElement("img");
+           img.setAttribute("src", event.target.result);
+           // 이미지안에 표시되는 체크박스의 속성
+          var img_style = 'width:100%;height:100%;z-index:none';
+          img.setAttribute("style",img_style);
+           document.querySelector("div#image_container3").appendChild(img);
+         };
+ 
+         reader.readAsDataURL(event.target.files[0]);
+       }
+      
 
 // ( /* att_zone : 이미지들이 들어갈 위치 id, btn : file tag id */
 //   imageView = function imageView(att_zone, btn){
