@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SingUp</title>
-    <link rel="stylesheet" href="main.css" />
+    <!-- <link rel="stylesheet" href="main.css" /> -->
     <link rel="stylesheet" href="signUp.css" />
+    <link rel="stylesheet" href="../alertModal/modal.css">
   </head>
   <body>
     <header style="text-align: center">
@@ -20,26 +21,24 @@
         <table>
           <tr>
             <td id="label" rowspan="2">
-              <label for="username"> 이름<b>*</b> </label>
+              <label for="username"> 닉네임<b>*</b> </label>
             </td>
             <td>
               <input
                 type="text"
                 id="username"
                 name="username"
-                minlength="2"
-                maxlength="10"
-                placeholder="이름을 입력해주세요."
+                placeholder="닉네임을 입력해주세요."
                 required
               />
-              <button id="button_dup" onclick="checkNameDuplicate()">
+              <button type="button" class="button_dup" id="username_dup">
                 중복확인
               </button>
               <form id="name_duplication"></form>
             </td>
           </tr>
           <tr>
-            <td id="condition">* 2~10자 이내, 공백 불가능</td>
+            <td id="condition">* 2~10자 이내, 영문, 숫자 사용 (공백 불가능)</td>
           </tr>
           <tr>
             <td id="label" rowspan="2">
@@ -53,14 +52,14 @@
                 placeholder="아이디를 입력해주세요."
                 required
               />
-              <button id="button_dup" onclick="checkIDDuplicate()">
+              <button type="button" class="button_dup" id="userid_dup">
                 중복확인
               </button>
               <form id="id_duplication"></form>
             </td>
           </tr>
           <tr>
-            <td id="condition">* 영문문자, 숫자 사용, 공백 불가능</td>
+            <td id="condition">* 4~10자 이내, 영문, 숫자 사용 (공백 불가능)</td>
           </tr>
           <tr>
             <td id="label" rowspan="2">
@@ -86,15 +85,7 @@
               <label for="phonenum"> 휴대폰번호<b>*</b> </label>
             </td>
             <td>
-              <input
-                type="number"
-                inputmode="numeric"
-                id="phonenum"
-                name="phonenum"
-                maxlength="11"
-                placeholder="휴대폰번호를 입력해주세요."
-                required
-              />
+              <input id="phonenum" name="phonenum" maxlength="11" placeholder="휴대폰번호를 입력해주세요." required>
             </td>
           </tr>
           <tr>
@@ -105,8 +96,9 @@
               <span>
                 <input type="text" id="useremail" name="useremail" required />
                 @
-                <!-- <input type="text" id="emaildomain" name="emaildomain" required /> -->
-                <select>
+                <input type="text" id="emaildomain" name="emaildomain" required />
+                <select id= "domainOption">
+                  <option>직접입력</option>
                   <option>naver.com</option>
                   <option>gmail.com</option>
                 </select>
@@ -116,13 +108,16 @@
           <tr>
             <td colspan="2" id="button">
               <button type="button">돌아가기</button>
-              <button type="submit" onclick="signUp()">회원가입</button>
+              <button type="submit" id="signUp">회원가입</button>
             </td>
           </tr>
         </table>
       </form>
-
-      <script src="signUp.js"></script>
     </main>
+    <div id="modalContainer"></div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <scirpt src="../alertModal/modal.js" type="module"></scirpt>
+    <script src="signUp.js" type="module"></script>
   </body>
 </html>

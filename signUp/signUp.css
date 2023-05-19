@@ -54,7 +54,11 @@ label {
 
 input {
   height: 30px;
-  width: 250px;
+  width: 150px;
+}
+
+input::placeholder{
+  font-size: 5px;
 }
 
 /* input하단 조건 */
@@ -110,7 +114,7 @@ button {
   color: var(--button-color);
 }
 
-#button_dup {
+.button_dup {
   width: auto;
   font-size: small;
   --button-color: #ffffff;
@@ -131,4 +135,10 @@ button:disabled {
   --button-color: #ffffff;
   --button-bg-color: orange;
   --button-hover-bg-color: rgb(255, 134, 20);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

@@ -1,3 +1,9 @@
+import { modalControl } from "../alertModal/modal.js";
+
+$(function() {
+    $("#modalContainer").load("../alertModal/modal.html");
+});
+
 let tokenList = JSON.parse(localStorage.getItem('tokenList'));
 let postList = JSON.parse(localStorage.getItem('postList'));
 let postCurrPage = localStorage.getItem('postCurrPage');
@@ -79,9 +85,7 @@ $(".newComment").click(function() {
     let postList = JSON.parse(localStorage.getItem('postList'));
     
     if(comment === ''){
-        event.preventDefault();
-        $('#alertContent').html("댓글을 작성한 후 등록해주세요.");
-        $('#myModal').css('display', 'block');
+        modalControl("댓글을 작성한 후 등록해주세요.");
     }
     else{
         for(let post of postList){
@@ -99,12 +103,6 @@ $(".newComment").click(function() {
         $(this).parent().find('#newReply').val('');
     }
 });
-
-// Confirm btn function to close alert modal
-$('#confirm').click(function(){
-    $('#myModal').css('display', 'none');
-})
-
 
 // Pagination
 $(".pages").click(function(){
@@ -127,7 +125,7 @@ $(".pages").click(function(){
 });
 
 // Post Button
-function posting(){
+$("#posting").click(function() {
     let randomToken = makeToken(10);
     while(1){
         if(tokenList.includes(randomToken)){
@@ -162,7 +160,7 @@ function posting(){
         localStorage.setItem('postList', JSON.stringify(postList));
     }
     window.location.reload();
-}
+});
 
 function generateImages(imgList){
     let retVal = "";

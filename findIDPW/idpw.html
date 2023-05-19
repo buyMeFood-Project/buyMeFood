@@ -6,33 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FindIDPW</title>
     <link rel="stylesheet" href="/main.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../alertModal/modal.css">
     <style>
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-
-        .modal-content {
-            text-align: center;
-            background-color: #fefefe;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 25%;
-            border-top: 15px solid orange; /* Add border-top property */
-        }
-
-        .modal-buttons {
-            text-align: center;
-            margin-top: 20px;
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
         }
     </style>
 </head>
@@ -60,7 +39,7 @@
                 </div>
                 <div>
                     <label for="findOption" id="changeable">휴대폰: </label>
-                    <input type="text" id="findOption" name="searchPhoneNum" required>
+                    <input type="number" id="findOption" name="searchPhoneNum" required>
                 </div>
                 <div>
                     <button type="submit" id="findId">아이디찾기</button>
@@ -84,16 +63,10 @@
             </form>
         </div>
     </div>
+    <div id="modalContainer"></div>
 
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <p id="alertContent"></p>
-            <div class="modal-buttons">
-                <button id="confirm">확인</button>
-            </div>
-        </div>
-    </div>
-
-    <script src="findIDPW.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <scirpt src="../alertModal/modal.js" type="module"></scirpt>
+    <script src="findIDPW.js" type="module"></script>
 </body>
 </html>

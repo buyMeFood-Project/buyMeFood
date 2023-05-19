@@ -1,4 +1,9 @@
+import { modalControl } from "../alertModal/modal.js";
 const userList = JSON.parse(localStorage.getItem('userList'));
+
+$(function() {
+    $("#modalContainer").load("../alertModal/modal.html");
+});
 
 // Display input form for find id info
 $("#idInfo").click(function(){
@@ -19,18 +24,6 @@ $('#byPhoneNum').click(function(){
 
 $('#byEmail').click(function(){
     $('#changeable').html("이메일: ");
-});
-
-// function to set alert message inside alert modal
-function modalControl(message){
-    event.preventDefault();
-    $('#alertContent').html(message);
-    $('#myModal').css('display', 'block');
-};
-
-// Confirm btn function to close alert modal
-$('#confirm').click(function(){
-    $('#myModal').css('display', 'none');
 });
 
 // Find Id Function
