@@ -1,160 +1,111 @@
-function feature_addPost_bslee() {
-  let newPost = {
-    storeName: document.getElementById("storeName").value,
-    content: document.getElementById("content").value,
-    stars: document.querySelector('input[name="stars"]:checked').value,
-    image1: document.getElementById("image1").value,
-    image2: document.getElementById("image2").value,
-    image3: document.getElementById("image3").value,
-  };
+import { alertModalControl, confirmModalControl } from "../alertModal/modal.js";
+let imgList = [];
 
-  if (localStorage.getItem("postList") == null) {
-    if (localStorage.getItem("postList") == null) {
-      localStorage.setItem("postList", JSON.stringify([newPost]));
-    }
-  } else {
-    let postList = JSON.parse(localStorage.getItem("postList"));
-    postList.push(newPost);
-    localStorage.setItem("postList", JSON.stringify(postList));
+$(function() {
+  $("#modalContainer").load("../alertModal/modal.html");
+});
+
+// Image upload 및 preview 표시
+$("input[type=file]").on("change", function(event) {
+  var containerId = $(this).parent().attr("id");
+  var imageContainer = $("#" + containerId + " > div[id^=image_container]");
+  var file = event.target.files[0];
+  var fileSizeInBytes = file.size;
+  var maxSizeInBytes = 500 * 1024; // 500KB
+
+  if (fileSizeInBytes > maxSizeInBytes) {
+    alertModalControl("이미지 용량은 최대 500KB를 초과할 수 없습니다.");
+    $(this).val("");
+    return;
   }
-  window.location.reload();
+  else{
+    var reader = new FileReader();
+
+    reader.onload = function(event) {
+      var uploadedImg = event.target.result;
+      var img = $("<img>").attr("src", uploadedImg);
+      var img_style = 'width:70%;height:70%;z-index:none';
+      img.attr("style", img_style);
+      imageContainer.empty().append(img);
+      imgList.push(uploadedImg);
+    };
+
+    reader.readAsDataURL(file);
+  }
+});
+
+// Generate an unique token for post identification
+function generateToken(length) {
+  let result = '';
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  const charactersLength = characters.length;
+  let counter = 0;
+  while (counter < length) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      counter += 1;
+  }
+  return result;
 }
 
-function setThumbnail1(event) {
-       var reader = new FileReader();
 
-        reader.onload = function(event) {
-          var img = document.createElement("img");
-          img.setAttribute("src", event.target.result);
-          // 이미지안에 표시되는 체크박스의 속성
-          var img_style = 'width:100%;height:100%;z-index:none';
-          img.setAttribute("style",img_style);
-          document.querySelector("div#image_container1").appendChild(img);
+// 게시글 등록
+$('#submit1').click(function(event){
+  event.preventDefault();
+  if(validationCheck()){
+    confirmModalControl("게시글을 등록하시겠습니까?", '../post/post.html', function(result){
+      if(result){
+        let newPost = {
+          author: "임시",
+          storeName: $("#storeName").val(),
+          rate: $('input[name="stars"]:checked').val(),
+          content: $("#content").val(),
+          imageList: imgList,
+          likes:[],
+          comments:[],
+          date:new Date().toJSON().slice(0, 10),
+          postToken: generateToken(10)
         };
-
-        reader.readAsDataURL(event.target.files[0]);
+        let postList = localStorage.getItem("postList") ? JSON.parse(localStorage.getItem("postList")) : [];
+        postList.push(newPost);
+        localStorage.setItem("postList", JSON.stringify(postList));
       }
-function setThumbnail2(event) {
-        var reader = new FileReader();
- 
-         reader.onload = function(event) {
-           var img = document.createElement("img");
-           img.setAttribute("src", event.target.result);
-           // 이미지안에 표시되는 체크박스의 속성
-          var img_style = 'width:100%;height:100%;z-index:none';
-          img.setAttribute("style",img_style);
-           document.querySelector("div#image_container2").appendChild(img);
-         };
- 
-         reader.readAsDataURL(event.target.files[0]);
-       }
-function setThumbnail3(event) {
-        var reader = new FileReader();
- 
-         reader.onload = function(event) {
-           var img = document.createElement("img");
-           img.setAttribute("src", event.target.result);
-           // 이미지안에 표시되는 체크박스의 속성
-          var img_style = 'width:100%;height:100%;z-index:none';
-          img.setAttribute("style",img_style);
-           document.querySelector("div#image_container3").appendChild(img);
-         };
- 
-         reader.readAsDataURL(event.target.files[0]);
-       }
-      
+    });
+  }
+});
 
-// ( /* att_zone : 이미지들이 들어갈 위치 id, btn : file tag id */
-//   imageView = function imageView(att_zone, btn){
+function validationCheck(){
+  var isAnyChecked = $(".star-rating input[type='radio']:checked").length > 0;
+  let isOkay = true;
+  if($('#storeName').val() === ''){
+    isOkay = false;
+    alertModalControl("가게명을 입력해주세요.");
+  }
+  else if(!isAnyChecked){
+    isOkay = false;
+    alertModalControl("별점을 선택해주세요.");
+  }
+  else if($('#content').val() === ''){
+    isOkay = false;
+    alertModalControl("게시글 내용을 입력해주세요.");
+  }
 
-//     var attZone = document.getElementById(att_zone);
-//     var btnAtt = document.getElementById(btn)
-//     var sel_files = [];
+return isOkay;
+}
 
-//     // 이미지와 체크 박스를 감싸고 있는 div 속성
-//     var div_style = 'display:inline-block;position:relative;'
-//                   + 'width:150px;height:120px;margin:5px;border:1px solid #00f;z-index:1';
-//     // 미리보기 이미지 속성
-//     var img_style = 'width:100%;height:100%;z-index:none';
-//     // 이미지안에 표시되는 체크박스의 속성
-//     var chk_style = 'width:30px;height:30px;position:absolute;font-size:24px;'
-//                   + 'right:0px;bottom:0px;z-index:999;background-color:rgba(255,255,255,0.1);color:#f00';
+// Count number of letters in content area
+$("#content").on("input", function() {
+  var inputText = $(this).val();
+  var letterCount = 0;
 
-//     btnAtt.onchange = function(e){
-//       var files = e.target.files;
-//       var fileArr = Array.prototype.slice.call(files)
-//       for(f of fileArr){
-//         imageLoader(f);
-//       }
-//     }
+  // Remove excess letters
+  if (inputText.length > 100) {
+    inputText = inputText.slice(0, 100);
+    $(this).val(inputText);
+  }
 
-//     // 탐색기에서 드래그앤 드롭 사용
-//     attZone.addEventListener('dragenter', function(e){
-//       e.preventDefault();
-//       e.stopPropagation();
-//     }, false)
+  if (inputText.trim() !== "") {
+    letterCount = inputText.length;
+  }
 
-//     attZone.addEventListener('dragover', function(e){
-//       e.preventDefault();
-//       e.stopPropagation();
-//     }, false)
-
-//     attZone.addEventListener('drop', function(e){
-//       var files = {};
-//       e.preventDefault();
-//       e.stopPropagation();
-//       var dt = e.dataTransfer;
-//       files = dt.files;
-//       for(f of files){
-//         imageLoader(f);
-//       }
-//     }, false)
-
-//     /*첨부된 이미리즐을 배열에 넣고 미리보기 */
-//     imageLoader = function(file){
-//       sel_files.push(file);
-
-//       var reader = new FileReader();
-//       reader.onload = function(ee){
-//         let img = document.createElement('img')
-//         img.setAttribute('style', img_style)
-//         img.src = ee.target.result;
-//         attZone.appendChild(makeDiv(img, file));
-//       }
-//       reader.readAsDataURL(file);
-//     }
-
-//     /*첨부된 파일이 있는 경우 checkbox와 함께 attZone에 추가할 div를 만들어 반환 */
-//     makeDiv = function(img, file){
-//       var div = document.createElement('div')
-//       div.setAttribute('style', div_style)
-
-//       var btn = document.createElement('input')
-//       btn.setAttribute('type', 'button')
-//       btn.setAttribute('value', 'x')
-//       btn.setAttribute('delFile', file.name);
-//       btn.setAttribute('style', chk_style);
-//       btn.onclick = function(ev){
-//         var ele = ev.srcElement;
-//         var delFile = ele.getAttribute('delFile');
-//         for(var i=0 ;i<sel_files.length; i++){
-//           if(delFile== sel_files[i].name){
-//             sel_files.splice(i, 1);
-//           }
-//         }
-
-//         dt = new DataTransfer();
-//         for(f in sel_files) {
-//           var file = sel_files[f];
-//           dt.items.add(file);
-//         }
-//         btnAtt.files = dt.files;
-//         var p = ele.parentNode;
-//         attZone.removeChild(p)
-//       }
-//       div.appendChild(img)
-//       div.appendChild(btn)
-//       return div
-//     }
-//   }
-// )('att_zone', 'btnAtt')
+  $("#letterCount").text("글자 수: " + letterCount + "/100");
+  });
