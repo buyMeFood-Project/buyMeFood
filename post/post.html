@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>게시판</title>
     <link rel="stylesheet" href="../alertModal/modal.css">
+    <link rel="stylesheet" href="../gnb/gnb.css">
+    <link rel="stylesheet" href="../footer/footer.css">
+    
     <style>
         p{
             margin:2px;
@@ -33,19 +36,13 @@
             display: none;
             background-color: #f1f1f1;
         }
-        ul{
-            margin: 1px;
-            padding: 0;
-            list-style: none;
-        }
     </style>
 </head>
 <body>
-    <header style="text-align: center;">
-        <h2>GNB</h2>
-    </header>
+    <header id="GNB"></header>
+    
     <form id="postArea">
-         <div class="post" id="post1" style="display:none">
+        <div class="post" id="post1" style="display:none">
             <form>
                 <p id="storeName"></p>
                 <p id="info"></p>
@@ -67,8 +64,8 @@
                     <ul id="comment" class="comments"></ul>
                 </div>
             </form>
-         </div>
-         <div class="post" id="post2" style="display:none">
+        </div>
+        <div class="post" id="post2" style="display:none">
             <form>
                 <p id="storeName"></p>
                 <p id="info"></p>
@@ -90,8 +87,8 @@
                     <ul id="comment" class="comments"></ul>
                 </div>
             </form>
-         </div>
-         <div class="post" id="post3" style="display:none">
+        </div>
+        <div class="post" id="post3" style="display:none">
             <form>
                 <p id="storeName"></p>
                 <p id="info"></p>
@@ -113,7 +110,7 @@
                     <ul id="comment" class="comments"></ul>
                 </div>
             </form>
-         </div>
+        </div>
     </form>
 
     <button id="addPost">게시글 작성</button>
@@ -126,6 +123,8 @@
             <button type="button" class="pages" value="nextPage">></button>
         </span>
     </div>
+    <footer id="footer"></footer>
+    
     <div id="modalContainer"></div>
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
