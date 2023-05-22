@@ -1,4 +1,4 @@
-import { modalControl } from "../alertModal/modal.js";
+import { alertModalControl, confirmModalControl} from "../alertModal/modal.js";
 
 $(function() {
     $("#modalContainer").load("../alertModal/modal.html");
@@ -85,7 +85,7 @@ $(".newComment").click(function() {
     let postList = JSON.parse(localStorage.getItem('postList'));
     
     if(comment === ''){
-        modalControl("댓글을 작성한 후 등록해주세요.");
+        alertModalControl("댓글을 작성한 후 등록해주세요.");
     }
     else{
         for(let post of postList){
@@ -124,44 +124,6 @@ $(".pages").click(function(){
     window.location.reload();
 });
 
-// Post Button
-$("#posting").click(function() {
-    let randomToken = makeToken(10);
-    while(1){
-        if(tokenList.includes(randomToken)){
-            randomToken = makeToken(10);
-        }
-        else{
-            tokenList.push(randomToken); 
-            break;    
-        }
-    }
-    let newPost = {
-        postToken: randomToken, 
-        storeName: "새로운 가게",
-        author: "새로운 작성자",
-        date: new Date().toJSON().slice(0, 10),
-        rate: 5.0,
-        content: "새로운 게시글 내용입니다.",
-        imageList:["https://t1.daumcdn.net/cfile/tistory/99E39F4D5BE841E216",
-                    "https://t1.daumcdn.net/cfile/tistory/99E39F4D5BE841E216",
-                "https://t1.daumcdn.net/cfile/tistory/185CDD584D93EED220"],
-        likes: [],
-        comments: []
-    }
-    localStorage.setItem('tokenList', JSON.stringify(tokenList));
-
-    if(postList === null){
-        localStorage.setItem('postList', JSON.stringify([newPost]));
-    }
-    else{
-        postList = JSON.parse(localStorage.getItem('postList'));
-        postList.push(newPost);
-        localStorage.setItem('postList', JSON.stringify(postList));
-    }
-    window.location.reload();
-});
-
 function generateImages(imgList){
     let retVal = "";
     for(let img of imgList){
@@ -185,15 +147,6 @@ function displayComments(token){
     return retVal;
 }
 
-// Generate an unique token for post identification
-function makeToken(length) {
-    let result = '';
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    const charactersLength = characters.length;
-    let counter = 0;
-    while (counter < length) {
-        result += characters.charAt(Math.floor(Math.random() * charactersLength));
-        counter += 1;
-    }
-    return result;
-}
+$('#addPost').click(function (){
+    window.location.href = "../addpost/feature_addPost_bslee.html";
+});
