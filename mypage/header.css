@@ -1,0 +1,41 @@
+table {
+    width: 100%;
+}
+td {
+    text-align: center;
+    width: 20%;
+}
+.center {
+    width: 60%;
+    padding: 0;
+    height: 50px;
+}
+#gnb_label {
+    width: 60%;
+    height: 20px;
+    font-size: small;
+    color: gray;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+}
+#search_input {
+    width: 400px;
+    height: 35px;
+    margin: 5px auto;
+}
+#navi {
+    display: flex;
+    padding-left: 0px;
+    margin: 3px 0px;
+}
+#navi li {
+    list-style: none;
+    margin: 0px auto;
+    float: left;
+}
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: orangered;
+}
