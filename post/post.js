@@ -2,6 +2,8 @@ import { alertModalControl, confirmModalControl} from "../alertModal/modal.js";
 
 $(function() {
     $("#modalContainer").load("../alertModal/modal.html");
+    $('#GNB').load('../gnb/gnb.html');
+    $('#footer').load('../footer/footer.html');
 });
 
 let tokenList = JSON.parse(localStorage.getItem('tokenList'));
@@ -27,7 +29,7 @@ if(postList != null){
         pagingArea += '<button type="button" class="pages" value="' + String(k) + '">' + String(k) + '</button>';
     }
     $('#pagination').html(pagingArea);
-
+    
     for(let i = (currPage-1) * 3; i < limit; i++){
         let postToken = postList[i].postToken;
         let imgList = postList[i].imageList;
