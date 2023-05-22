@@ -15,7 +15,7 @@ $('#username_dup').click(function(){
     let username = $('#username').val();
     let nicknamePattern = /^[a-zA-Z0-9]{2,10}$/;
     if(username === ''){
-        alertModalControl("공란이 존재합니다.");
+        alertModalControl("닉네임을 입력해주세요.");
         $('#username').focus();
     }
     else if(!nicknamePattern.test(username)){
@@ -42,7 +42,7 @@ $('#userid_dup').click(function(){
     let userid = $('#userid').val();
     let useridpattern = /^[a-zA-Z0-9]{4,10}$/;
     if(userid === ''){
-        alertModalControl("공란이 존재합니다.");
+        alertModalControl("아이디를 입력해주세요.");
         $('#userid').focus();
     }
     else if(!useridpattern.test(userid)){
@@ -108,6 +108,12 @@ $('#signUp').click(function(){
     }
 });
 
+$('#back').click(function(){
+    confirmModalControl("회원가입을 취소하고 로그인 페이지로 이동하시겠습니까?", '../login/login.html', function(result){
+        
+    });
+})
+
 function validationCheck(password){
     let passwordPattern = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[^\s]{8,20}$/;
     let retVal = true;
@@ -134,4 +140,4 @@ $('input').on('input', function() {
 $('#phonenum').on('input', function() {
     var sanitizedValue = $(this).val().replace(/[^0-9]/g, '');
     $(this).val(sanitizedValue);
-})
+});
