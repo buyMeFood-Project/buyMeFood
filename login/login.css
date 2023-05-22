@@ -1,0 +1,224 @@
+:root {
+    --color: #FA914B;
+    --color-dark: #FC6B0A;
+    --color-light: #a49eac;
+    --color-lighten: #f2f2f2;
+    --color-hover: #FC6B0A;
+    --font: "Open Sans", sans-serif;
+    --big-font-size: 1.5rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.85rem;
+}
+
+@media screen and (min-width: 768px) {
+    :root {
+        --normal-font-size: 1rem;
+        --small-font-size: 0.875rem;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'TmoneyRoundWindExtraBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindExtraBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    margin: 0 auto;
+    padding: 0;
+    font-family: var(--font);
+    font-size: var(--normal-font-size);
+    color: var(--color);
+    width: 500px;
+    font-family: 'TmoneyRoundWindExtraBold';
+}
+
+h1 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.login {    
+    display: grid;
+    grid-template-columns: 100%;
+    height: 100vh;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.login__content {
+    display: grid;
+}
+
+.login__img {
+    justify-self: center;
+}
+
+/* 로고1 */
+/* 
+.login__img img {
+    width: 300px;
+}
+*/
+.login__img img {
+    width: 400px;
+}
+
+.login__forms {
+    position: relative;
+    height: 350px;
+}
+
+.login__register,
+.login__create {
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+    background-color: var(--color-lighten);
+    padding: 2rem 1rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(35, 0, 77, 0.2);
+    animation-duration: 0.4s;
+    animation-name: animateLogin;
+}
+
+.login__title {
+    font-size: var(--big-font-size);
+    margin-bottom: 2rem;
+}
+
+.login__box {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 0.5rem;
+    padding: 1.125rem 1rem;
+    background-color: #fff;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+}
+
+.login__icon {
+    font-size: 1.5rem;
+    color: var(--color);
+}
+
+.login__input {
+    border: none;
+    outline: none;
+    font-size: var(--normal-font-size);
+    font-weight: 700;
+    color: var(--color-dark);
+    width: 100%;
+}
+
+.login__input::placeholder {
+    font-size: var(--normal-font-size);
+    font-family: var(--font);
+    color: var(--color-light);
+}
+
+#find_to_login {
+    text-align: right;
+}
+
+.login__forgot {
+    display: inline-block;
+    width: max-content;
+    margin-left: auto;
+    margin-top: 0.5rem;
+    font-size: var(--small-font-size);
+    font-weight: 600;
+    color: var(--color-light);
+}
+
+.login__button {
+    display: block;
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: var(--color);
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 0.5rem;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: var(--color-hover);
+    }
+}
+
+.login__account,
+.login__signin,
+.login__signup {
+    font-weight: 600;
+    font-size: var(--small-font-size);
+}
+
+.login__account--account, .login__account--google {
+    color: var(--color-light);
+    font-weight: 600;
+}
+
+.bottom_label {
+    margin-bottom: 10px;
+}
+#byGoogle .bx.bxl-google::before {
+    color: var(--color);
+    background-color: #fff;
+    border-radius: 20px;
+    border: 1px solid var(--color);
+    padding: 3px;
+    vertical-align: middle;
+}
+
+.login__signin,
+.login__signup {
+    color: var(--color);
+    cursor: pointer;
+}
+
+.login__social {
+    margin-top: 2rem;
+}
+
+.login__social--icon {
+    font-size: 1.5rem;
+    color: var(--color-dark);
+    margin: 0 1rem;
+}
+
+.block {
+    display: block;
+}
+
+.none {
+    display: none;
+}
+
+@keyframes animateLogin {
+    0% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1.1, 1.1);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
