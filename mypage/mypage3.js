@@ -29,7 +29,7 @@ function emoji_picker() {
 const loginUser = (JSON.parse(localStorage.getItem('userList')))[0].username;
 
 userId:document.getElementById("userId").textContent = loginUser;
-const username = document.getElementById("userId").textContent;
+const username = document.getElementById("userId").innerHTML; //textContent;
 
 function changeInfo() {
     infoArea.innerHTML = '\
@@ -68,7 +68,10 @@ if (localStorage.getItem('userList') == null) {
 1. likeList 리스트 찾기
 2. 불러와서 html로 보내주기
 */
+
+
 function likeList() {
+
 //    localStorage.getItem('likeList')
 
 }
