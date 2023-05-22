@@ -1,0 +1,24 @@
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    clear: both;
+    text-align: center;
+    padding-top: 30px;
+}
+#footer_line {
+    margin: 3px 0px;
+    padding-left: 0px;
+}
+#footer_line li {
+    list-style: none;
+    display: inline-block;
+    font-weight: bold;
+}
+#footer_info {
+    display: inline-block;
+    font-size: 14px;
+    text-align: left;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}

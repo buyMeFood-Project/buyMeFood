@@ -9,16 +9,11 @@
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.0/BMHANNAPro.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-    }
-
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    font-family: 'Pretendard-Regular';
 }
+
 header {
     margin-top: 10px;
-    border-bottom: 5px solid #FA914B;
+    /* border-bottom: 5px solid #FA914B; */
 }
 #mypage_top {
     /* border-bottom: 2px solid orange; */
