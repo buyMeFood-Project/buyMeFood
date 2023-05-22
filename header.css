@@ -1,0 +1,77 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'BMHANNAPro';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.0/BMHANNAPro.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+
+.hanna * {
+ font-family: 'Hanna', fantasy;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    font-family: 'Pretendard-Regular';
+}
+
+header nav {
+    position: relative;
+    height: 150px;
+    padding-bottom: 5px;
+    border-bottom: 5px solid #FA914B;
+}
+table {
+    width: 100%;
+}
+td {
+    text-align: center;
+    width: 20%;
+}
+.center {
+    width: 60%;
+    padding: 0;
+    height: 50px;
+}
+.center #navi li{
+    margin-top: 10px;
+    font-family: 'BMHANNAPro';
+    font-size: 25px;
+}
+#gnb_label {
+    width: 60%;
+    height: 20px;
+    font-size: small;
+    color: gray;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+}
+#search_input {
+    width: 400px;
+    height: 35px;
+    margin: 5px auto;
+}
+#navi {
+    display: flex;
+    padding-left: 0px;
+    margin: 3px 0px;
+}
+#navi li {
+    list-style: none;
+    margin: 0px auto;
+    float: left;
+}
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #FA914B;
+}
