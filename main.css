@@ -12,11 +12,11 @@
 }
 .food_list img {
     width: 300px; height: 260px;
-    padding-bottom: 10px
+    padding-bottom: 8px;
 }
 .food_list li {
     float: left;
-    padding: 0px 10px;
+    padding: 3px 10px;
     padding-bottom: 20px;
     overflow: hidden;
     position: relative;
@@ -24,7 +24,7 @@
 .food_list .food_type {
     color: gray;
     font-size: small;
-    line-height: 1px;
+    line-height: 13px;
 }
 .food_list .rest_info {
     font-weight: 800;
