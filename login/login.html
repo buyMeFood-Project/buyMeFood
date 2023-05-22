@@ -4,68 +4,83 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로그인</title>
-    <style>
-        h3 {
-            text-align: center;
-        }
-        form {
-            border: 1px solid black;
-            padding: 30px;
-            width: 306px;
-            height: 205px;
-            border-radius: 10px;
-            margin: 0px auto;
-        }
-        .user_input {
-            width: 300px;
-            height: 40px;
-            margin-bottom: 5px;
-            border: 1px solid gray;
-            border-radius: 5px;
-        }
-        #login_btn {
-            width: 300px;
-            height: 40px;
-            box-sizing: content-box;
-            background-color: orange;
-            border: 1px solid orange;
-            border-radius: 5px;
-            font-weight: bold;
-            color: white;
-            margin: 10px 0px;
-            padding: 1px 2px;
-            font-size: large;
-        }
-        label {
-            font-size: small;
-        }
-        #navi {
-            text-align: center;
-        }
-        a {
-            text-decoration: none;
-            color: black;
-            font-size: small;
-        }
-    </style>
+    <title>Login</title>
 </head>
 <body>
-    <h3>로그인</h3>
-    <form id="login">
-        <input type="text" placeholder="아이디를 입력해주세요" name="userId" class="user_input" id="userId"><br>
-        <input type="password" placeholder="비밀번호를 입력해주세요" name="userPw" class="user_input" id="userPw"><br>
-        <label for="remember_login">
-            <input type="checkbox" id="remember_login"> 로그인 상태 유지
-        </label><br>
-        <button type="button" id="login_btn">로그인</button>
-        <div id="navi">
-            <a href=""> 회원가입 </a> |
-            <a href=""> 아이디 찾기 </a> |
-            <a href=""> 비밀번호 찾기 </a>
-        </div>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href="login.css" rel="stylesheet">
+    <div class="login">
+        <div class="login__content">
+            <div class="login__img">
+                <img src="../img/logo2.jpg" alt="user login">
+            </div>
+            <div class="login__forms">
+                <!-- login form -->
+                <form action="" class="login__register" id="login-in">
+                    <h1 class="login__title">로그인</h1>
+                    <div class="login__box">
+                        <i class='bx bx-user login__icon'></i>
+                        <input type="text" placeholder="아이디" class="login__input" id="userId">
+                    </div>
+                    <div class="login__box">
+                        <i class='bx bx-lock login__icon'></i>
+                        <input type="password" placeholder="비밀번호" class="login__input" id="userPw">
+                    </div>
 
-    </form>
-    <script src="login.js"></script>
+                    <div id="find_to_login">
+                        <a href="../idpw/idpw.html" class="login__forgot">아이디 찾기</a>
+                        <span class="login__forgot"> | </span>
+                        <a href="../idpw/idpw.html" class="login__forgot">비밀번호 찾기</a>
+                    </div>
+
+                    <a href="#" class="login__button">로그인</a>
+
+                    <div id="byGoogle" class="bottom_label">
+                        <span class="login__account login__account--google">구글 계정으로 맛난거4조에 로그인</span>
+                        <a href="#" class="login__social--icon"><i class='bx bxl-google'></i></a>
+                    </div>
+
+                    <div class="bottom_label">
+                        <span class="login__account login__account--account">아직 회원이 아니신가요? </span>
+                        <span class="login__signin login__signin--signup" id="sign-up">&nbsp;&nbsp;&nbsp;회원가입</span>
+                    </div>
+                </form>
+        
+<!--         create account form -->
+        <form action="" class="login__create none" id="login-up">
+          <h1 class="login__title">Create Account</h1>
+          <div class="login__box">
+            <i class='bx bx-user login__icon'></i>
+            <input type="text" placeholder="Username" class="login__input">
+          </div>
+          
+          <div class="login__box">
+            <i class='bx bx-at login__icon'></i>
+            <input type="text" placeholder="Email" class="login__input">
+          </div>
+          
+          <div class="login__box">
+            <i class='bx bx-lock login__icon'></i>
+            <input type="text" placeholder="Password" class="login__input">
+          </div>
+          
+          <a href="#" class="login__button">Sign Up</a>
+          
+          <div>
+            <span class="login__account login__account--account">Already have an Account?</span>
+            <span class="login__signup login__signup--signup" id="sign-in">Sign In</span>
+          </div>
+          
+          <div class="login__social">
+             <a href="#" class="login__social--icon"><i class='bx bxl-facebook'></i></a>
+             <a href="#" class="login__social--icon"><i class='bx bxl-twitter'></i></a>
+             <a href="#" class="login__social--icon"><i class='bx bxl-google'></i></a>
+             <a href="#" class="login__social--icon"><i class='bx bxl-github'></i></a>
+          </div>
+        </form>
+      </div>
+    </div>
+   </div>
+   <script src="login.js"></script>
 </body>
 </html>
