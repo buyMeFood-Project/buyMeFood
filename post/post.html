@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>게시판</title>
     <link rel="stylesheet" href="../alertModal/modal.css">
+    <link rel="stylesheet" href="post.css">
+    <link rel="stylesheet" href="../header.css">
     <style>
         p{
             margin:2px;
@@ -29,9 +31,8 @@
             size: 10%;
         }
         .commentArea {
-            margin:2px auto;
             display: none;
-            background-color: #f1f1f1;
+            background-color: #f9f9f9;
         }
         ul{
             margin: 1px;
@@ -44,78 +45,77 @@
     <header style="text-align: center;">
         <h2>GNB</h2>
     </header>
-    <form id="postArea">
-         <div class="post" id="post1" style="display:none">
-            <form>
-                <p id="storeName"></p>
-                <p id="info"></p>
-                <p id="content"></p>
-                <span id="images"></span>
-                <br>
-                <span>
-                    <button class="likeBtn" type="button" name="">
-                    <span>♡</span>
-                    </button>
-                    (<h10 id="likeCounts"></h10>)
-                    <button type="button" class="replyBtn" name="">댓글</button>
-                    (<h10 id="replyCounts"></h10>)
-                </span>
-                <div id="" class="commentArea">
-                    <label for="newReply">댓글:</label>
-                    <input type="text" id="newReply">
-                    <button class="newComment" type="button" name="" required>등록</button>
-                    <ul id="comment" class="comments"></ul>
-                </div>
-            </form>
-         </div>
-         <div class="post" id="post2" style="display:none">
-            <form>
-                <p id="storeName"></p>
-                <p id="info"></p>
-                <p id="content"></p>
-                <span id="images"></span>
-                <br>
-                <span>
-                    <button class="likeBtn" type="button" name="">
-                    <span>♡</span>
-                    </button>
-                    (<h10 id="likeCounts"></h10>)
-                    <button type="button" class="replyBtn" name="">댓글</button>
-                    (<h10 id="replyCounts"></h10>)
-                </span>
-                <div id="" class="commentArea">
-                    <label for="newReply">댓글:</label>
-                    <input type="text" id="newReply">
-                    <button class="newComment" type="button" name="" required>등록</button>
-                    <ul id="comment" class="comments"></ul>
-                </div>
-            </form>
-         </div>
-         <div class="post" id="post3" style="display:none">
-            <form>
-                <p id="storeName"></p>
-                <p id="info"></p>
-                <p id="content"></p>
-                <span id="images"></span>
-                <br>
-                <span>
-                    <button class="likeBtn" type="button" name="">
-                    <span>♡</span>
-                    </button>
-                    (<h10 id="likeCounts"></h10>)
-                    <button type="button" class="replyBtn" name="">댓글</button>
-                    (<h10 id="replyCounts"></h10>)
-                </span>
-                <div id="" class="commentArea">
-                    <label for="newReply">댓글:</label>
-                    <input type="text" id="newReply">
-                    <button class="newComment" type="button" name="" required>등록</button>
-                    <ul id="comment" class="comments"></ul>
-                </div>
-            </form>
-         </div>
-    </form>
-
+    <div id="container">
+        <form id="postArea">
+            <div class="post" id="post1" style="display:none">
+                <form>
+                    <p id="storeName"></p>
+                    <p id="info"></p>
+                    <p id="content"></p>
+                    <span id="images"></span>
+                    <span>
+                        <button class="likeBtn" type="button" name="">
+                        <span>♡</span>
+                        </button>
+                        (<h10 id="likeCounts"></h10>)
+                        <button type="button" class="replyBtn" name="">댓글</button>
+                        (<h10 id="replyCounts"></h10>)
+                    </span>
+                    <div id="" class="commentArea">
+                        <label for="newReply">댓글:</label>
+                        <input type="text" id="newReply">
+                        <button class="newComment" type="button" name="" required>등록</button>
+                        <ul id="comment" class="comments"></ul>
+                    </div>
+                </form>
+            </div>
+            <div class="post" id="post2" style="display:none">
+                <form>
+                    <p id="storeName"></p>
+                    <p id="info"></p>
+                    <p id="content"></p>
+                    <span id="images"></span>
+                    <span>
+                        <button class="likeBtn" type="button" name="">
+                        <span>♡</span>
+                        </button>
+                        (<h10 id="likeCounts"></h10>)
+                        <button type="button" class="replyBtn" name="">댓글</button>
+                        (<h10 id="replyCounts"></h10>)
+                    </span>
+                    <div id="" class="commentArea">
+                        <label for="newReply">댓글:</label>
+                        <input type="text" id="newReply">
+                        <button class="newComment" type="button" name="" required>등록</button>
+                        <ul id="comment" class="comments"></ul>
+                    </div>
+                </form>
+            </div>
+            <div class="post" id="post3" style="display:none">
+                <form>
+                    <p id="storeName"></p>
+                    <p id="info"></p>
+                    <p id="content"></p>
+                    <span id="images"></span>
+                    <span>
+                        <button class="likeBtn" type="button" name="">
+                        <span>♡</span>
+                        </button>
+                        (<h10 id="likeCounts"></h10>)
+                        <button type="button" class="replyBtn" name="">댓글</button>
+                        (<h10 id="replyCounts"></h10>)
+                    </span>
+                    <div id="" class="commentArea">
+                        <label for="newReply">댓글:</label>
+                        <input type="text" id="newReply">
+                        <button class="newComment" type="button" name="" required>등록</button>
+                        <ul id="comment" class="comments"></ul>
+                    </div>
+                </form>
+            </div>
+        </form>
+    </div>
+    
     <button id="addPost">게시글 작성</button>
     <div>
         <span>
@@ -128,6 +128,7 @@
     </div>
     <div id="modalContainer"></div>
     
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../alertModal/modal.js" type="module"></script>
     <script src="post.js" type="module"></script>

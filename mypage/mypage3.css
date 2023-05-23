@@ -11,10 +11,6 @@
     font-style: normal;
 }
 
-header {
-    margin-top: 10px;
-    /* border-bottom: 5px solid #FA914B; */
-}
 #mypage_top {
     /* border-bottom: 2px solid orange; */
     width: 1000px; height: 120px;
@@ -57,13 +53,6 @@ header {
     margin-bottom: 23px;
     width:500px;
     align-items: end;
-}
-a[href] {
-    text-decoration: none;
-    color: gray;
-    font-size: 12px;
-    padding: 0 10px;
-    cursor: pointer;
 }
 #mypageImg {
     left: 0; right: 0;
