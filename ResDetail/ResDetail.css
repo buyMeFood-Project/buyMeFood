@@ -1,36 +1,117 @@
-#resImage {
+/* body {
+  ::-webkit-scrollbar {
+    width: 15px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #fa914b93;
+  }
+} */
+
+/* 상세이미지 */
+resImage {
   text-align: center;
+  margin-bottom: 30px;
 }
-
-button {
-}
-
 img {
-  width: 300px;
-  height: 360px;
+  width: 330px;
+  height: 340px;
 }
 
-hr {
-  width: 1000px;
-  margin-left: -30px;
+@media only screen and (min-width: 320px) and (max-width: 1700px) {
+  #resImage {
+    height: 340px;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    font-size: 0;
+  }
+  img {
+    /* height: 100%;
+    width: 100px; */
+  }
 }
-#Info {
-  margin-left: 200px;
+
+/* title */
+.resaurant_title_wrap {
+  display: grid;
+  grid-template-columns: 10fr 1fr;
+  border-bottom: 1px solid rgb(209, 209, 209);
 }
-.restaurant_name {
-  position: inline-block;
-}
-.Score {
-  display: inline;
-}
+
 .restaurant_title {
-  display: block;
+  display: flex;
+  /* display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 100px 80px; */
 }
 
-map {
-  display: inline-block;
+.restaurant_name {
+  margin-bottom: 15px;
 }
+
+.Score {
+  color: #fa914b;
+  margin: auto;
+  margin-left: 0px;
+  font-size: 20px;
+}
+
+#Like {
+  text-align: center;
+  margin: auto;
+  height: 40px;
+}
+
+.heart_icon {
+  border: none;
+  outline: none;
+  background-color: #00ff0000;
+  font-size: large;
+}
+
+.heart_text {
+  margin: 0px;
+  font-size: small;
+}
+
+#Like:hover {
+  color: #fa914b;
+}
+
+/* #resInfo {
+  padding-bottom: 5px;
+  font-size: small;
+  color: rgb(109, 109, 109);
+} */
+
+/* 가게정보 */
 table {
   width: 400px;
   height: 300px;
+  font-size: small;
+  margin-top: 30px;
+}
+
+.detail_contents {
+  width: 1000px;
+  margin-right: 0px;
+  /* display: inline-block; */
+  margin-top: 0px;
+}
+
+/* 위치(지도) */
+
+#map {
+  margin-left: 30px;
+}
+#container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }

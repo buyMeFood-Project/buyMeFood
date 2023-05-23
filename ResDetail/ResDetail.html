@@ -9,57 +9,59 @@
   </head>
   <body>
     <div id="resImage">
-      <!-- <button><</button> -->
-      <img src="image.png" />
-      <img src="image.png" />
-      <img src="image.png" />
-      <img src="image.png" />
-      <img src="image.png" />
-      <!-- <button>></button> -->
+      <img src="sample_image/1.jpeg" />
+      <img src="sample_image/2.jpeg" />
+      <img src="sample_image/3.jpeg" />
+      <img src="sample_image/4.jpeg" />
+      <img src="sample_image/5.jpeg" />
     </div>
-    <div class="detail_contents">
-      <div class="resaurant_title_wrap">
-        <!-- 가게명, 별점, 좋아요 라인 -->
-        <span class="restaurant_title">
-          <h1 class="restaurant_name">가게명</h1>
-          <strong class="Score"><span>★별점</span></strong>
-          <p class="branch"></p>
-        </span>
-        <div id="Like">
-          <button class="heart_icon">♡</button>
-          <p class="heart_text">찜하기</p>
+    <div id="container">
+        <div class="detail_contents">
+          <div class="resaurant_title_wrap">
+            <!-- 가게명, 별점, 좋아요 라인 -->
+            <span class="restaurant_title">
+              <span><h1 class="restaurant_name">대림국수</h1></span>
+              <span class="Score">⭐5.0</span>
+              <!-- <div id="resInfo">가게정보</div> -->
+            </span>
+            <div id="Like">
+              <button class="heart_icon">♡</button>
+              <p class="heart_text">찜하기</p>
+            </div>
+          </div>
+          <!-- 클릭시 빈 하트 -> 꽉 찬 하트 (이미지화해서 넣어놓기) -->
+
+          <!-- <hr /> -->
+          <table>
+            <tr>
+              <th align="left">주소</th>
+              <td>{address}</td>
+            </tr>
+            <tr>
+              <th align="left">지번</th>
+              <td>{address_number}</td>
+            </tr>
+            <tr>
+              <th align="left">전화번호</th>
+              <td>{phone_number}</td>
+            </tr>
+            <tr>
+              <th align="left">음식 종류</th>
+              <td>{foodtype}</td>
+            </tr>
+            <tr>
+              <th align="left">주차</th>
+              <td>{parking_boolean}</td>
+            </tr>
+            <tr>
+              <th align="left">영업시간</th>
+              <td>{openinghours}</td>
+            </tr>
+          </table>
         </div>
-      </div>
-      <!-- 클릭시 빈 하트 -> 꽉 찬 하트 (이미지화해서 넣어놓기) -->
-      <div id="resInfo">가게정보</div>
-      <hr />
-      <table>
-        <tr>
-          <th>주소</th>
-          <td>{address}</td>
-        </tr>
-        <tr>
-          <th>지번</th>
-          <td>{address_number}</td>
-        </tr>
-        <tr>
-          <th>전화번호</th>
-          <td>{phone_number}</td>
-        </tr>
-        <tr>
-          <th>음식 종류</th>
-          <td>{foodtype}</td>
-        </tr>
-        <tr>
-          <th>주차</th>
-          <td>{parking_boolean}</td>
-        </tr>
-        <tr>
-          <th>영업시간</th>
-          <td>{openinghours}</td>
-        </tr>
-      </table>
+      </Res>
+      <iframe id = "map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.5072024864544!2d127.05250887641928!3d37.543112372044746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca52d20815afd%3A0x14b1f44e1a4be334!2z64yA66a86rWt7IiYIOyEseyImOygkA!5e0!3m2!1sko!2skr!4v1684744085263!5m2!1sko!2skr" width="350" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+     
     </div>
-    <div id="map">map</div>
   </body>
 </html>
