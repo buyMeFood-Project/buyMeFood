@@ -39,7 +39,7 @@ if(postList != null){
         targetPost.css('display', '');
         targetPost.find('#storeName').html(postList[i].storeName);
         targetPost.find('#info').html(postList[i].author + " " 
-                                    + postList[i].date + " ★" 
+                                    + postList[i].date + " ⭐" 
                                     + postList[i].rate);
         targetPost.find('#content').html(postList[i].content);
         targetPost.find('#images').html(imgSrc);
@@ -129,7 +129,7 @@ $(".pages").click(function(){
 function generateImages(imgList){
     let retVal = "";
     for(let img of imgList){
-        retVal += "<img style=\"width:60px;height:60px;\"src=" + img + " alt=이미지>";
+        retVal += "<img src=" + img + " alt=이미지>";
     }
     return retVal;
 }
