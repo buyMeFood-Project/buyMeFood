@@ -9,6 +9,8 @@ $(function() {
 $("input[type=file]").on("change", function(event) {
   var containerId = $(this).parent().attr("id");
   var imageContainer = $("#" + containerId + " > div[id^=image_container]");
+  var container = $(this).parent();
+  var imageDelete = container.find("input[type=button]");
   var file = event.target.files[0];
   var fileSizeInBytes = file.size;
   var maxSizeInBytes = 500 * 1024; // 500KB
@@ -24,15 +26,18 @@ $("input[type=file]").on("change", function(event) {
     reader.onload = function(event) {
       var uploadedImg = event.target.result;
       var img = $("<img>").attr("src", uploadedImg);
-      var img_style = 'width:70%;height:70%;z-index:none';
+      var img_style = 'width:100%;height:100%;z-index:none';
       img.attr("style", img_style);
       imageContainer.empty().append(img);
       imgList.push(uploadedImg);
     };
 
     reader.readAsDataURL(file);
+
   }
+  imageDelete.show(); // Show the button
 });
+
 
 // Generate an unique token for post identification
 function generateToken(length) {
@@ -109,3 +114,18 @@ $("#content").on("input", function() {
 
   $("#letterCount").text("글자 수: " + letterCount + "/100");
   });
+
+
+// 게시글 등록
+$('#del1').click(function(event){
+  $("#image_container1 img").remove();
+  $("#del1").hide();
+});
+$('#del2').click(function(event){
+  $("#image_container2 img").remove();
+  $("#del2").hide();
+});
+$('#del3').click(function(event){
+  $("#image_container3 img").remove();
+  $("#del3").hide();
+});

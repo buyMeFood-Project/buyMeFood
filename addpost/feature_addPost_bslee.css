@@ -97,10 +97,6 @@ footer {
     margin: 20px auto;
     width: 1000px;
 }
-#image_preview{
-    margin: 0 auto;
-    width: 200px;
-}
 label{
     font-size: 30px;
     font-family: 'Black Han Sans', sans-serif;
@@ -136,12 +132,6 @@ label{
   .star-rating label:hover ~ label {
     color:orange;
 }
-  .imagePreView{
-    display: flex;
-  }
-#test1{
-    display: block;
-}
 
 #body3{
     border: 1px solid; 
@@ -151,7 +141,6 @@ label{
 }
 .postWord{
     font-size: 25px;
-    font-family: 'Black Han Sans', sans-serif;
     color:orange;
 }
 
@@ -184,4 +173,41 @@ textarea {
 textarea:focus {
 	border-color:yellow;
 	box-shadow:0 0 8px 0 red;
+}
+
+#imageLabel{
+    font-size: 15px;
+}
+#image_container1{
+    width: 120px;
+    height: 120px;
+}
+#image_container2{
+    width: 120px;
+    height: 120px;
+}
+
+#image_container3{
+    width: 120px;
+    height: 120px;
+}
+
+#test1{
+    display: block;
+    width: auto;
+
+}
+.imagePreView
+{
+    display: flex;
+    margin: auto 0;
+    width: 100%;
+}
+#imageLabel{
+
+    font-size: 15px;
+
+}
+.test1{
+    width: 233px;
 }
