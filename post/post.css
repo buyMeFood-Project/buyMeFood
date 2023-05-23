@@ -7,6 +7,21 @@ body {
     margin: 10px auto;
     border-radius: 10px;
 }
+#menuTitle {
+    margin: 15px;
+    margin-left: 25px;
+    font-size: 40px;
+    text-align: left;
+    font-family: 'TmoneyRoundWindExtraBold';
+}
+#miniTitle {
+    text-align: left;
+    margin-left: 25px;
+    font-family: 'Pretendard-Regular';
+    content: "여러분들의 의견을 들려주세요!";
+    font-size: 15px;
+    color: rgb(148, 148, 148);
+}
 #postArea > div:not(.post) {
     height: 400px;
     margin-bottom: 20px;
@@ -94,6 +109,7 @@ body {
     margin-right: 5px;
     height: 22px;
     width: 85%;
+    border: 1px solid rgb(160, 160, 160);
 }
 .commentArea .newComment {
     background: #fa914b;
@@ -142,8 +158,9 @@ body {
     font-weight: bolder;
 
 }
-.pages#pagination {
-    background-color: #fa914b;
-
+#pagination button{
+    /* background-color: #fa914b; */
+    cursor: pointer;
+    border-radius: 5px;
 
 }
