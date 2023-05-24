@@ -12,7 +12,9 @@
     background: #fa914b93;
   }
 } */
-
+#ResDetail_page {
+  margin-top: 200px;
+}
 /* 상세이미지 */
 #resImage {
   text-align: center;
@@ -46,6 +48,7 @@ img {
 
 .restaurant_title {
   display: flex;
+  /* margin-bottom: 10px; */
   /* display: grid;
   grid-template-columns: 1fr 5fr;
   grid-template-columns: 100px 80px; */
@@ -59,21 +62,23 @@ img {
   color: #fa914b;
   margin: auto;
   margin-left: 0px;
-  padding-top: 10px;
+  margin-top: 5px;
+  /* padding-top: 10px; */
   font-size: 20px;
 }
 
 #Like {
   text-align: center;
-  margin: auto;
+  /* margin: auto; */
   height: 40px;
 }
 
 .heart_icon {
-  border: none;
-  outline: none;
+  /* border: none;
+  outline: none; */
   background-color: #00ff0000;
-  font-size: large;
+  font-size: 30px;
+  /* font-size: large; */
 }
 
 .heart_text {
@@ -92,11 +97,16 @@ img {
 } */
 
 /* 가게정보 */
-table {
-  width: 400px;
+#detail {
+  width: 550px;
   height: 300px;
-  font-size: small;
-  margin-top: 30px;
+  /* font-size: small; */
+  /* margin-top: 30px; */
+}
+
+#detail td {
+  width: 400px;
+  text-align: left;
 }
 
 .detail_contents {

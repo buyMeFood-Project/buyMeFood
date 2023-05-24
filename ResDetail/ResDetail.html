@@ -5,10 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="ResDetail.css" />
+    <link rel="stylesheet" href="../gnb/gnb.css">
+<link rel="stylesheet" href="../footer/footer.css">
     <title>Res_Detail</title>
   </head>
   <body>
-    <div id="resImage">
+    <header id="GNB"></header>
+    <div id="ResDetail_page">
+      <div id="resImage">
       <img src="sample_image/1.jpeg" />
       <img src="sample_image/2.jpeg" />
       <img src="sample_image/3.jpeg" />
@@ -25,36 +29,36 @@
               <!-- <div id="resInfo">가게정보</div> -->
             </span>
             <div id="Like">
-              <button class="heart_icon">♡</button>
+              <p class="heart_icon">♡</p>
               <p class="heart_text">찜하기</p>
             </div>
           </div>
           <!-- 클릭시 빈 하트 -> 꽉 찬 하트 (이미지화해서 넣어놓기) -->
 
           <!-- <hr /> -->
-          <table>
+          <table id="detail">
             <tr>
-              <th align="left">주소</th>
-              <td>{address}</td>
+              <th align="left" id="label">주소</th>
+              <td>{address}주소입니다</td>
             </tr>
             <tr>
-              <th align="left">지번</th>
+              <th align="left" id="label">지번</th>
               <td>{address_number}</td>
             </tr>
             <tr>
-              <th align="left">전화번호</th>
+              <th align="left" id="label">전화번호</th>
               <td>{phone_number}</td>
             </tr>
             <tr>
-              <th align="left">음식 종류</th>
+              <th align="left" id="label">음식 종류</th>
               <td>{foodtype}</td>
             </tr>
             <tr>
-              <th align="left">주차</th>
+              <th align="left" id="label">주차</th>
               <td>{parking_boolean}</td>
             </tr>
             <tr>
-              <th align="left">영업시간</th>
+              <th align="left" id="label">영업시간</th>
               <td>{openinghours}</td>
             </tr>
           </table>
@@ -62,6 +66,11 @@
       </Res>
       <iframe id = "map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.5072024864544!2d127.05250887641928!3d37.543112372044746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca52d20815afd%3A0x14b1f44e1a4be334!2z64yA66a86rWt7IiYIOyEseyImOygkA!5e0!3m2!1sko!2skr!4v1684744085263!5m2!1sko!2skr" width="350" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
      
-    </div>
+    </div></div>
+    
+    <footer id="footer"></footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="ResDetail.js" type="module"></script>
   </body>
 </html>
