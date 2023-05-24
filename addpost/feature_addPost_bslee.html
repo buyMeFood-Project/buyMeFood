@@ -41,12 +41,13 @@
     </header>
 
     <div id="contaner">
+        <div class="postWord">
+            <h1 id="titleH1">게시판 등록</h1>
+        </div>
         <form id="body1">
             <div id="body2">
                 <div id="body3">
-                    <div class="postWord">
-                        <h1>게시판 등록</h1>
-                    </div>
+
                 <table>
                 <tr>
                     <td id="boardTh1">가게명</td>
@@ -83,26 +84,29 @@
                 <div id="image_container1"></div>
                 <img src=""/>
                 <label id="imageLabel" for="image1">파일 업로드 </label>
-                <input style="display: none;" type="button" id ="del1" onclick="deleteDiv1()"/>
+                <input style="display: none;" type="button" id ="del1" value="x" onclick="deleteDiv1()"/>
                 <input style="display: none;" type="file" id="image1" accept="image/*" onchange="setThumbnail1(event);"/> 
             </div>
             <div class="test1" id="preView2">
                 <div id="image_container2"></div>
                 <label id="imageLabel" for="image2">파일 업로드</label>
-                <input style="display: none;" type="button" id ="del2" onclick='deleteDiv2()'/>
+                <input style="display: none;" type="button" id ="del2" value="x" onclick='deleteDiv2()'/>
                 <input style="display: none;" type="file" id="image2" accept="image/*" onchange="setThumbnail2(event);"/>
             </div>
             <div class="test1" id="preView3">
                 <div id="image_container3"></div>
                 <label id="imageLabel" for="image3">파일 업로드</label>
-                <input style="display: none;" type="button" id ="del3" onclick='deleteDiv3()'/>
+                <input style="display: none;" type="button" id ="del3" value="x" onclick='deleteDiv3()'/>
                 <input style="display: none;" type="file" id="image3" accept="image/*" onchange="setThumbnail3(event);"/>
             </div>
 
         </div>
         <div><p>* 이미지당 최대 500KB 초과 불가</p></div>
-        <button id="submit1" type="submit">등록</button>  
+
+
         </div>
+        <div id="addPostBtn"><button id="addPost" type="submit">등록</button>  </div>
+
         </div>
 
     </div>
