@@ -14,7 +14,7 @@
 } */
 
 /* 상세이미지 */
-resImage {
+#resImage {
   text-align: center;
   margin-bottom: 30px;
 }
@@ -59,6 +59,7 @@ img {
   color: #fa914b;
   margin: auto;
   margin-left: 0px;
+  padding-top: 10px;
   font-size: 20px;
 }
 
@@ -99,8 +100,7 @@ table {
 }
 
 .detail_contents {
-  width: 1000px;
-  margin-right: 0px;
+  width: 800px;
   /* display: inline-block; */
   margin-top: 0px;
 }
@@ -108,7 +108,7 @@ table {
 /* 위치(지도) */
 
 #map {
-  margin-left: 30px;
+  margin-left: 100px;
 }
 #container {
   display: flex;
