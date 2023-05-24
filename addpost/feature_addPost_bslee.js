@@ -115,11 +115,19 @@ $("#content").on("input", function() {
   $("#letterCount").text("글자 수: " + letterCount + "/100");
   });
 
+  $(document).ready(function () {
+    $('#storeName').on('input', function () {
+        if ($(this).val().length > 20) {
+            $(this).val($(this).val().slice(0, 20));
+        }
+    });
+});
 
-// 게시글 등록
+// 게시글 삭제
 $('#del1').click(function(event){
   $("#image_container1 img").remove();
   $("#del1").hide();
+  imgList.splice(0, 1);
 });
 $('#del2').click(function(event){
   $("#image_container2 img").remove();
@@ -129,3 +137,4 @@ $('#del3').click(function(event){
   $("#image_container3 img").remove();
   $("#del3").hide();
 });
+
