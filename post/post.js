@@ -2,6 +2,8 @@ import { alertModalControl, confirmModalControl} from "../alertModal/modal.js";
 
 $(function() {
     $("#modalContainer").load("../alertModal/modal.html");
+    $('#GNB').load('../gnb/gnb.html');
+    $('#footer').load('../footer/footer.html');
 });
 
 let tokenList = JSON.parse(localStorage.getItem('tokenList'));
@@ -27,7 +29,7 @@ if(postList != null){
         pagingArea += '<button type="button" class="pages" value="' + String(k) + '">' + String(k) + '</button>';
     }
     $('#pagination').html(pagingArea);
-
+    
     for(let i = (currPage-1) * 3; i < limit; i++){
         let postToken = postList[i].postToken;
         let imgList = postList[i].imageList;
@@ -37,7 +39,7 @@ if(postList != null){
         targetPost.css('display', '');
         targetPost.find('#storeName').html(postList[i].storeName);
         targetPost.find('#info').html(postList[i].author + " " 
-                                    + postList[i].date + " ★" 
+                                    + postList[i].date + " ⭐" 
                                     + postList[i].rate);
         targetPost.find('#content').html(postList[i].content);
         targetPost.find('#images').html(imgSrc);
@@ -127,7 +129,7 @@ $(".pages").click(function(){
 function generateImages(imgList){
     let retVal = "";
     for(let img of imgList){
-        retVal += "<img style=\"width:60px;height:60px;\"src=" + img + " alt=이미지>";
+        retVal += "<img src=" + img + " alt=이미지>";
     }
     return retVal;
 }

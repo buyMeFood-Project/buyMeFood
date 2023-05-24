@@ -1,0 +1,166 @@
+body {
+    text-align: center;
+}
+
+#container {
+    width: 1000px;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+#menuTitle {
+    margin: 15px;
+    margin-left: 25px;
+    font-size: 40px;
+    text-align: left;
+    font-family: 'TmoneyRoundWindExtraBold';
+}
+#miniTitle {
+    text-align: left;
+    margin-left: 25px;
+    font-family: 'Pretendard-Regular';
+    content: "여러분들의 의견을 들려주세요!";
+    font-size: 15px;
+    color: rgb(148, 148, 148);
+}
+#postArea > div:not(.post) {
+    height: 400px;
+    margin-bottom: 20px;
+    border: 3px solid #fa914b55;
+    border-radius: 10px;
+}
+#postArea > div:not(.post) > p {
+    position: relative;
+    top: 150px;
+    font-size: large;
+    color: gray;
+}
+.post {
+    margin: 10px;
+    text-align: left;
+    padding: 15px 20px 15px 20px;
+    margin-bottom: 20px;
+    border: 3px solid #fa914b55;
+    border-radius: 10px;
+}
+.post #storeName{
+/*    background-color: #fa914b;
+    color: white; 
+    display: inline;
+    padding: 5px 20px 5px 20px; */
+    border-radius: 10px;
+    font-size: 32px;
+    font-weight: 650; 
+}
+.post #info {
+    font-size: 14px;
+    border-bottom: 2px solid #e3e3e3;
+}
+.post #content {
+    margin-top: 10px;
+    font-size: 17px;
+}
+.post #images {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.post #images img {
+    margin: 5px;
+    height: 200px;
+    background-size: contain;
+}
+.post #info {
+    color: gray;
+    line-height: 35px;
+}
+.post span:not(#images) {
+    font-size: 25px;
+    padding-left: 5px;
+}
+.likeBtn {
+    padding: 0px;
+    border: transparent;
+    background-color: transparent;
+    font-size: 20px;
+    cursor: pointer;
+}
+.replyBtn {
+    border: transparent;
+    background-color: transparent;
+    padding: 0px 0px 0px 5px;
+    font-size: 17px;
+    cursor: pointer;
+}
+.commentArea {
+    border-top: 2px solid #d0d0d0;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    font-size: 18px;
+}
+.commentArea label {
+    height: 50px;
+    transform: translateY(500%);
+}
+.commentArea #newReply {
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 22px;
+    width: 85%;
+    border: 1px solid rgb(160, 160, 160);
+}
+.commentArea .newComment {
+    background: #fa914b;
+    color: white;
+    font-weight: bold;
+    border: transparent;
+    border-radius: 5px;
+    padding: 5px;
+    width: 50px;
+    cursor: pointer;
+}
+.commentArea .newComment:hover {
+    background: #FC6B0A;
+}
+.commentArea ul {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+#addPost {
+    font-size: large;
+
+    background: transparent;
+    position: fixed;
+    bottom: 40px;
+    right:30px;
+
+    border: none;
+    border-radius: 16px;
+    background: #fa914b;
+    color: white;
+    padding: 12px;
+    font-weight: bold;
+    box-shadow: 0px 5px 15px rgb(179, 179, 179);
+    cursor: pointer;
+}
+#addPost:hover {
+    background: #FC6B0A;
+}
+.comments li {
+    margin: 5px;
+}
+.pages {
+    color: gray;
+    background-color: white;
+    border: transparent;
+    font-size: larger;
+    font-weight: bolder;
+
+}
+#pagination button{
+    /* background-color: #fa914b; */
+    cursor: pointer;
+    border-radius: 5px;
+
+}

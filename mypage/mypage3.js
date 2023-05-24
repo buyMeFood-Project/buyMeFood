@@ -1,19 +1,31 @@
+/* js 남은거 
+1. 마이 정보 수정
+2. 메뉴탭별로 다른 화면 띄우기
+3. 유저별 정보 가져오기
+
+4. 창호님꺼 참고해서 개수별로 for문? 돌려서 게시글 추가하는거 보기
+*/
+
+
+
 /*
+이모지 관련 코드 (가져온거)
 <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
 <button id="emoji_btn">button</button>
 <input type="text" id="message">
 */
 
-let infoArea = document.getElementById("myinfo");
+/* 외부 html 파일 가져오기 */
+$(function() {
+    $('#GNB').load('../gnb/gnb.html');
+    $('#footer').load('../footer/footer.html');
+});
 
+/* 이모지 버튼 */
 const btn = document.getElementById("emoji_btn");
 const picker = new EmojiButton({
     position: 'bottom-start'
 });
-
-// btn.addEventListener('click', () => {
-//     picker.togglePicker(btn);
-// });
 
 picker.on('emoji', emoji => {
     const text_box = document.querySelector('#message');
@@ -24,17 +36,20 @@ function emoji_picker() {
     picker.togglePicker(btn);
 }
 
+/* username 수정하는 부분 */
+let infoArea = document.getElementById("myinfo");
 
-// userId:document.getElementById("userId").textContent = "백연정";
+// 현재 로그인한 유저 정보 (수정 필요!⭐⭐⭐)
 const loginUser = (JSON.parse(localStorage.getItem('userList')))[0].username;
 
 userId:document.getElementById("userId").textContent = loginUser;
-const username = document.getElementById("userId").innerHTML; //textContent;
+const username = loginUser;
 
 function changeInfo() {
     infoArea.innerHTML = '\
         <div id="user_emoji">\
-        <input type="text" id="message"></div>\
+            <input type="text" id="message">\
+        </div>\
         <h2 id="top">마이페이지</h2>\
         <form id="userForm">\
             <input type="text" value="'+ username + '">\

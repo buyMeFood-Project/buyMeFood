@@ -6,35 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="gnb/gnb.css">
+    <link rel="stylesheet" href="footer/footer.css">
 </head>
-<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-<header>
-    <div id="top">
-        <h1><a href=""><span class="hide">맛난거4조</span><img src="../img/logo2.jpg" width="100px"></a></h1>
-        <div id="search_container">
-            <input type="text" placeholder="알파코 주변 맛집 검색" id="search_input">
-            <a href="" id="search_btn"><i class='bx bx-search bx-sm'></i></a>
-        </div>
-        <div id="util">
-            <h4><a href=""><span class="hide">로그인</span>로그인</a></h4>
-            <h4><a href=""><span class="hide">회원가입</span>회원가입</a></h4>
-        </div>
-    </div>
-    
-    
-    <h2 class="hide">메뉴</h2>
-    <nav class="gnb">
-        <ul>
-            <li class="on"><a href="" id="nav1" class="menu"><span>맛집 추천</span></a></li>
-            <li><a href="" id="nav2" class="menu"><span>게시판</span></a></li>
-            <li><a href="" id="nav3" class="menu"><span>메뉴 추천</span></a></li>
-        </ul>
-    </nav>
-</header>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="main.js"></script>
+    <header id="GNB"></header>
     <div id="container">
         <div id="comment1"> 알파코 주변 맛집! </div>
         <ul class="food_list">
@@ -96,32 +71,8 @@
         </li>
         </ul>
     </div>
-    <footer>
-        <hr>
-        <ul id="footer_line">
-            <li>회사소개</li>
-            <span>|</span>
-            <li>이용약관</li>
-            <span>|</span>
-            <li>개인정보처리방침</li>
-            <span>|</span>
-            <li>고객센터</li>
-        </ul>
-        <hr>
-        <img src="logo.jpg" width="70px" height="70px" id="footer_logo">
-        <div id="footer_info">
-            | 상호명 : 맛난거4조 <br>
-            | 사업자등록번호 : 000-00-000 <br>
-            | 대표자 : 맛난거4조 <br>
-            | 개인정보관리책임자 : 디지털하나로
-        </div>        
-        <div id="footer_info">
-            | 주소 : (00000) 서울시 성동구 아차산로 111 <br>
-            | TEL : 02-000-0000 | FAX : (02)000-0000 | Email : matna4jo@business.com <br>
-            <br>
-            Copyright 2023 맛난거4조 Corp. All Rights Reserved.
-        </div>
-    </footer>
+    <footer id="footer"></footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
