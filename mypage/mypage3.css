@@ -1,15 +1,3 @@
-@font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'BMHANNAPro';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.0/BMHANNAPro.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
 
 #mypage_top {
     /* border-bottom: 2px solid orange; */
@@ -74,14 +62,14 @@
     color: #565656a8;
     font-size: 20px;
     font-weight: 550;
-    font-family: 'BMHANNAPro';    
+    font-family: 'TmoneyRoundWindExtraBold';  
 }
 #imgText div {
     margin-top: 10px;
     font-size: 45px;
     font-weight: 580;
     letter-spacing: 5px;
-    font-family: 'BMHANNAPro';
+    font-family: 'TmoneyRoundWindExtraBold';
 }
 #container {
     margin: 40px auto;
@@ -97,7 +85,7 @@
     margin-right: 10px;
 } */
 #mypage_nav > div {
-    font-family: 'BMHANNAPro';
+    font-family: 'TmoneyRoundWindExtraBold';
     text-align: center;
     /* margin-top: 10px;
     padding-bottom: 10px; */
@@ -135,6 +123,8 @@
 }
 .mypage #title1 {
     /* display: none; */
+    font-family: 'TmoneyRoundWindExtraBold';
+    margin-top: 5px;
 }
 #like_list{
     /* display: none; */

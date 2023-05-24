@@ -34,7 +34,6 @@ body {
     font-size: large;
     color: gray;
 }
-
 .post {
     margin: 10px;
     text-align: left;
@@ -133,7 +132,7 @@ body {
 
     background: transparent;
     position: fixed;
-    bottom: 30px;
+    bottom: 40px;
     right:30px;
 
     border: none;
@@ -152,6 +151,7 @@ body {
     margin: 5px;
 }
 .pages {
+    color: gray;
     background-color: white;
     border: transparent;
     font-size: larger;

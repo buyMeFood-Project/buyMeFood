@@ -6,44 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="mypage3.css">
-    <link rel="stylesheet" href="../header.css">
+    <link rel="stylesheet" href="../gnb/gnb.css">
+    <link rel="stylesheet" href="../footer/footer.css">
 </head>
 <body style="padding: 0px">
     <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
-    <header>
-        <nav>
-            <table>
-                <tr>
-                    <td rowspan="3"><a href=""><img src="../logo.jpg" width="150px"></a></td>
-                    <td id="gnb_label">알파코 주변 맛집을 추천해드릴게요!</td>
-                    <td rowspan="3" id="login"><a href="">로그인</a></td>
-                </tr>
-                <tr>
-                    <td class="center">
-                        <form id="searchForm">
-                            <input type="text" id="search_input" placeholder="음식이나 음식점을 검색해보세요">
-                            <button type="button" id="search_btn">검색</button>
-                        </form>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="center">
-                        <ul id="navi">
-                            <li><a href=""> 맛집 추천 </a></li>
-                            <li><a href=""> 게시판 </a></li>
-                            <li><a href=""> 룰렛 추천 </a></li>
-                        </ul>
-                    </td>
-                </tr>
-            </table>
-        </nav>
-    </header>
+    <header id="GNB"></header>
+    
     <div id="mypage_top"> <!-- 상단은 flex로 -->
         <div id="myinfo">
             <div id="user_emoji">🍔</div>
             <dl>
                 <dt><h2 id="top">마이 페이지</h2></dt>
-                <dd><span id="userId">백연정</span>
+                <dd><span id="userId"></span>
                     <button id="editbtn" onclick="changeInfo()">✏️</button>
                 </dd>
             </dl>
@@ -117,6 +92,7 @@
         </div>
     </div>
     
-    <script src="mypage3.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="mypage3.js" type="module"></script>
 </body>
 </html>
