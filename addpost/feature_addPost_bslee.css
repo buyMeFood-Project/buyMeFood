@@ -122,7 +122,7 @@ label{
 #body3{
     width: 800px;
     height: 50%;
-    margin: auto;
+    margin: 10px 20px 10px 20px;
 }
 .postWord{
 
@@ -132,7 +132,6 @@ label{
 input[type=text]{
 	width:624px;
 
-	border-radius:4px;
 	margin: 8px 0;
 	outline: none;
 	padding:8px;
@@ -173,6 +172,7 @@ textarea {
     display: flex;
     margin: auto 0;
     width: 100%;
+    justify-content: space-around;
 }
 #imageLabel{
 
@@ -218,6 +218,7 @@ textarea {
     font-weight: bold;
     box-shadow: 0px 5px 15px rgb(179, 179, 179);
     cursor: pointer;
+    margin-bottom: 20px;
 
 }
 #addPostBtn{
@@ -257,11 +258,26 @@ textarea {
 .postWord{
     height: 200px;
 }
-#body2{
-    border: 1px solid orange;
-    border-radius: 16px;
-    padding: 100px;
+
+
+#field{
+    width: 800px;
+    border:3px solid #FA914B55;
+    border-radius: 10px;
+
 }
-#addPost{
-   margin-top: 50px;
+legend {
+    background-color: #FA914B;
+    color: #fff;
+    padding: 3px 6px;
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 16px;
+
+}
+#pp{
+    margin-left: 20px;
+    font-size: 12px;
+    color: gray;
+}
 }

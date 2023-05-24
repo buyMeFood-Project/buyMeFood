@@ -1,8 +1,10 @@
 
 #container {
     width: 1000px;
-    height: 800px;
+    height: 1200px;
     margin: 20px auto;
+    margin-bottom: 50px;
+    margin-top: 110px;
 }
 #container #comment1 {
     margin-left: 35px;
@@ -19,6 +21,7 @@
     padding-bottom: 20px;
     overflow: hidden;
     position: relative;
+    margin-bottom: 35px;
 }
 .food_list .food_type {
     color: gray;
@@ -119,4 +122,19 @@ footer {
     text-align: left;
     margin-left: 20px;
     margin-bottom: 10px;
+}
+#field{
+    width: 1040px;
+    border:3px solid #FA914B55;
+    border-radius: 10px;
+
+}
+legend {
+    background-color: #FA914B;
+    color: #fff;
+    padding: 3px 6px;
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 16px;
+
 }
