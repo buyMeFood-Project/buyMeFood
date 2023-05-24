@@ -11,15 +11,6 @@ div.p1 {
     width: 100%;
 }
 
-th{
-    text-align: left;
-}
-
-td {
-    text-align: center;
-    width: 20%;
-}
-
 .center {
     width: 60%;
     padding: 0;
@@ -57,7 +48,7 @@ td {
 a {
     text-decoration: none;
     font-weight: bold;
-    color: orangered;
+    color: #FA914B;
 }
 
 footer {
@@ -88,17 +79,12 @@ footer {
 }
 
 #contaner {
-    margin: 20px auto;
-    width: 500px;
-    padding-right: 100px;
-}
-
-#body2 {
-    margin: 20px auto;
+    margin: 0 auto;
     width: 1000px;
 }
+
 label{
-    font-size: 30px;
+    font-size: 35px;
     font-family: 'Black Han Sans', sans-serif;
     color:orange;
 }
@@ -109,10 +95,10 @@ label{
     flex-direction: row-reverse;
     font-size:1.7em;
     justify-content:space-around;
-    padding:0 .2em;
+
     text-align:center;
     width:5em;
-    padding-bottom: 14px;
+
   }
   
   .star-rating input {
@@ -125,29 +111,27 @@ label{
   }
   
   .star-rating :checked ~ label {
-    color:#f0dc2b;
+    color:#FA914B;
 }
 
   .star-rating label:hover,
   .star-rating label:hover ~ label {
-    color:orange;
+    color:#FA914B;
 }
 
 #body3{
-    border: 1px solid; 
-    color: orange;
-    width: 70%;
+    width: 800px;
     height: 50%;
+    margin: 10px 20px 10px 20px;
 }
 .postWord{
-    font-size: 25px;
-    color:orange;
+
+
 }
 
 input[type=text]{
-	width:100%;
-	border:5px solid orange;
-	border-radius:4px;
+	width:624px;
+
 	margin: 8px 0;
 	outline: none;
 	padding:8px;
@@ -155,29 +139,15 @@ input[type=text]{
 	transition:.3s;
 }
 
-
-input[type=text]:focus{
-	border-color:yellow;
-	box-shadow:0 0 8px 0 red;
-}
 textarea {
-	width:100%;
-	border:5px solid orange;
+	width:700px;
 	border-radius:4px;
 	margin: 8px 0;
 	outline: none;
-	padding:8px;
 	box-sizing: border-box;
 	transition:.3s;
 }
-textarea:focus {
-	border-color:yellow;
-	box-shadow:0 0 8px 0 red;
-}
 
-#imageLabel{
-    font-size: 15px;
-}
 #image_container1{
     width: 120px;
     height: 120px;
@@ -202,6 +172,7 @@ textarea:focus {
     display: flex;
     margin: auto 0;
     width: 100%;
+    justify-content: space-around;
 }
 #imageLabel{
 
@@ -210,4 +181,103 @@ textarea:focus {
 }
 .test1{
     width: 233px;
+}
+#boardTh5{
+    width: 50px;
+    padding-left: 24.5px;
+    margin-top: 20px;
+    font-size: 23px;
+}
+#boardTh4{
+    padding-left: 15px;
+}
+#boardTh3{
+    padding-left:23px;
+    width: 50px;
+    font-size: 23px;
+    padding-top: 12px;
+}
+#boardTh1{
+    font-size: 23px;
+    width: 100px;
+}
+#content{
+  margin-left: 25px;
+}
+#letterCount{
+    width: 500px;
+    padding-left: 25px;
+}
+#addPost {
+    font-size: large;
+    border: none;
+    border-radius: 16px;
+    background: #fa914b;
+    color: white;
+    padding: 12px;
+    font-weight: bold;
+    box-shadow: 0px 5px 15px rgb(179, 179, 179);
+    cursor: pointer;
+    margin-bottom: 20px;
+
+}
+#addPostBtn{
+    margin: 0 auto;
+    width:60px;
+}
+#del1{
+    border: none;
+    border-radius: 16px;
+    background: #fa914b;
+    color: white;
+}
+#del2{
+    border: none;
+    border-radius: 16px;
+    background: #fa914b;
+    color: white;
+}
+#del3{
+    border: none;
+    border-radius: 16px;
+    background: #fa914b;
+    color: white;
+}
+#titleH1{
+   width: 180px;
+    background: #fa914b;
+    border: none;
+    border-radius: 16px;
+    color: white;
+    padding: 10px;
+    position: absolute;
+    margin-top: 170px;
+    margin-left: 30px;
+    
+}
+.postWord{
+    height: 200px;
+}
+
+
+#field{
+    width: 800px;
+    border:3px solid #FA914B55;
+    border-radius: 10px;
+
+}
+legend {
+    background-color: #FA914B;
+    color: #fff;
+    padding: 3px 6px;
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 16px;
+
+}
+#pp{
+    margin-left: 20px;
+    font-size: 12px;
+    color: gray;
+}
 }

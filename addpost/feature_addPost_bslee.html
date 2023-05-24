@@ -9,7 +9,7 @@
 </head>
 <link rel="stylesheet" href="../alertModal/modal.css">
 <link rel="stylesheet" href="feature_addPost_bslee.css">
-<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+<!--     -->
 <body>
     <header>
         <nav>
@@ -41,20 +41,20 @@
     </header>
 
     <div id="contaner">
+        <fieldset id="field">
+            <legend id="comment1">게시판 등록</legend>
         <form id="body1">
             <div id="body2">
                 <div id="body3">
-                    <div class="postWord">
-                        <h1>게시판 등록</h1>
-                    </div>
+
                 <table>
                 <tr>
-                    <th> <label for="storeName">가게명 &nbsp:&nbsp&nbsp</label></td>
-                    <th> <input id="storeName" name="storeName" type="text"></td>
+                    <td id="boardTh1">가게명</td>
+                    <td id="boardTh2"><input id="storeName" name="storeName" type="text"></td>
                 </tr>
                 <tr>   
-                    <th><label>&nbsp&nbsp&nbsp별점&nbsp&nbsp:</label></td>
-                    <th>
+                    <td id="boardTh3">별점</td>
+                    <td id="boardTh4">
                         <div class="star-rating">
                         <input type="radio" id="1-star" name="stars" value="5" />
                         <label for="1-star" class="star">&#9733;</label>
@@ -67,43 +67,47 @@
                         <input type="radio" id="5-star" name="stars" value="1" />
                         <label for="5-star" class="star">&#9733;</label>
                         </div>
-      </th>
-            <tr>
-                <th><label for="content">&nbsp&nbsp&nbsp내용&nbsp&nbsp:</label></th>
-                <th><textarea style="resize:none" id="content" name="content" cols="50" rows="10" width="200px"
-                        class="form-control"></textarea>
-                        <div id="letterCount">글자 수: 0/100</div></th>
-            </tr>
+      </td>
+    </tr>   
+        
+           
         </table>
 
-
+        <div id="boardTh5">내용</div>
+                <textarea style="resize:none" id="content" name="content" cols="50" rows="10" width="200px"
+                        class="form-control"></textarea>
+                        <div id="letterCount">글자 수 0/100</div>
         <div class="imagePreView">
 
             <div class="test1" id="preView1">
                 <div id="image_container1"></div>
                 <img src=""/>
                 <label id="imageLabel" for="image1">파일 업로드 </label>
-                <input style="display: none;" type="button" id ="del1" onclick="deleteDiv1()"/>
+                <input style="display: none;" type="button" id ="del1" value="x" onclick="deleteDiv1()"/>
                 <input style="display: none;" type="file" id="image1" accept="image/*" onchange="setThumbnail1(event);"/> 
             </div>
             <div class="test1" id="preView2">
                 <div id="image_container2"></div>
                 <label id="imageLabel" for="image2">파일 업로드</label>
-                <input style="display: none;" type="button" id ="del2" onclick='deleteDiv2()'/>
+                <input style="display: none;" type="button" id ="del2" value="x" onclick='deleteDiv2()'/>
                 <input style="display: none;" type="file" id="image2" accept="image/*" onchange="setThumbnail2(event);"/>
             </div>
             <div class="test1" id="preView3">
                 <div id="image_container3"></div>
                 <label id="imageLabel" for="image3">파일 업로드</label>
-                <input style="display: none;" type="button" id ="del3" onclick='deleteDiv3()'/>
+                <input style="display: none;" type="button" id ="del3" value="x" onclick='deleteDiv3()'/>
                 <input style="display: none;" type="file" id="image3" accept="image/*" onchange="setThumbnail3(event);"/>
             </div>
 
         </div>
-        <div><p>* 이미지당 최대 500KB 초과 불가</p></div>
-        <button id="submit1" type="submit">등록</button>  
+        <div><p id="pp">* 이미지당 최대 500KB 초과 불가</p></div>
+
+
         </div>
+        <div id="addPostBtn"><button id="addPost" type="submit">등록</button>  </div>
+
         </div>
+        </fieldset>
 
     </div>
     
