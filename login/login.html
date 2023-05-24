@@ -9,10 +9,11 @@
 <body>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link href="login.css" rel="stylesheet">
+    <link href="../alertModal/modal.css" rel="stylesheet">
     <div class="login">
         <div class="login__content">
             <div class="login__img">
-                <img src="../img/logo2.jpg" alt="user login">
+                <a href="../main.html"><img src="../img/logo2.jpg" alt="user login"></a>
             </div>
             <div class="login__forms">
                 <!-- login form -->
@@ -28,9 +29,7 @@
                     </div>
 
                     <div id="find_to_login">
-                        <a href="../idpw/idpw.html" class="login__forgot">아이디 찾기</a>
-                        <span class="login__forgot"> | </span>
-                        <a href="../idpw/idpw.html" class="login__forgot">비밀번호 찾기</a>
+                        <a href="../findIDPW/idpw.html" class="login__forgot">아이디 | 비밀번호 찾기</a>
                     </div>
 
                     <a href="#" class="login__button">로그인</a>
@@ -81,6 +80,9 @@
       </div>
     </div>
    </div>
-   <script src="login.js"></script>
+   <div id="modalContainer"></div>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="../alertModal/modal.js" type="module"></script>
+   <script src="login.js" type="module"></script>
 </body>
 </html>
