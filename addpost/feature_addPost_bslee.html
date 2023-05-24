@@ -9,7 +9,7 @@
 </head>
 <link rel="stylesheet" href="../alertModal/modal.css">
 <link rel="stylesheet" href="feature_addPost_bslee.css">
-<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+<!--     -->
 <body>
     <header>
         <nav>
@@ -49,12 +49,12 @@
                     </div>
                 <table>
                 <tr>
-                    <th> <label for="storeName">가게명 &nbsp:&nbsp&nbsp</label></td>
-                    <th> <input id="storeName" name="storeName" type="text"></td>
+                    <td id="boardTh1">가게명</td>
+                    <td id="boardTh2"><input id="storeName" name="storeName" type="text"></td>
                 </tr>
                 <tr>   
-                    <th><label>&nbsp&nbsp&nbsp별점&nbsp&nbsp:</label></td>
-                    <th>
+                    <td id="boardTh3">별점</td>
+                    <td id="boardTh4">
                         <div class="star-rating">
                         <input type="radio" id="1-star" name="stars" value="5" />
                         <label for="1-star" class="star">&#9733;</label>
@@ -67,16 +67,16 @@
                         <input type="radio" id="5-star" name="stars" value="1" />
                         <label for="5-star" class="star">&#9733;</label>
                         </div>
-      </th>
-            <tr>
-                <th><label for="content">&nbsp&nbsp&nbsp내용&nbsp&nbsp:</label></th>
-                <th><textarea style="resize:none" id="content" name="content" cols="50" rows="10" width="200px"
-                        class="form-control"></textarea>
-                        <div id="letterCount">글자 수: 0/100</div></th>
-            </tr>
+      </td>
+    </tr>   
+        
+           
         </table>
 
-
+        <div id="boardTh5">내용</div>
+                <textarea style="resize:none" id="content" name="content" cols="50" rows="10" width="200px"
+                        class="form-control"></textarea>
+                        <div id="letterCount">글자 수 0/100</div>
         <div class="imagePreView">
 
             <div class="test1" id="preView1">
