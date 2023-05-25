@@ -81,7 +81,7 @@ i {
 }
 #util_afterLogin {
   /* display: inline-block; */
-  display: none;
+  /* display: none; */
   position: absolute;
   right: 10%;
 }
@@ -132,7 +132,7 @@ header nav ul li span {
 }
 header nav ul li.on span {
   font-weight: bold;
-  color: #FC6B0A;
+  color: #FC6B0B;
   height: 36px;
 }
 header nav ul li.on span:after {
