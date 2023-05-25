@@ -21,8 +21,12 @@ if (selectedMenuItem) {
 
 var currUser = localStorage.getItem('currUser');
 
-if(currUser !== ''){
+if(currUser !== null){
     $('#util').hide();
     $('#util_afterLogin').css('display', 'inline-block');
     $('#nickName').text(" " + currUser);
+}
+else{
+    $('#util').css('display', 'flex');
+    $('#util_afterLogin').hide();
 }
