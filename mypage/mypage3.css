@@ -23,9 +23,11 @@
 }
 #myinfo dl {
     position: relative;
-    top: 20px;
+    top: 5px;
     line-height: 30px;
-
+}
+#myinfo dl dt h2 {
+    display: inline;
 }
 #editbtn {
     position: relative;
@@ -34,14 +36,7 @@
     padding: 0px;
     cursor: pointer;
 }
-#util {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 10px;
-    margin-bottom: 23px;
-    width:500px;
-    align-items: end;
-}
+
 #mypageImg {
     left: 0; right: 0;
     height: 300px;
@@ -121,6 +116,9 @@
     margin-left: 40px;
 
 }
+#mypage_list{
+   margin: 0;
+}
 .mypage #title1 {
     /* display: none; */
     font-family: 'TmoneyRoundWindExtraBold';
@@ -134,7 +132,6 @@
 }
 .like_shop {
     margin: 10px;
-    padding-top: 10px;
     padding-right: 10px;
 }
 .like_img {

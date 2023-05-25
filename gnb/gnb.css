@@ -145,4 +145,4 @@ header nav ul li.on span:after {
   background: #FC6B0A;
 }
 
-.hide {overflow: hidden; display: block; position: absolute; border: 0; width: 1px; height: 1px; clip: rect(1px, 1px, 1px, 1px);}
+.hide {overflow: hidden; display: block; position: absolute; border: 0; width: 1px; height: 1px; clip: rect(1px, 1px, 1px, 1px);} 
