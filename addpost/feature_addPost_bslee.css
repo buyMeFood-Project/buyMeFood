@@ -80,12 +80,11 @@ footer {
 
 #contaner {
     margin: 0 auto;
-    width: 1000px;
+    width: 900px;
 }
 
 label{
     font-size: 35px;
-    font-family: 'Black Han Sans', sans-serif;
     color:orange;
 }
 
@@ -149,17 +148,32 @@ textarea {
 }
 
 #image_container1{
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
+    background: #c6bbbb33;
+    border: 1px;
+    border-radius : 2px;
+    border: 1px solid;
+    border-radius: 3px;
+    color: #c6bbbb33;
 }
 #image_container2{
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
+    background: #c6bbbb33;
+    border: 1px solid;
+    border-radius: 3px;
+    color: #c6bbbb33;
+
 }
 
 #image_container3{
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
+    background: #c6bbbb33;
+    border: 1px solid;
+    border-radius: 3px;
+    color: #c6bbbb33;
 }
 
 #test1{
@@ -173,6 +187,7 @@ textarea {
     margin: auto 0;
     width: 100%;
     justify-content: space-around;
+
 }
 #imageLabel{
 
@@ -207,6 +222,8 @@ textarea {
 #letterCount{
     width: 500px;
     padding-left: 25px;
+    margin-top: 5px;
+    margin-bottom: 40px;
 }
 #addPost {
     font-size: large;
