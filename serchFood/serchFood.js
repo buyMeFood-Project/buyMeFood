@@ -1,3 +1,8 @@
+$(function () {
+    $("#GNB").load("../gnb/gnb.html");
+    $("#footer").load("../footer/footer.html");
+  });
+
 localStorage.setItem("keyword","족발");
 if(localStorage.getItem("keyword")=='족발'){
 
