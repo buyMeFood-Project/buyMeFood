@@ -1,163 +1,148 @@
 @font-face {
-  font-family: "Pretendard-Regular";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
-    format("woff");
+  font-family: 'TmoneyRoundWindExtraBold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindExtraBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
-@font-face {
-  font-family: "BMHANNAPro";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.0/BMHANNAPro.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
+
+body {
+  font-family: 'TmoneyRoundWindExtraBold';
+  margin: 8px 0 0;
+}
+header {
+  width: 100%;
+  margin: 0 auto;
+}
+header h1 {
+  float: left;
+  margin: 0;
+}
+header h1 img {
+  display: block;
+  width: 190px;
+  height: 120px;
+}
+#top {
+  display: flex;
+  justify-content:left;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  margin-left: 25%;
+  overflow: hidden;
 }
 
-@font-face {
-  font-family: "TmoneyRoundWindExtraBold";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindExtraBold.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
+#search_container {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  border: 2px solid #FA914B;
+  border-radius: 3px;
 }
-
-.hanna * {
-  font-family: "Hanna", fantasy;
+#search_container input {
+  width: 100%;
+  height: 30px;
+  border: none;
+  padding-left: 10px;
 }
-
-html,
-body,
-div,
-span,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-abbr,
-address,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-samp,
-small,
-strong,
-sub,
-sup,
-var,
-b,
-i,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+#search_container input::placeholder {
+  font-family: 'Pretendard-Regular';
+  font-size: 15px;
+  font-weight: 500;
+}
+#search_container input:focus {
+  border-color: white;
+}
+#search_container a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+i {
+  color: #FA914B;
+}
+#util {
+  text-align: center;
+  position: absolute;
+  right: 10%;
+  display: flex;
+  /* display: none; */
+  justify-content: space-between;
+}
+#util_afterLogin {
+  /* display: inline-block; */
+  display: none;
+  position: absolute;
+  right: 10%;
+}
+#util_afterLogin a {
+  text-decoration: none;
+  color: #FA914B;
+}
+#util_afterLogin a i.bx-border-circle {
+  border-color: #FA914B;
+}
+#util h4 {
+  display: inline-block;
+  padding: 10px;
+}
+#util h4 a {
+  text-decoration: none;
+  color: black;
+  font-family: 'Pretendard-Regular';
+}
+header nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
   margin: 0;
   padding: 0;
-  font-family: "Pretendard-Regular";
 }
-
 header nav {
-  position: relative;
-  height: 150px;
-  padding-bottom: 5px;
-  border-bottom: 5px solid #fa914b;
-}
-table {
+  background-color: rgba(250, 145, 75, 0.1);
   width: 100%;
+
 }
-td {
-  text-align: center;
-  width: 20%;
+header nav ul li {
+  height: 40px;
+  font-size: 17.5px;
 }
-.center {
-  width: 60%;
-  padding: 0;
-  height: 50px;
-}
-.center #navi li {
-  margin-top: 10px;
-  font-family: "TmoneyRoundWindExtraBold";
-  font-size: 20px;
-}
-#gnb_label {
-  width: 60%;
-  height: 20px;
-  font-size: small;
-  color: gray;
+header nav ul a {
+  display: block;
+  color: black;
   font-weight: bold;
-  line-height: 1;
-  text-align: center;
+  padding: 0 80px;
 }
-#search_input {
-  width: 400px;
-  height: 35px;
-  margin: 5px auto;
+header nav ul li span {
+  display: inline-block;
+  position: relative;
+  padding: 0.125rem 1.5625rem;
+  line-height: 2.025rem;
+  color: black;
 }
-#navi {
-  display: flex;
-  padding-left: 0px;
-  margin: 3px 0px;
-}
-#navi li {
-  list-style: none;
-  margin: 0px auto;
-  float: left;
-}
-a {
-  text-decoration: none;
+header nav ul li.on span {
   font-weight: bold;
-  color: #fa914b;
+  color: #FC6B0A;
+  height: 36px;
+}
+header nav ul li.on span:after {
+  content: ""; 
+  position: absolute; 
+  left: 0; 
+  bottom: 0; 
+  width: 100%;
+  height: .166rem; 
+  background: #FC6B0A;
 }
 
-.hide {
-  overflow: hidden;
-  display: block;
-  position: absolute;
-  border: 0;
-  width: 1px;
-  height: 1px;
-  clip: rect(1px, 1px, 1px, 1px);
-}
+.hide {overflow: hidden; display: block; position: absolute; border: 0; width: 1px; height: 1px; clip: rect(1px, 1px, 1px, 1px);}

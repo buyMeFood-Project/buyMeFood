@@ -17,11 +17,12 @@ document.querySelector('#menu_btn').addEventListener("click", function(){
     for (var i=0; i < placeList.length; i++) {
         if (placeList[i].keyword === selected_menu) {
             let new_place = document.createElement('div');
+            new_place.setAttribute('class', 'place');
 
             const place_image = new Image();
             place_image.src = placeList[i].image;
-            place_image.width = 300;
-            place_image.height = 350;
+            place_image.width = 250;
+            place_image.height = 250;
             new_place.appendChild(place_image);
 
             var place_label = document.createElement('span');
@@ -37,7 +38,6 @@ document.querySelector('#menu_btn').addEventListener("click", function(){
         }
     }
 });
-
 
 // 임시데이터 세팅
 /*
@@ -79,4 +79,4 @@ for (var i=0; i<4; i++) {
 */
 
 // 로컬스토리지 데이터 삭제
-//localStorage.removeItem('placeList');
+// localStorage.removeItem('placeList');

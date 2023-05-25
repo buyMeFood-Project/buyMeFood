@@ -38,7 +38,7 @@ document.querySelector('.login__button').addEventListener("click", function(){
 
     var userList = JSON.parse(localStorage.getItem('userList'));
     for (var i=0; i < userList.length; i++) {
-        if (userList[i].userId == userId) {
+        if (userList[i].userid == userId) {
             if (userList[i].password == userPassword) {  // 로그인 성공
                 alertModalControl("로그인 성공");   
                 break;
@@ -50,6 +50,7 @@ document.querySelector('.login__button').addEventListener("click", function(){
         }
     }
 });
+
 /*
 const data = {
     userName: 'admin',
