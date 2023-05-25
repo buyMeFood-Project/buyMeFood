@@ -13,19 +13,19 @@
   }
 } */
 #ResDetail_page {
-  margin-top: 200px;
+  margin-top: 20px;
 }
 /* 상세이미지 */
 #resImage {
   text-align: center;
   margin-bottom: 30px;
 }
-img {
-  width: 330px;
-  height: 340px;
+#ex {
+  width: 300px;
+  height: 310px;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 1700px) {
+@media only screen and (min-width: 320px) and (max-width: 1600px) {
   #resImage {
     height: 340px;
     white-space: nowrap;
@@ -62,7 +62,7 @@ img {
   color: #fa914b;
   margin: auto;
   margin-left: 0px;
-  margin-top: 5px;
+  margin-top: 30px;
   /* padding-top: 10px; */
   font-size: 20px;
 }
@@ -78,6 +78,7 @@ img {
   outline: none; */
   background-color: #00ff0000;
   font-size: 30px;
+  margin: 5px;
   /* font-size: large; */
 }
 
@@ -107,6 +108,7 @@ img {
 #detail td {
   width: 400px;
   text-align: left;
+  color: rgb(124, 124, 124);
 }
 
 .detail_contents {
@@ -123,5 +125,5 @@ img {
 #container {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  /* margin-top: 20px; */
 }

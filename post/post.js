@@ -58,23 +58,28 @@ else{
 
 // Like Button
 $(".likeBtn").click(function() {
-    let token = $(this).attr('name');
-    let postList = JSON.parse(localStorage.getItem('postList'));
-    
-    for(let post of postList){
-        if(post.postToken === token){
-            if(!post.likes.includes(currUser)){
-                post.likes.push(currUser);
-            }
-            else{
-                post.likes.splice(post.likes.indexOf(currUser), 1);
-                $(this).parent().find('.likeIcon').html('♡');
-            }        
-            $(this).parent().find('#likeCounts').html(post.likes.length);
-            localStorage.setItem('postList', JSON.stringify(postList));
-        }
+    if(!currUser){
+        alertModalControl("로그인 후 이용해주세요");
     }
-    window.location.reload();
+    else{
+        let token = $(this).attr('name');
+        let postList = JSON.parse(localStorage.getItem('postList'));
+        
+        for(let post of postList){
+            if(post.postToken === token){
+                if(!post.likes.includes(currUser)){
+                    post.likes.push(currUser);
+                }
+                else{
+                    post.likes.splice(post.likes.indexOf(currUser), 1);
+                    $(this).parent().find('.likeIcon').html('♡');
+                }        
+                $(this).parent().find('#likeCounts').html(post.likes.length);
+                localStorage.setItem('postList', JSON.stringify(postList));
+            }
+        }
+        window.location.reload();
+    }
 });
 
 // Show & Hide Comment Area Button
@@ -87,27 +92,32 @@ $(".replyBtn").click(function() {
 
 // Add New Comment Button
 $(".newComment").click(function() {
-    let token = $(this).attr('name');
-    let comment = $(this).parent().find('#newReply').val();
-    let postList = JSON.parse(localStorage.getItem('postList'));
-    
-    if(comment === ''){
-        alertModalControl("댓글을 작성한 후 등록해주세요.");
+    if(!currUser){
+        alertModalControl("로그인 후 이용해주세요");
     }
     else{
-        for(let post of postList){
-            if(post.postToken === token){
-                post.comments.push({
-                    writer: currUser,
-                    comment: comment
-                });
-                $(this).parent().parent().find('#replyCounts').html(post.comments.length);
-                localStorage.setItem('postList', JSON.stringify(postList));
-                break;
-            }
+        let token = $(this).attr('name');
+        let comment = $(this).parent().find('#newReply').val();
+        let postList = JSON.parse(localStorage.getItem('postList'));
+        
+        if(comment === ''){
+            alertModalControl("댓글을 작성한 후 등록해주세요.");
         }
-        $(this).parent().find('#comment').html(displayComments(token));
-        $(this).parent().find('#newReply').val('');
+        else{
+            for(let post of postList){
+                if(post.postToken === token){
+                    post.comments.push({
+                        writer: currUser,
+                        comment: comment
+                    });
+                    $(this).parent().parent().find('#replyCounts').html(post.comments.length);
+                    localStorage.setItem('postList', JSON.stringify(postList));
+                    break;
+                }
+            }
+            $(this).parent().find('#comment').html(displayComments(token));
+            $(this).parent().find('#newReply').val('');
+        }
     }
 });
 
@@ -155,5 +165,10 @@ function displayComments(token){
 }
 
 $('#addPost').click(function (){
-    window.location.href = "../addpost/feature_addPost_bslee.html";
+    if(!currUser){
+        alertModalControl("로그인 후 이용해주세요");
+    }
+    else{      
+        window.location.href = "../addpost/feature_addPost_bslee.html";
+    }
 });
