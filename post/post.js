@@ -6,14 +6,11 @@ $(function() {
     $('#footer').load('../footer/footer.html');
 });
 
+let currUser = localStorage.getItem('currUser');
 let tokenList = JSON.parse(localStorage.getItem('tokenList'));
 let postList = JSON.parse(localStorage.getItem('postList'));
-let postCurrPage = localStorage.getItem('postCurrPage');
-localStorage.setItem('currUser', 'tmpUser');
+localStorage.setItem('postCurrPage', "1");
 
-if(postCurrPage === null){
-    localStorage.setItem('postCurrPage', "1");
-}
 if(tokenList === null){
     tokenList = [];
     localStorage.setItem('tokenList', JSON.stringify(tokenList));
@@ -34,8 +31,8 @@ if(postList != null){
         let postToken = postList[i].postToken;
         let imgList = postList[i].imageList;
         let imgSrc = generateImages(imgList);
-        
         let targetPost = $('#post'+String(i%3 + 1));
+
         targetPost.css('display', '');
         targetPost.find('#storeName').html(postList[i].storeName);
         targetPost.find('#info').html(postList[i].author + " " 
@@ -49,6 +46,9 @@ if(postList != null){
         targetPost.find('.likeBtn, .replyBtn, .newComment').each(function(){
             $(this).attr('name', postToken);
         })
+        if(postList[i].likes.includes(currUser)){
+            targetPost.find('.likeIcon').html('❤️');
+        }
         targetPost.find('.commentArea').attr('id', postToken);
     }
 }
@@ -60,15 +60,21 @@ else{
 $(".likeBtn").click(function() {
     let token = $(this).attr('name');
     let postList = JSON.parse(localStorage.getItem('postList'));
-    let currUser = localStorage.getItem('currUser');
     
     for(let post of postList){
-        if(post.postToken === token && !post.likes.includes(currUser)){
-            post.likes.push(currUser);
+        if(post.postToken === token){
+            if(!post.likes.includes(currUser)){
+                post.likes.push(currUser);
+            }
+            else{
+                post.likes.splice(post.likes.indexOf(currUser), 1);
+                $(this).parent().find('.likeIcon').html('♡');
+            }        
             $(this).parent().find('#likeCounts').html(post.likes.length);
             localStorage.setItem('postList', JSON.stringify(postList));
         }
     }
+    window.location.reload();
 });
 
 // Show & Hide Comment Area Button
@@ -82,7 +88,6 @@ $(".replyBtn").click(function() {
 // Add New Comment Button
 $(".newComment").click(function() {
     let token = $(this).attr('name');
-    let userName = localStorage.getItem('currUser');
     let comment = $(this).parent().find('#newReply').val();
     let postList = JSON.parse(localStorage.getItem('postList'));
     
@@ -93,7 +98,7 @@ $(".newComment").click(function() {
         for(let post of postList){
             if(post.postToken === token){
                 post.comments.push({
-                    writer: userName,
+                    writer: currUser,
                     comment: comment
                 });
                 $(this).parent().parent().find('#replyCounts').html(post.comments.length);

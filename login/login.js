@@ -3,60 +3,31 @@ $(function() {
     $("#modalContainer").load("../alertModal/modal.html");
 });
 
-const signup = document.getElementById("sign-up");
-const signin = document.getElementById("sign-in");
-const loginin = document.getElementById("login-in");
-const loginup = document.getElementById("login-up");
-
-signup.addEventListener("click", () => {
-    loginin.classList.remove("block");
-    loginup.classList.remove("none");
-
-    loginin.classList.add("none");
-    loginup.classList.add("block");
-})
-
-signin.addEventListener("click", () => {
-    loginin.classList.remove("none");
-    loginup.classList.remove("block");
-
-    loginin.classList.add("block");
-    loginup.classList.add("none");
-})
-
-document.querySelector('.login__button').addEventListener("click", function(){
-    var userId = document.getElementById("userId").value;
-    var userPassword = document.getElementById("userPw").value;
-    if (!userId) {  // 아이디 미입력
+$('#login').click(function(){
+    const userList = JSON.parse(localStorage.getItem('userList'));
+    const userid = $('#userId').val();
+    const userPw = $('#userPw').val();
+    let isOkay = false;
+    if(userid === ''){
         alertModalControl("아이디를 입력해주세요.");
-        
-        }
-    else if (!userPassword) {  // 비밀번호 미입력
-        alertModalControl("비밀번호를 입력해주세요.");
-    
     }
-
-    var userList = JSON.parse(localStorage.getItem('userList'));
-    for (var i=0; i < userList.length; i++) {
-        if (userList[i].userid == userId) {
-            if (userList[i].password == userPassword) {  // 로그인 성공
-                alertModalControl("로그인 성공");   
+    else if(userPw === ''){
+        alertModalControl("비밀번호를 입력해주세요");
+    }
+    else{
+        for(let user of userList){
+            if(user.userid === userid && user.password === userPw){
+                isOkay = true;
                 break;
             }
-            else {  // 비밀번호 불일치
-                if (userPassword)
-                    alertModalControl('아이디, 비밀번호가 일치하지 않습니다. 다시 입력해주세요.');
-            }
+        }
+    
+        if(isOkay){
+            localStorage.setItem('currUser', userid);
+            window.location.href = "../main.html";
+        }
+        else{
+            alertModalControl("일치하는 정보가 없습니다. 아이디 혹은 비밀번호를 확인 후 다시 로그인해주세요.")
         }
     }
-});
-
-/*
-const data = {
-    userName: 'admin',
-    userId: 'admin',
-    password: '1234'
-};
-
-localStorage.setItem('userList', JSON.stringify([data]));
-*/
+})

@@ -82,7 +82,7 @@ $('#signUp').click(function(){
     let username = $('#username').val();
     let userid = $('#userid').val();
     let password = $('#password').val();
-    let phonenum = $('#phoenum').val();
+    let phonenum = $('#phonenum').val();
     let emailid = $('#useremail').val() 
     let emaildomin = $('#emaildomain').val();
     if(username === '' || userid === '' || password === '' ||
@@ -98,7 +98,7 @@ $('#signUp').click(function(){
                 phonenum: phonenum,
                 email: emailid + "@" + emaildomin
             }
-            confirmModalControl("회원가입을 진행하시겠습니까?", '../main.html', function(result){
+            confirmModalControl("회원가입을 진행하시겠습니까?", '../login/login.html', function(result){
                 if(result){
                     userList.push(newUser);
                     localStorage.setItem('userList', JSON.stringify(userList));
