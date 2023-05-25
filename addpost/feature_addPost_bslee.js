@@ -3,6 +3,8 @@ let imgList = [];
 
 $(function() {
   $("#modalContainer").load("../alertModal/modal.html");
+  $('#GNB').load("../gnb/gnb.html");
+  $('#footer').load("../footer/footer.html");
 });
 
 // Image upload 및 preview 표시
@@ -54,7 +56,7 @@ function generateToken(length) {
 
 
 // 게시글 등록
-$('#submit1').click(function(event){
+$('#addPost').click(function(event){
   event.preventDefault();
   if(validationCheck()){
     confirmModalControl("게시글을 등록하시겠습니까?", '../post/post.html', function(result){
