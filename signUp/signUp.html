@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SingUp</title>
     <link rel="stylesheet" href="signUp.css" />
-    <link rel="stylesheet" href="../alertModal/modal.css">
+    <link rel="stylesheet" href="../alertModal/modal.css" />
   </head>
   <body>
     <main>
@@ -19,7 +19,7 @@
             <td id="label" rowspan="2">
               <label for="username"> 닉네임<b>*</b> </label>
             </td>
-            <td>
+            <td id="input_condition">
               <input
                 type="text"
                 id="username"
@@ -40,7 +40,7 @@
             <td id="label" rowspan="2">
               <label for="userid"> 아이디<b>*</b> </label>
             </td>
-            <td>
+            <td id="input_condition">
               <input
                 type="text"
                 id="userid"
@@ -61,7 +61,7 @@
             <td id="label" rowspan="2">
               <label for="password"> 비밀번호<b>*</b> </label>
             </td>
-            <td>
+            <td id="input_condition">
               <input
                 type="password"
                 id="password"
@@ -77,23 +77,34 @@
             </td>
           </tr>
           <tr>
-            <td id="label">
+            <td id="label_not_Cnd">
               <label for="phonenum"> 휴대폰번호<b>*</b> </label>
             </td>
             <td>
-              <input id="phonenum" name="phonenum" maxlength="11" placeholder="휴대폰번호를 입력해주세요." required>
+              <input
+                id="phonenum"
+                name="phonenum"
+                maxlength="11"
+                placeholder="휴대폰번호를 입력해주세요."
+                required
+              />
             </td>
           </tr>
           <tr>
-            <td id="label">
+            <td id="label_not_Cnd">
               <label for="useremail"> 이메일<b>*</b> </label>
             </td>
             <td>
               <span>
                 <input type="text" id="useremail" name="useremail" required />
                 @
-                <input type="text" id="emaildomain" name="emaildomain" required />
-                <select id= "domainOption">
+                <input
+                  type="text"
+                  id="emaildomain"
+                  name="emaildomain"
+                  required
+                />
+                <select id="domainOption">
                   <option>직접입력</option>
                   <option>naver.com</option>
                   <option>gmail.com</option>
@@ -111,7 +122,7 @@
       </form>
     </main>
     <div id="modalContainer"></div>
-    
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <scirpt src="../alertModal/modal.js" type="module"></scirpt>
     <script src="signUp.js" type="module"></script>

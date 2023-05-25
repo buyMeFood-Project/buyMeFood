@@ -57,14 +57,24 @@ input {
   width: 150px;
 }
 
-input::placeholder{
+input::placeholder {
   font-size: 5px;
+}
+
+/* 조건 input에 붙이기 위해*/
+#input_condition {
+  vertical-align: bottom;
 }
 
 /* input하단 조건 */
 #condition {
   /* height: 10px; */
   font-size: 10px;
+}
+
+/*조건 없는 input label 높이 조정*/
+#label_not_Cnd {
+  height: 87px;
 }
 
 /* 돌아가기,회원가입 전체 button영역 */
