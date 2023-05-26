@@ -23,7 +23,7 @@ var currUser = localStorage.getItem('currUser');
 
 if(currUser !== null){
     $('#util').hide();
-    $('#util_afterLogin').css('display', 'inline-block');
+    $('#util_afterLogin').css('display', 'flex');
     $('#nickName').text(" " + currUser);
 }
 else{
