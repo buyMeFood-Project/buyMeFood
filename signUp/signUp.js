@@ -96,7 +96,9 @@ $('#signUp').click(function(){
                 userid: userid,
                 password: password,
                 phonenum: phonenum,
-                email: emailid + "@" + emaildomin
+                email: emailid + "@" + emaildomin,
+                mystore: [],
+                mypost: []
             }
             confirmModalControl("회원가입을 진행하시겠습니까?", '../login/login.html', function(result){
                 if(result){
