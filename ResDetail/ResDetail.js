@@ -29,15 +29,25 @@ $(document).ready(function () {
       }
     }
 
+
     $(".heart_icon").click(function () {
       if(isAdded){
+
+        // $('#Like').hover(function() {
+        //   $(this).css("color", "#FC6B0A");
+        // }, function(){
+        //   $(this).css("color", "black");
+        // });
+
         $(".heart_icon").text("♡");
+        $("#Like").css("color","black");
         let storeIdx = currUserInfo.mystore.indexOf(selectedStore.storeName);
         currUserInfo.mystore.splice(storeIdx, 1);
         isAdded = false;
       }
       else{
         $(".heart_icon").text("♥");
+        $("#Like").css("color","#FA914B");
         currUserInfo.mystore.push(selectedStore.storeName);
         isAdded = true;
       }
