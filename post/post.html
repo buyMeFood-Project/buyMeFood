@@ -26,9 +26,6 @@
         #replyBtn:hover{
             font-weight: bold;
         }
-        div{
-            margin: 2% auto;
-        }
         img{
             size: 10%;
         }
@@ -45,8 +42,8 @@
 </head>
 <body>
     <header id="GNB"></header>
+    <div id="menuTitle">게시판</div>        
     <div id="container">
-        <div id="menuTitle">게시판</div>
         <!-- <div id="miniTitle">여러분들의 의견을 들려주세요!</div> -->
         <form id="postArea">
             <div class="post" id="post1" style="display:none">
@@ -120,7 +117,7 @@
     
 
     <button id="addPost">게시글 작성</button>
-    <div>
+    <div id="paging">
         <span>
             <button type="button" class="pages" value="prePage"><</button>
             <span id="pagination"> 
