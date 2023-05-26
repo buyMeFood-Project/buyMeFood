@@ -1,5 +1,8 @@
 import { alertModalControl, confirmModalControl } from "../alertModal/modal.js";
 let imgList = [];
+let tokenList = localStorage.getItem("tokenList") ? JSON.parse(localStorage.getItem("tokenList")) : [];
+let userList = JSON.parse(localStorage.getItem("userList"));
+let currUser = localStorage.getItem('currUser');
 
 $(function() {
   $("#modalContainer").load("../alertModal/modal.html");
@@ -61,8 +64,9 @@ $('#addPost').click(function(event){
   if(validationCheck()){
     confirmModalControl("게시글을 등록하시겠습니까?", '../post/post.html', function(result){
       if(result){
+        let postToken = generateToken(10);
         let newPost = {
-          author: "임시",
+          author: currUser,
           storeName: $("#storeName").val(),
           rate: $('input[name="stars"]:checked').val(),
           content: $("#content").val(),
@@ -70,11 +74,24 @@ $('#addPost').click(function(event){
           likes:[],
           comments:[],
           date:new Date().toJSON().slice(0, 10),
-          postToken: generateToken(10)
+          postToken: postToken
         };
         let postList = localStorage.getItem("postList") ? JSON.parse(localStorage.getItem("postList")) : [];
         postList.push(newPost);
+        tokenList.push(postToken);
         localStorage.setItem("postList", JSON.stringify(postList));
+        localStorage.setItem("tokenList", JSON.stringify(tokenList));
+      
+        let currUserInfo = null;
+        for(let each of userList){
+          if(each.userid === currUser){
+            currUserInfo = each;
+            break;
+          }
+        }
+        currUserInfo.mypost.push(postToken);
+        localStorage.setItem('userList', JSON.stringify(userList));
+
       }
     });
   }

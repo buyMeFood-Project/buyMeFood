@@ -9,7 +9,7 @@ $(function() {
 let currUser = localStorage.getItem('currUser');
 let tokenList = JSON.parse(localStorage.getItem('tokenList'));
 let postList = JSON.parse(localStorage.getItem('postList'));
-localStorage.setItem('postCurrPage', "1");
+
 
 if(tokenList === null){
     tokenList = [];

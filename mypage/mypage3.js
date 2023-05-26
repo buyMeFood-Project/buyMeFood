@@ -16,6 +16,16 @@
 */
 
 /* 외부 html 파일 가져오기 */
+
+let currUser = localStorage.getItem('currUser');
+let userList = JSON.parse(localStorage.getItem('userList'));
+let postList = JSON.parse(localStorage.getItem('postList'));
+let currUserInfo = null;
+for(let each of userList){
+    if(each.userid === currUser){
+        currUserInfo = each;
+    }
+}
 $(function() {
     $('#GNB').load('../gnb/gnb.html');
     $('#footer').load('../footer/footer.html');
@@ -84,14 +94,29 @@ if (localStorage.getItem('userList') == null) {
 2. 불러와서 html로 보내주기
 */
 
+$('#myPostList').click(function(){
+    $('#myPostForm').css("display", "");
+    $('#myStoreForm').hide();
+    
+    // for(let myPost of currUserInfo.mypost){
+    //     let currPost = null;
+    //     for(let post of postList){
+    //         if(postList.postToken === myPost){
+    //             currPost = post;
+    //             break;
+    //         }
+    //     }
+    //     $('#like_list')
+    // }
+});
 
-function likeList() {
-
-//    localStorage.getItem('likeList')
-
-}
-
-/* likeList와 동일 */
-function myPost() {
-//  localStorage.getItem('myPost')
-}
+{/* <div class="mypost">
+    <div class="mypost_title" id="post_name"></div>
+    <span class="start">⭐</span>
+    <span class="mypost_rate" id="post_rate"></span>
+    <div class="mypost_content" id="post_content3"></div>
+</div> */}
+$('#likeList').click(function(){
+    $('#myStoreForm').css("display", "");
+    $('#myPostForm').hide();
+});
