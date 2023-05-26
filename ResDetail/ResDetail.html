@@ -7,29 +7,24 @@
     <link rel="stylesheet" href="ResDetail.css" />
     <link rel="stylesheet" href="../gnb/gnb.css">
     <link rel="stylesheet" href="../footer/footer.css">
+    <link rel="stylesheet" href="../alertModal/modal.css">
     <title>Res_Detail</title>
   </head>
   <body>
     <header id="GNB"></header>
     <div id="ResDetail_page">
-      <div id="resImage">
-      <img src="sample_image/1.jpeg" />
-      <img src="sample_image/2.jpeg" />
-      <img src="sample_image/3.jpeg" />
-      <img src="sample_image/4.jpeg" />
-      <img src="sample_image/5.jpeg" />
-    </div>
+        <div id="resImage"> </div>
     <div id="container">
         <div class="detail_contents">
           <div class="resaurant_title_wrap">
             <!-- 가게명, 별점, 좋아요 라인 -->
             <span class="restaurant_title">
-              <span><h1 class="restaurant_name">대림국수</h1></span>
-              <span class="Score">⭐5.0</span>
+              <span><h1 class="restaurant_name"></h1></span>
+              <span class="Score"></span>
               <!-- <div id="resInfo">가게정보</div> -->
             </span>
             <div id="Like">
-              <p class="heart_icon" onclick="AddLike()">♡</p>
+              <p class="heart_icon" >♡</p>
               <p class="heart_text">찜하기</p>
             </div>
           </div>
@@ -39,38 +34,38 @@
           <table id="detail">
             <tr>
               <th align="left" id="label">주소</th>
-              <td>{address}주소입니다</td>
-            </tr>
-            <tr>
-              <th align="left" id="label">지번</th>
-              <td>{address_number}</td>
+              <td id="address"></td>
             </tr>
             <tr>
               <th align="left" id="label">전화번호</th>
-              <td>{phone_number}</td>
+              <td id="contact"></td>
             </tr>
             <tr>
               <th align="left" id="label">음식 종류</th>
-              <td>{foodtype}</td>
+              <td id="menu"></td>
             </tr>
             <tr>
               <th align="left" id="label">주차</th>
-              <td>{parking_boolean}</td>
+              <td id="parking"></td>
             </tr>
             <tr>
-              <th align="left" id="label">영업시간</th>
-              <td>{openinghours}</td>
+              <th align="left" id="label">자세한 정보</th>
+              <td id="moreInfo"></td>
             </tr>
           </table>
         </div>
       </Res>
       <iframe id = "map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.5072024864544!2d127.05250887641928!3d37.543112372044746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca52d20815afd%3A0x14b1f44e1a4be334!2z64yA66a86rWt7IiYIOyEseyImOygkA!5e0!3m2!1sko!2skr!4v1684744085263!5m2!1sko!2skr" width="350" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
      
-    </div></div>
+    </div>
+  </div>
     
     <footer id="footer"></footer>
 
+    <div id="modalContainer"></div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../alertModal/modal.js" type="module"></script>
     <script src="ResDetail.js" type="module"></script>
   </body>
 </html>

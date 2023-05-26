@@ -10,69 +10,90 @@
     <link rel="stylesheet" href="../alertModal/modal.css">
 </head>
 <body>
-    <header style="text-align: center;">
-        <h2>GNB</h2>
-    </header>
-    <div>
-        <span>
-            <button type="button" id="idInfo">아이디찾기</button>
-            <button type="button" id="pwInfo">비밀번호찾기</button>
-        </span>
-
-        <div id="findInfo">
-            <form id="forID">
-                <div id="beforeID">
-                    <div>
-                        <input type="radio" id="byPhoneNum" name="searchIDBy" checked="checked">
-                        <label for="phone"> 휴대폰</label>
-                        <input type="radio" id="byEmail" name="searchIDBy">
-                        <label for="email"> 이메일</label>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <div class="findIdPw">
+        <div class="find_content">
+            <div class="find__img">
+                <a href="../main.html"><img src="../img/logo2.jpg" alt="user findIdPw"></a>
+            </div>
+    
+            <div id="findInfo">
+                <span id="findToggle">
+                    <button type="button" id="idInfo"><span>아이디 찾기</span></button>
+                    <button type="button" id="pwInfo"><span>비밀번호 찾기</span></button>
+                </span>
+                <form id="forID">
+                    <div id="beforeID">
+                        <div id="findRadio">
+                            <div class="radio_wrap">
+                                <input type="radio" id="byPhoneNum" name="searchIDBy" checked="checked">
+                                <label for="byPhoneNum">휴대폰</label>
+                            </div>
+                            <div class="radio_wrap">
+                                <input type="radio" id="byEmail" name="searchIDBy">
+                                <label for="byEmail">이메일</label>
+                            </div>
+                        </div>
+                        <div class="find__box">
+                            <i class='bx bx-id-card find__icon'></i>
+                            <label for="searchName">이름:</label>
+                            <input type="text" id="searchName" name="searchName" placeholder="이름" required>
+                        </div>
+                        <div class="find__box byPhone">
+                            <i class='bx bx-phone find__icon'></i>
+                            <label for="findOption" id="changeable">휴대폰: </label>
+                            <input type="number" id="findOption" name="searchPhoneNum" placeholder="휴대폰번호" required>
+                        </div>
+                        <div class="find__box byMail" style="display: none;">
+                            <i class='bx bx-envelope find__icon'></i>
+                            <label for="findOption" id="changeable">이메일: </label>
+                            <input type="number" id="findOption" name="searchByEmail" placeholder="이메일" required>
+                        </div>
+                        <div>
+                            <button type="button" id="findId"><span>아이디 찾기</span></button>
+                            <button type="button" id="loginPage"><span>로그인</span></button>
+                        </div>
                     </div>
-                    <div>
-                        <label for="searchName">이름:</label>
-                        <input type="text" id="searchName" name="searchName" required>
-                    </div>
-                    <div>
-                        <label for="findOption" id="changeable">휴대폰: </label>
-                        <input type="number" id="findOption" name="searchPhoneNum" required>
-                    </div>
-                    <div>
-                        <button type="button" id="findId">아이디찾기</button>
-                        <button type="button" id="loginPage">로그인</button>
-                    </div>
-                </div>
-
-                <div id="afterID" style="display:none; ">
-                    <p id="getID"></p>
-                    <button id="mainPage" type="button">메인페이지</button>
-                    <button id="loginPage" type="button">로그인</button>
-                </div>
-            </form>
-
-            <form id="forPW" style="display: none;">
-                <div id="beforePW">
-                    <label for="searchName2">이름:</label>
-                    <input type="text" id="searchName2" name="searchName2" required>
-                    <br>
-                    <label for="searchID">아이디:</label>
-                    <input type="text" id="searchID" name="searchID" required>
-                    <br>
-                    <label for="searchEmail">이메일:</label>
-                    <input type="email" id="searchEmail" name="searchEmail" required>
-                    <div>
-                        <button id="findPW" type="button">비밀번호찾기</button>
-                        <button id="loginPage" type="button">로그인</button>
-                    </div>
-                </div>
-
-                <div id="afterPW" style="display: none;">
-                    <div style="display:block">
-                        비밀번호 찾기 성공! <br> 임시 비밀번호를 입력하신 이메일로 발송하였습니다.
+    
+                    <div id="afterID" style="display:none; ">
+                        <p id="getID"></p>
                         <button id="mainPage" type="button">메인페이지</button>
                         <button id="loginPage" type="button">로그인</button>
                     </div>
-                </div>
-            </form>
+                </form>
+    
+                <form id="forPW" style="display: none;">
+                    <div id="beforePW">
+                        <div class="find__box">
+                            <i class='bx bx-id-card find__icon'></i>
+                            <label for="searchName2">이름:</label>
+                            <input type="text" id="searchName2" name="searchName2" placeholder="이름" required>
+                        </div>
+                        <div class="find__box">
+                            <i class='bx bx-user find__icon'></i>
+                            <label for="searchID">아이디:</label>
+                            <input type="text" id="searchID" name="searchID" placeholder="아이디" required>
+                        </div>
+                        <div class="find__box">
+                            <i class='bx bx-envelope find__icon'></i>
+                            <label for="searchEmail">이메일:</label>
+                            <input type="email" id="searchEmail" name="searchEmail" placeholder="이메일" required>
+                        </div>
+                        <div>
+                            <button id="findPW" type="button"><span>비밀번호 찾기</span></button>
+                            <button id="loginPage" type="button"><span>로그인</span></button>
+                        </div>
+                    </div>
+    
+                    <div id="afterPW" style="display: none;">
+                        <div style="display:block">
+                            비밀번호 찾기 성공! <br> 임시 비밀번호를 입력하신 이메일로 발송하였습니다.
+                            <button id="mainPage" type="button">메인페이지</button>
+                            <button id="loginPage" type="button">로그인</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
     <div id="modalContainer"></div>
