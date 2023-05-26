@@ -63,6 +63,7 @@ img {
 
 .login__content {
     display: grid;
+    grid-template-rows: 320px 500px;
 }
 
 .login__img {
