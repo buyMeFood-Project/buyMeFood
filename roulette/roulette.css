@@ -39,8 +39,10 @@ h2 {
     background-color: #fff;
 }
 #place_list {
+    height: 300px;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-bottom: 10px;
 }
 .place {
@@ -52,9 +54,4 @@ h2 {
 }
 .rating {
     color: #FA914B;
-}
-footer {
-    font-family: 'Pretendard-Regular';
-    position: absolute;
-    right: 0;
 }
