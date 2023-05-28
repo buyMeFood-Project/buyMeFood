@@ -1,34 +1,36 @@
+
 #container {
-    width: 1000px;
+    width: 1300px;
     height: 100%;
     margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-content: space-between;
+    font-family: 'Pretendard-Regular';
+    
 }
-#container #comment1 {
-    margin-left: 10px;
-    margin-bottom: 10px;
+#comment1 {
+    width: 1300px;
+    padding-left: 20px;
+    margin: 20px auto;
+    font-size: large;
 }
 .food_list {
-    list-style: none;
+    margin: 0 auto;
 }
 .food_list img {
     width: 290px; height: 260px;
-    padding-bottom: 8px;
-}
-.food_list li {
-    float: left;
-    padding: 3px 10px;
-    padding-bottom: 20px;
-    overflow: hidden;
-    position: relative;
+    padding-bottom: 2px;
 }
 .food_list .food_type {
     color: gray;
     font-size: small;
-    line-height: 13px;
+    line-height: 1px;
 }
 .food_list .rest_info {
-    font-weight: 800;
+    font-weight: 500;
     font-size: larger;
+    margin-bottom: 50px;
 }
 .food_list .rest_info .rest_rate {
     color: rgb(255, 204, 34);

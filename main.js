@@ -5,7 +5,7 @@ $(document).ready(function(){
     localStorage.setItem('selectedStoreInfo', '');
     localStorage.setItem('postCurrPage', "1");
     let displayed = [];
-    for(let i = 1; i <= 6; i++){
+    for(let i = 1; i <= 12; i++){
         var index = String(i);
         var tmpData = data[Math.floor(Math.random()*data.length)];
         while(displayed.includes(tmpData.storeName)){
