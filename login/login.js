@@ -15,19 +15,24 @@ $('#login').click(function(){
         alertModalControl("비밀번호를 입력해주세요");
     }
     else{
-        for(let user of userList){
-            if(user.userid === userid && user.password === userPw){
-                isOkay = true;
-                break;
-            }
-        }
-    
-        if(isOkay){
-            localStorage.setItem('currUser', userid);
-            window.location.href = "../main.html";
+        if(userList === null){
+            alertModalControl("존재하지 않는 정보입니다. 회원가입을 먼저 진행해주세요.");
         }
         else{
-            alertModalControl("일치하는 정보가 없습니다. 아이디 혹은 비밀번호를 확인 후 다시 로그인해주세요.")
+            for(let user of userList){
+                if(user.userid === userid && user.password === userPw){
+                    isOkay = true;
+                    break;
+                }
+            }
+        
+            if(isOkay){
+                localStorage.setItem('currUser', userid);
+                window.location.href = "../main.html";
+            }
+            else{
+                alertModalControl("일치하는 정보가 없습니다. 아이디 혹은 비밀번호를 확인 후 다시 로그인해주세요.")
+            }
         }
     }
 })

@@ -66,12 +66,18 @@ $(document).ready(function () {
       resImages += "<img id='ex' src='" + selectedStore.images[idx] +"'/>\n";
     }
   }
+  $('#map').attr("src", selectedStore.mapLink);
   $('#resImage').html(resImages);
   $('.restaurant_name').text(selectedStore.storeName);
-  $('.Score').text('⭐' + selectedStore.rate);
+  if(selectedStore.rate !== "평가중"){
+    $('.Score').text('⭐' + selectedStore.rate.substring(0, selectedStore.rate.length-2));
+  }
+  else{
+    $('.Score').text('⭐' + selectedStore.rate);
+  }
   $('#address').text(selectedStore.address);
   $('#contact').text(selectedStore.contact);
   $('#menu').text(selectedStore.menu);
   $('#parking').text(selectedStore.parking);
-$('#moreInfo').html('<a href="'+ selectedStore.link + '" target="blank">자세히 보기</a>');
+$('#moreInfo').html('<a href="'+ selectedStore.storeLink + '" target="blank" style="color:#FA914B">자세히 보기</a>');
 });

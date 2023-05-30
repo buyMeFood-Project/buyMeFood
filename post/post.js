@@ -53,7 +53,7 @@ if(postList != null){
     }
 }
 else{
-    $('#postArea').html("<div><p> 등록된 게시글이 없습니다.</p></div>");
+    $('#postArea').html("<div><p style='text-align:center;'> 등록된 게시글이 없습니다.</p></div>");
 }
 
 // Like Button

@@ -15,6 +15,7 @@
 .food_list img {
     width: 300px; height: 260px;
 }
+
 .food_list li {
     float: left;
     padding: 0px 10px;
