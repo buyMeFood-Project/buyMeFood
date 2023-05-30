@@ -15,11 +15,11 @@
     
     <div id="mypage_top"> <!-- 상단은 flex로 -->
         <div id="myinfo">
-            <div id="user_emoji">😀</div>
+            <div id="user_emoji"></div>
             <dl>
                 <dt><h2>마이 페이지</h2></dt>
                 <dd><span id="userId"></span>
-                    <button id="editbtn" onclick="changeInfo()">✏️</button>
+                    <button id="editbtn">✏️</button>
                 </dd>
             </dl>
             <!-- <h2 id="top">마이페이지</h2>
@@ -33,7 +33,7 @@
     </div>
     <div id="mypageImg"></div>
     <div id="imgText">
-        <span id="user_id"></span>
+        <span id="userId"></span>
         <span>님의 최애 음식은?</span>
         <div id="most_food"></div>
     </div>
@@ -41,8 +41,8 @@
         <div class="mypage" id="mypage_nav">
             <div> 마이 페이지 </div>
             <ul id="mypage_list">
-                <li><div onclick="likeList()">찜 목록</div></li>
-                <li><div onclick="myPost()">내 게시글</div></li>
+                <li><div id="likeList">찜 목록</div></li>
+                <li><div id="myPost">내 게시글</div></li>
             </ul>
         </div>
         <div class="mypage" id="mypage_content">
