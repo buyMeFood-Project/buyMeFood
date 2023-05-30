@@ -4,6 +4,18 @@ window.onload = function(){
         localStorage.setItem('search_keyword', search_keyword);
     });
 }
+var currUser = localStorage.getItem('currUser');
+
+if(currUser !== null){
+    $('#util').hide();
+    $('#util_afterLogin').css('display', 'flex');
+    $('#nickname').text(" " + currUser);
+}
+else{
+    $('#util').css('display', 'flex');
+    $('#util_afterLogin').hide();
+}
+
 $(".menu").click(function(){
     localStorage.setItem("selectedMenu", $(this).attr('id'));
 })
@@ -18,15 +30,21 @@ if (selectedMenuItem) {
     $("#" + selectedMenuItem).closest("li").addClass("on");
 }
 
+$('#logout').click(function(){
+    localStorage.removeItem('currUser');
+});
 
-var currUser = localStorage.getItem('currUser');
 
-if(currUser !== null){
-    $('#util').hide();
-    $('#util_afterLogin').css('display', 'flex');
-    $('#nickName').text(" " + currUser);
-}
-else{
-    $('#util').css('display', 'flex');
-    $('#util_afterLogin').hide();
-}
+$('#search_input').keypress(function(event){
+    if(event.keyCode === 13){
+        var search_keyword = $(this).val();
+        localStorage.setItem('searchKeyword', search_keyword);
+        window.location.href = "../serchFood/serchFood.html";
+        
+    }
+});
+$('#search_btn').click(function(){
+    let keyword = $(this).parent().find('#search_input').val();
+    localStorage.setItem('searchKeyword', keyword);
+    window.location.href = "../serchFood/serchFood.html";
+})
