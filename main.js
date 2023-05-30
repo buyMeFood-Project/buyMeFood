@@ -19,7 +19,7 @@ $(document).ready(function(){
             $('#src'+index).attr('src', tmpData.images[1]);
         }
         $('#src'+index).attr('name', tmpData.storeName);
-        $('#food_rate'+index).html(tmpData.rate);
+        $('#food_rate'+index).html(tmpData.rate.substr(0, 3));
         $('#food'+index).html(tmpData.menu);
         $('#food_name'+index).html(tmpData.storeName);
     }

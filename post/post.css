@@ -1,16 +1,17 @@
+#menuTitle {
+    width: 1100px;
+    margin: 20px auto 5px auto;
+    font-size: 40px;
+    text-align: left;
+    font-family: 'TmoneyRoundWindExtraBold';
+}
+
 #container {
-    width: 1000px;
+    width: 1100px;
     margin: 10px auto;
     border-radius: 10px;
     display: flex;
     flex-direction: column-reverse;
-}
-#menuTitle {
-    width: 1000px;
-    margin: 0 auto;
-    font-size: 40px;
-    text-align: left;
-    font-family: 'TmoneyRoundWindExtraBold';
 }
 #postArea > div:not(.post) {
     height: 400px;
@@ -51,7 +52,7 @@
 }
 .post #images {
     margin-top: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     display: flex;
     flex-direction: row;
 }
@@ -65,7 +66,7 @@
     line-height: 35px;
 }
 .post span:not(#images) {
-    font-size: 25px;
+    font-size: 20px;
     padding-left: 5px;
 }
 .likeBtn {

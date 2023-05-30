@@ -1,21 +1,9 @@
-/* js 남은거 
-1. 마이 정보 수정
-2. 메뉴탭별로 다른 화면 띄우기
-3. 유저별 정보 가져오기
-
-4. 창호님꺼 참고해서 개수별로 for문? 돌려서 게시글 추가하는거 보기
-*/
-
-
-
 /*
 이모지 관련 코드 (가져온거)
 <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
 <button id="emoji_btn">button</button>
 <input type="text" id="message">
 */
-
-/* 외부 html 파일 가져오기 */
 
 let currUser = localStorage.getItem('currUser');
 let userList = JSON.parse(localStorage.getItem('userList'));
@@ -31,43 +19,65 @@ $(function() {
     $('#footer').load('../footer/footer.html');
 });
 
+
 /* 이모지 버튼 */
 const btn = document.getElementById("emoji_btn");
 const picker = new EmojiButton({
-    position: 'bottom-start'
+    position: 'bottom-top'
+});
+
+/*
+$("#emoji_btn").click(function() {
+    picker.togglePicker(btn);
+});
+*/
+$(document).on("click", "#emoji_btn", function(){
+    picker.togglePicker(btn);
 });
 
 picker.on('emoji', emoji => {
     const text_box = document.querySelector('#message');
-    text_box.value += emoji;
-});
 
-function emoji_picker() {
-    picker.togglePicker(btn);
-}
+    text_box.value += emoji;
+    user_emoji:document.getElementById("user_emoji").innerHTML = emoji;
+});
 
 /* username 수정하는 부분 */
 let infoArea = document.getElementById("myinfo");
 
 // 현재 로그인한 유저 정보 (수정 필요!⭐⭐⭐)
-const loginUser = (JSON.parse(localStorage.getItem('userList')))[0].username;
 
-userId:document.getElementById("userId").textContent = loginUser;
-const username = loginUser;
+let user_emojiInfo = {
+    user_emoji:document.getElementById("user_emoji").textContent,
+    userId:document.getElementById("userId").textContent = currUser
+}
+/* 1. user정보와 해당 이모지를 가지는 로컬스토리지 가져오기
+2. 이모지의 정보가 최초면 (null이면) 기본값 부여 후 저장
+*/
+if (localStorage.getItem('user_emojiInfo'.user_emoji) == null) {
+    /* 최초의 data를 foodList에 넣는 작업 */
+    user_emojiInfo.user_emoji = '🍕'
 
-function changeInfo() {
+    localStorage.setItem('user_emojiInfo', JSON.stringify([user_emojiInfo]));
+}
+const userEmoji = localStorage.getItem('user_emojiInfo'.user_emoji);
+const username = currUser;
+
+$("#editbtn").click(function() {
     infoArea.innerHTML = '\
         <div id="user_emoji">\
-            <input type="text" id="message">\
+            <input type="text" id="message" value="'+userEmoji+'">\
         </div>\
-        <h2 id="top">마이페이지</h2>\
-        <form id="userForm">\
+        <dl>\
+        <dt><h2>마이 페이지</h2></dt>\
+        <dd>\
             <input type="text" value="'+ username + '">\
-            <button type="button" id="emoji_btn" onclick="emoji_picker()">button</button>\
-            <button id="donebtn" onclick="changeDone()">확인</button>\
-        </form>\
+            <button type="button" id="emoji_btn">button</button>\
+            <button id="donebtn">확인</button>\
+        </dd>\
+        </dl>\
     ';
-}
+});
 
 function changeDone() {
     infoArea.innerHTML = '\
@@ -94,7 +104,7 @@ if (localStorage.getItem('userList') == null) {
 2. 불러와서 html로 보내주기
 */
 
-$('#myPostList').click(function(){
+$('#myPost').click(function(){
     $('#myPostForm').css("display", "");
     $('#myStoreForm').hide();
     
