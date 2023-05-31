@@ -2,7 +2,7 @@ import { alertModalControl, confirmModalControl } from "../alertModal/modal.js";
 let imgList = [];
 let tokenList = localStorage.getItem("tokenList") ? JSON.parse(localStorage.getItem("tokenList")) : [];
 let userList = JSON.parse(localStorage.getItem("userList"));
-let currUser = localStorage.getItem('currUser');
+let currUser = sessionStorage.getItem('currUser');
 
 $(function() {
   $("#modalContainer").load("../alertModal/modal.html");

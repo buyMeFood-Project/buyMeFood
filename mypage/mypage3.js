@@ -17,7 +17,7 @@
 
 /* 외부 html 파일 가져오기 */
 
-let currUser = localStorage.getItem('currUser');
+let currUser = sessionStorage.getItem('currUser');
 let userList = JSON.parse(localStorage.getItem('userList'));
 let postList = JSON.parse(localStorage.getItem('postList'));
 let storeList = JSON.parse(localStorage.getItem('storeData'));
