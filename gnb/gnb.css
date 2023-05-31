@@ -25,8 +25,8 @@ header h1 {
 }
 header h1 img {
   display: block;
-  width: 190px;
-  height: 120px;
+  width: 230px;
+  height: 100px;
 }
 #top {
   display: flex;

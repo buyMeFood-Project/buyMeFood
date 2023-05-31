@@ -16,40 +16,40 @@ footer {
     background-color: rgba(250, 145, 75, 0.1);
     width: 100%;
     clear: both;
-    /* text-align: center; */
 }
 hr {
     border-color: rgba(250, 145, 75, 0.1);
+    margin: 3px;
+}
+#box {
+    width: 63%;
+    display: inline-flex;
+    justify-content: space-between;
 }
 #footer_line {
+    height: 25px;
     margin: 3px 0px;
     padding-left: 0px;
     font-family: 'Pretendard-Regular';
-    display: inline-block;
-    width: 80%;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-#footer_line ul {
-    width: 80%;
+#box img {
+    justify-self: left;
+    margin-left: 30px;
 }
 #footer_line li {
     list-style: none;
-    display: inline-block;
-    /* font-size: 15px; */
+    text-align: center;
     padding: 0 10px;
-}
-#footer_name {
-    width: 20%;
-    font-size: 17px;
-    color: #FA914B;
-    font-family: 'TmoneyRoundWindExtraBold';
-    margin: 0 0 0 50px;
+    white-space: nowrap;
 }
 #footer_line li:hover {
     color: #FA914B;
     font-weight: bold;
 }
-#footer_line span {
+#footer_line .sep {
     font-weight: 100;
     color: gray;
 }
@@ -60,6 +60,5 @@ hr {
     text-align: left;
     line-height: 1.5;
     padding: 5px 0;
-    margin-left: 50px;
-    margin-bottom: 10px;
+    margin-left: 30px;
 }
