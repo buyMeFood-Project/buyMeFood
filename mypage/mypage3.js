@@ -2,10 +2,15 @@
 let currUser = localStorage.getItem('currUser');
 let userList = JSON.parse(localStorage.getItem('userList'));
 let postList = JSON.parse(localStorage.getItem('postList'));
+let storeList = JSON.parse(localStorage.getItem('storeData'));
 let currUserInfo = null;
+let postListContent = '';
+let likeListContent = '';
+
 for(let each of userList){
     if(each.userid === currUser){
         currUserInfo = each;
+        break;
     }
 }
 $(function() {
@@ -182,4 +187,62 @@ $('#myPost').click(function(){
 $('#likeList').click(function(){
     $('#myStoreForm').css("display", "");
     $('#myPostForm').hide();
+});
+
+$('#postList').click(function(){
+    $('#myPostForm').css("display", "");
+    $('#myStoreForm').hide();
+});
+
+
+for(let myStore of currUserInfo.mystore){
+    let currStore = null;
+    for(let store of storeList){
+        if(store.storeName === myStore){
+            currStore = store;
+            break;
+        }
+    }
+    let tmpRate = currStore.rate;
+    if(tmpRate !== "평가중"){
+        tmpRate = tmpRate.substring(0, tmpRate.length - 2);
+    }
+    likeListContent += '<div class="like_shop">\
+                            <div class="like_title" id="rest_name">'+currStore.storeName+'</div>\
+                            <span class="start">⭐</span>\
+                            <span class="like_rate" id="rest_rate">'+tmpRate+'</span>\
+                            <div class="like_img" id="rest_img"><a href=../ResDetail/ResDetail.html><img class="like_img" name="' + currStore.storeName + '"src="'+currStore.images[0]+'"></a></div>\
+                        </div>';
+}
+$('#like_list').html(likeListContent);
+
+
+
+
+for(let myPost of currUserInfo.mypost){
+    let currPost = null;
+    for(let post of postList){
+        if(post.postToken === myPost){
+            currPost = post;
+            break;
+        }
+    }
+    postListContent += '<div class="mypost">\
+    <div class="mypost_title" id="post_name">'+ currPost.storeName +'</div>\
+    <span class="start">⭐</span>\
+    <span class="mypost_rate" id="post_rate">'+currPost.rate +'</span>\
+    <div class="mypost_content" id="post_content3">'+currPost.content+'</div>\
+    </div>';
+}
+$('#mypost_list').html(postListContent);
+
+
+$('a').click(function(){
+    let nameAttr = $(this).find('img').attr('name');
+    for(let each of storeList){
+        if(each.storeName === nameAttr){
+            localStorage.setItem('selectedStoreInfo', JSON.stringify(each));
+            break;
+        }
+    }
 });
