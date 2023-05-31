@@ -1,3 +1,4 @@
+// $(document).ready(function(){ 
 
 let currUser = sessionStorage.getItem('currUser');
 let userList = JSON.parse(localStorage.getItem('userList'));
@@ -13,23 +14,20 @@ for(let each of userList){
         break;
     }
 }
+let currUsername = currUserInfo.username; //바꿔줄 닉네임 username
+
+
 $(function() {
     $('#GNB').load('../gnb/gnb.html');
     $('#footer').load('../footer/footer.html');
 });
 
-
 /* 이모지 버튼 */
 const btn = document.getElementById("emoji_btn");
 const picker = new EmojiButton({
-    position: 'bottom-top'
+    position: 'top'
 });
 
-/*
-$("#emoji_btn").click(function() {
-    picker.togglePicker(btn);
-});
-*/
 $(document).on("click", "#emoji_btn", function(){
     picker.togglePicker(btn);
 });
@@ -47,8 +45,8 @@ $(document).on('click', '#emoji_btn', function() {
 /* username 수정하는 부분 */
 let infoArea = document.getElementById("myinfo");
 
-// 현재 로그인한 유저 정보 (수정 필요!⭐⭐⭐)
-userId:document.getElementById("userId").innerHTML = currUser;
+// 현재 로그인한 유저 정보
+userId:document.getElementById("userId").innerHTML = currUsername;
 
 // 사용자 정보와 이모지 정보 저장 (user_emojiInfo)
 let user_emojiInfo = JSON.parse(localStorage.getItem('user_emojiInfo'));
@@ -56,26 +54,29 @@ let user_emojiInfo = JSON.parse(localStorage.getItem('user_emojiInfo'));
 if (user_emojiInfo == null) {
     let user_emojiInfo = {
         userEmoji: '🍕',
-        userId: 'currUser'
+        userName: 'currUsername'
     }
     localStorage.setItem('user_emojiInfo', JSON.stringify(user_emojiInfo));
+    user_emojiInfo = JSON.parse(localStorage.getItem('user_emojiInfo'));
 }
-user_emojiInfo = JSON.parse(localStorage.getItem('user_emojiInfo'));
 
-let user_now_emoji = user_emojiInfo.userEmoji; //현재 이모지 정보
+//현재 이모지 정보를 html에
+let user_now_emoji = user_emojiInfo.userEmoji;
 user_emoji:document.getElementById("user_emoji").innerHTML = user_now_emoji;
 
 //수정 버튼 누르기
 $(document).on('click', '#editbtn', function() {
-    currUser = localStorage.getItem('currUser');
+    currUsername = currUserInfo.username; //바꿔줄 닉네임 username
+    user_emojiInfo = JSON.parse(localStorage.getItem('user_emojiInfo'));
 
+    // value="' + currUsername + '">
     infoArea.innerHTML = '\
         <form>\
         <div id="user_emoji"></div>\
         <dl>\
             <dt><h2>마이 페이지</h2></dt>\
             <dd>\
-                <input type="text" value="' + currUser + '">\
+                <input id="userId" type="text">\
                 <button id="emoji_btn" type="button">이모지 수정</button>\
                 <button id="donebtn" type="submit">확인</button>\
             </dd>\
@@ -83,8 +84,8 @@ $(document).on('click', '#editbtn', function() {
         </form>\
     ';
 
-    let user_emojiInfo = JSON.parse(localStorage.getItem('user_emojiInfo'));
     user_emoji:document.getElementById("user_emoji").innerHTML = user_emojiInfo.userEmoji;
+    userId:document.getElementById("userId").value = currUsername;
 });
 
 $(document).on('submit', 'form', function(event) {
@@ -98,10 +99,10 @@ $(document).on('submit', 'form', function(event) {
 
     // 기존 폼 요소 및 버튼 등을 변경하기 위해 infoArea.innerHTML 대신 다음과 같이 코드를 작성합니다:
     if(userEmojiValue != user_emojiInfo.userEmoji ||
-        usernameValue != user_emojiInfo.userId) {
+        usernameValue != user_emojiInfo.userName) {
             user_emojiInfo = {
             userEmoji: userEmojiValue,
-            userId: usernameValue
+            userName: usernameValue
         }
         localStorage.setItem('user_emojiInfo', JSON.stringify(user_emojiInfo));
 
@@ -121,8 +122,9 @@ $(document).on('submit', 'form', function(event) {
     ';
 
     user_emoji:document.getElementById("user_emoji").innerHTML = user_emojiInfo.userEmoji;
-    userId:document.getElementById("userId").innerHTML = user_emojiInfo.userId;
-    localStorage.setItem('currUser',  user_emojiInfo.userId);
+    userId:document.getElementById("userId").innerHTML = user_emojiInfo.userName;
+    localStorage.setItem('currUser',  user_emojiInfo.userName);
+    //localStorage.getItem()
 });
 /*
 $(document).on('click', '#donebtn', function() {
