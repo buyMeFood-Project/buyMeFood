@@ -165,3 +165,13 @@
     margin: 5px;
     color: rgb(104, 104, 104);
 }
+
+#myinfo #emoji_btn {
+    border: transparent;
+    background: transparent;
+    cursor: pointer;
+}
+
+form #user_emoji {
+    margin-top: -16px;
+}
