@@ -4,7 +4,7 @@ window.onload = function(){
         localStorage.setItem('search_keyword', search_keyword);
     });
 }
-var currUser = localStorage.getItem('currUser');
+var currUser = sessionStorage.getItem('currUser');
 
 if(currUser !== null){
     $('#util').hide();
@@ -31,7 +31,7 @@ if (selectedMenuItem) {
 }
 
 $('#logout').click(function(){
-    localStorage.removeItem('currUser');
+    sessionStorage.removeItem('currUser');
 });
 
 

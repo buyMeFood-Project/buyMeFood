@@ -1,11 +1,5 @@
-/*
-이모지 관련 코드 (가져온거)
-<script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
-<button id="emoji_btn">button</button>
-<input type="text" id="message">
-*/
 
-let currUser = localStorage.getItem('currUser');
+let currUser = sessionStorage.getItem('currUser');
 let userList = JSON.parse(localStorage.getItem('userList'));
 let postList = JSON.parse(localStorage.getItem('postList'));
 let storeList = JSON.parse(localStorage.getItem('storeData'));
@@ -41,57 +35,126 @@ $(document).on("click", "#emoji_btn", function(){
 });
 
 picker.on('emoji', emoji => {
-    const text_box = document.querySelector('#message');
+    const text_box = document.querySelector('#user_emoji');
 
-    text_box.value += emoji;
-    user_emoji:document.getElementById("user_emoji").innerHTML = emoji;
+    text_box.innerHTML = emoji;
+});
+
+$(document).on('click', '#emoji_btn', function() {
+    picker.togglePicker('#emoji_btn');
 });
 
 /* username 수정하는 부분 */
 let infoArea = document.getElementById("myinfo");
 
 // 현재 로그인한 유저 정보 (수정 필요!⭐⭐⭐)
+userId:document.getElementById("userId").textContent = currUser;
 
-let user_emojiInfo = {
-    user_emoji:document.getElementById("user_emoji").textContent,
-    userId:document.getElementById("userId").textContent = currUser
+// 사용자 정보와 이모지 정보 저장 (user_emojiInfo)
+let user_emojiInfo = JSON.parse(localStorage.getItem('user_emojiInfo'));
+
+if (user_emojiInfo == null) {
+    let user_emojiInfo = {
+        userEmoji: '🍕',
+        userId: 'currUser'
+    }
+    localStorage.setItem('user_emojiInfo', JSON.stringify(user_emojiInfo));
 }
-/* 1. user정보와 해당 이모지를 가지는 로컬스토리지 가져오기
-2. 이모지의 정보가 최초면 (null이면) 기본값 부여 후 저장
-*/
-if (localStorage.getItem('user_emojiInfo'.user_emoji) == null) {
-    /* 최초의 data를 foodList에 넣는 작업 */
-    user_emojiInfo.user_emoji = '🍕'
+user_emojiInfo = JSON.parse(localStorage.getItem('user_emojiInfo'));
 
-    localStorage.setItem('user_emojiInfo', JSON.stringify([user_emojiInfo]));
-}
-const userEmoji = localStorage.getItem('user_emojiInfo'.user_emoji);
-const username = currUser;
+let user_now_emoji = user_emojiInfo.userEmoji; //현재 이모지 정보
+user_emoji:document.getElementById("user_emoji").innerHTML = user_now_emoji;
 
-$("#editbtn").click(function() {
+//수정 버튼 누르기
+$(document).on('click', '#editbtn', function() {
+    currUser = localStorage.getItem('currUser');
+
     infoArea.innerHTML = '\
-        <div id="user_emoji">\
-            <input type="text" id="message" value="'+userEmoji+'">\
-        </div>\
+        <form>\
+        <div id="user_emoji"></div>\
         <dl>\
-        <dt><h2>마이 페이지</h2></dt>\
-        <dd>\
-            <input type="text" value="'+ username + '">\
-            <button type="button" id="emoji_btn">button</button>\
-            <button id="donebtn">확인</button>\
-        </dd>\
+            <dt><h2>마이 페이지</h2></dt>\
+            <dd>\
+                <input type="text" value="' + currUser + '">\
+                <button id="emoji_btn" type="button">이모지 수정</button>\
+                <button id="donebtn" type="submit">확인</button>\
+            </dd>\
         </dl>\
+        </form>\
     ';
+
+    let user_emojiInfo = JSON.parse(localStorage.getItem('user_emojiInfo'));
+    user_emoji:document.getElementById("user_emoji").innerHTML = user_emojiInfo.userEmoji;
 });
 
-function changeDone() {
+$(document).on('submit', 'form', function(event) {
+    event.preventDefault(); // 기본 폼 제출 동작 방지
+
+    const userEmojiValue = $('#user_emoji').html();
+    const usernameValue = $(this).find('input[type="text"]').val();
+    //$('#userId').text(usernameValue);
+    
+    //user_emoji:document.getElementById("user_emoji").innerHTML = 
+
+    // 기존 폼 요소 및 버튼 등을 변경하기 위해 infoArea.innerHTML 대신 다음과 같이 코드를 작성합니다:
+    if(userEmojiValue != user_emojiInfo.userEmoji ||
+        usernameValue != user_emojiInfo.userId) {
+            user_emojiInfo = {
+            userEmoji: userEmojiValue,
+            userId: usernameValue
+        }
+        localStorage.setItem('user_emojiInfo', JSON.stringify(user_emojiInfo));
+
+        //currUser, userList
+    }
+
+
     infoArea.innerHTML = '\
-        <div id="user_emoji">😀</div>\
-        <h2 id="top">마이페이지</h2>\
-        <span id="userId" value="' + loginUser + '"></span>\
-        <button id="editbtn" onclick="changeInfo()">✏️</button>\
-    ';    
-}
+        <div id="user_emoji"></div>\
+        <dl>\
+            <dt><h2>마이 페이지</h2></dt>\
+            <dd>\
+            <span id="userId"></span>\
+            <button id="editbtn">✏️</button>\
+            </dd>\
+        </dl>\
+    ';
+
+    user_emoji:document.getElementById("user_emoji").innerHTML = user_emojiInfo.userEmoji;
+    userId:document.getElementById("userId").innerHTML = user_emojiInfo.userId;
+    localStorage.setItem('currUser',  user_emojiInfo.userId);
+});
+/*
+$(document).on('click', '#donebtn', function() {
+    const usernameValue = $(this).find('input[type="text"]').val();
+    // 가져온 값(usernameValue)을 이용하여 원하는 동작 수행
+
+    $('#userId').text(usernameValue);
+
+    alert(usernameValue);
+
+    infoArea.innerHTML = '\
+        <div id="user_emoji"></div>\
+        <dl>\
+            <dt><h2>마이 페이지</h2></dt>\
+            <dd>\
+            <span id="userId">' + usernameValue + '</span>\
+            <button id="editbtn">✏️</button>\
+            </dd>\
+        </dl>\
+    ';
+    /*
+    if(username != usernameValue) {
+        localStorage.setItem('user_emojiInfo'.userId, JSON.stringify(usernameValue));
+        username = usernameValue;
+    }
+    //userId:document.getElementById("userId").innerHTML = username;
+
+    let new_emoji = document.getElementById("user_emoji").innerHTML;
+    localStorage.setItem('user_emojiInfo'.userEmoji, JSON.stringify(new_emoji));
+    
+});
+*/
 
 /*
 if (localStorage.getItem('userList') == null) {

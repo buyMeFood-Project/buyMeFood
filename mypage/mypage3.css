@@ -165,11 +165,13 @@
     margin: 5px;
     color: rgb(104, 104, 104);
 }
-input[type="text" i] {
-    padding: 0px;
-    margin-top: -3px;
-}
+
 #myinfo #emoji_btn {
-    width: 50px;
     border: transparent;
+    background: transparent;
+    cursor: pointer;
+}
+
+form #user_emoji {
+    margin-top: -16px;
 }

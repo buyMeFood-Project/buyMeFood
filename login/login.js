@@ -27,7 +27,7 @@ $('#login').click(function(){
             }
         
             if(isOkay){
-                localStorage.setItem('currUser', userid);
+                sessionStorage.setItem('currUser', userid);
                 window.location.href = "../main.html";
             }
             else{

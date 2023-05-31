@@ -6,7 +6,7 @@ $(function() {
     $('#footer').load('../footer/footer.html');
 });
 
-let currUser = localStorage.getItem('currUser');
+let currUser = sessionStorage.getItem('currUser');
 let tokenList = JSON.parse(localStorage.getItem('tokenList'));
 let postList = JSON.parse(localStorage.getItem('postList'));
 

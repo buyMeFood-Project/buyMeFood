@@ -1,6 +1,6 @@
 import { alertModalControl } from "../alertModal/modal.js";
 const selectedStore = JSON.parse(localStorage.getItem('selectedStoreInfo'));
-let currUser = localStorage.getItem('currUser');
+let currUser = sessionStorage.getItem('currUser');
 let currUserInfo = null;
 let userList = JSON.parse(localStorage.getItem('userList'));
 let isAdded = false;
