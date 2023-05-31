@@ -48,7 +48,7 @@ $(document).on('click', '#emoji_btn', function() {
 let infoArea = document.getElementById("myinfo");
 
 // 현재 로그인한 유저 정보 (수정 필요!⭐⭐⭐)
-userId:document.getElementById("userId").textContent = currUser;
+userId:document.getElementById("userId").innerHTML = currUser;
 
 // 사용자 정보와 이모지 정보 저장 (user_emojiInfo)
 let user_emojiInfo = JSON.parse(localStorage.getItem('user_emojiInfo'));
@@ -238,6 +238,7 @@ for(let myPost of currUserInfo.mypost){
         }
     }
     postListContent += '<div class="mypost">\
+    <img class="mypost_image" id="post_image" src="'+ currPost.imageList[0]+'"></img>\
     <div class="mypost_title" id="post_name">'+ currPost.storeName +'</div>\
     <span class="start">⭐</span>\
     <span class="mypost_rate" id="post_rate">'+currPost.rate +'</span>\

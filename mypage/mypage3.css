@@ -72,6 +72,11 @@
     /* height: 500px; */
     display: flex;
 }
+#mypage_nav {
+    box-shadow: 0px 5px 15px rgb(179, 179, 179);
+    height: 162px;
+    border-radius: 10px;
+}
 /*#mypage_nav {
     /* border: 2px solid #FA914B;
     background-color: #FA914B;
@@ -119,9 +124,9 @@
 #mypage_list{
     margin: 0;
 }
-.mypage #title1 {
+.mypage #title1,
+.mypage #title2 {
     /* display: none; */
-    font-family: 'TmoneyRoundWindExtraBold';
     margin-top: 5px;
 }
 #like_list{
@@ -131,18 +136,23 @@
     grid-template-columns: 1fr 1fr;
 }
 .like_shop {
-    margin: 10px;
+    margin: 5px;
     padding-right: 10px;
+    font-size: 20px;
 }
 .like_img {
-    margin-top: 10px;
+    margin-top: 3px;
+    margin-bottom: 10px;
     height: 270px;
-    width: 270px;
+    width: 350px;
     /* height: contain; */
     background-size: contain;
 }
 .like_shop .like_title {
     display: inline;
+}
+.like_shop .like_rate {
+    color: rgb(255, 204, 34);
 }
 #mypost_list {
     height: 500px;
@@ -151,6 +161,13 @@
 }
 .mypost {
     margin:10px;
+}
+.mypost .mypost_image {
+    float: left;
+    width: 120px;
+    height: 100px;
+    background-size: contain;
+    margin-right: 20px;
 }
 .mypost .mypost_title {
     display: inline;
@@ -162,6 +179,7 @@
     letter-spacing: 2px;
 }
 .mypost .mypost_content {
+
     margin: 5px;
     color: rgb(104, 104, 104);
 }
