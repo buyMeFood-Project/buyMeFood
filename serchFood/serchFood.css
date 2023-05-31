@@ -119,3 +119,20 @@ a {
 .food_list .rest_info .rest_rate {
     color: rgb(255, 204, 34);
 }
+#pagination button{
+    /* background-color: #fa914b; */
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+.pages {
+    color: gray;
+    background-color: white;
+    border: transparent;
+    font-size: larger;
+    font-weight: bolder;
+
+}
+#paging {
+    text-align: center;
+}

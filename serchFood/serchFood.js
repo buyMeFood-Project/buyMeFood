@@ -30,7 +30,9 @@ while(start <= end){
     end -= 1;
 }}
 if(displayList.length === 0){
+    $('#container').css('height', '500px');
     $('#container').html("\"" + keyword + "\" 관련 맛집이 없습니다.");
+
 }
 if(displayList.length != 0 || keyword.trim() !== ''){
     let idx = 0;
