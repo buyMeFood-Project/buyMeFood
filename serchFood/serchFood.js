@@ -1,84 +1,68 @@
 $(function () {
     $("#GNB").load("../gnb/gnb.html");
     $("#footer").load("../footer/footer.html");
-  });
+});
 
-localStorage.setItem("keyword","족발");
-if(localStorage.getItem("keyword")=='족발'){
+const keyword = localStorage.getItem('searchKeyword');
+const storeList = JSON.parse(localStorage.getItem('storeData'));
+const displayList = [];
+const addedStore = [];
+let start = 0, end = storeList.length-1;
 
-    let foodData1= {
-        food_Image1:document.getElementById("food_Image1").src = "/img/1.jpg",
-        food1:document.getElementById("food1").innerHTML = "한식",
-        food_name1:document.getElementById("food_name1").innerHTML = "성수족발",
-        food_rate1:document.getElementById("food_rate1").innerHTML = "4.0",
-    }
-    let foodData2= {
-        food_Image2:document.getElementById("food_Image2").src = "../img/마왕족발.jpg",
-        food2:document.getElementById("food2").innerHTML = "한식",
-        food_name2:document.getElementById("food_name2").innerHTML = "마왕족발",
-        food_rate2:document.getElementById("food_rate2").innerHTML = "3.0",
-    }
-    let foodData3= {
-        food_Image3:document.getElementById("food_Image3").src = "../img/그믐족발.jpg",
-        food3:document.getElementById("food3").innerHTML = "한식",
-        food_name3:document.getElementById("food_name3").innerHTML = "그믐족발",
-        food_rate3:document.getElementById("food_rate3").innerHTML = "4.0",
-    }
-    let foodData4= {
-        food_Image4:document.getElementById("food_Image4").src = "../img/위풍당당족발.jpg",
-        food4:document.getElementById("food4").innerHTML = "한식",
-        food_name4:document.getElementById("food_name4").innerHTML = "위풍당당족발",
-        food_rate4:document.getElementById("food_rate4").innerHTML = "4.0",
-    }
-    let foodData5= {
-        food_Image5:document.getElementById("food_Image5").src = "../img/착한족발.jpg",
-        food5:document.getElementById("food5").innerHTML = "한식",
-        food_name5:document.getElementById("food_name5").innerHTML = "착한족발",
-        food_rate5:document.getElementById("food_rate5").innerHTML = "4.0",
-    }
-    let foodData6= {
-        food_Image6:document.getElementById("food_Image6").src = "../img/광장족발.jpg",
-        food6:document.getElementById("food6").innerHTML = "한식",
-        food_name6:document.getElementById("food_name6").innerHTML = "광장족발",
-        food_rate6:document.getElementById("food_rate6").innerHTML = "4.0",
-    }
-    let foodData7= {
-        food_Image7:document.getElementById("food_Image7").src = "../img/그믐족발.jpg",
-        food7:document.getElementById("food7").innerHTML = "한식",
-        food_name7:document.getElementById("food_name7").innerHTML = "그믐족발",
-        food_rate7:document.getElementById("food_rate7").innerHTML = "4.0",
-    }
-    let foodData8= {
-        food_Image8:document.getElementById("food_Image8").src = "../img/위풍당당족발.jpg",
-        food4:document.getElementById("food8").innerHTML = "한식",
-        food_name8:document.getElementById("food_name8").innerHTML = "위풍당당족발",
-        food_rate8:document.getElementById("food_rate8").innerHTML = "4.0",
-    }
-    let foodData9= {
-        food_Image9:document.getElementById("food_Image9").src = "../img/착한족발.jpg",
-        food5:document.getElementById("food9").innerHTML = "한식",
-        food_name9:document.getElementById("food_name9").innerHTML = "착한족발",
-        food_rate9:document.getElementById("food_rate9").innerHTML = "4.0",
-    }
+$('#comment1').text(keyword + " 맛집추천")
 
-}else{
-
+while(start <= end){
+    let lStore = storeList[start];
+    let rStore = storeList[end];
+    if(!addedStore.includes(lStore.storeName)){
+        if(lStore.storeName.includes(keyword) || lStore.menu.includes(keyword)){
+            displayList.push(lStore);
+            addedStore.push(lStore.storeName);
+        }
+    }
+    if(!addedStore.includes(rStore.storeName)){
+        if(rStore.storeName.includes(keyword) || rStore.menu.includes(keyword)){
+            displayList.push(rStore);
+            addedStore.push(rStore.storeName);
+        }
+    }
+    start += 1;
+    end -= 1;
 }
-let serchData = {
-    serchData1:document.getElementById("comment1").innerHTML = localStorage.getItem("keyword")+'맛집 추천',
+if(displayList.length === 0){
+    $('#field').html("\"" + keyword + "\" 관련 맛집이 없습니다.");
+}
+if(displayList.length != 0){
+    let idx = 0;
+    while(idx <= 8 || idx < displayList.length){
+        let tmp = displayList[idx];
+        let menu = tmp.menu.split(",");
+        let storeName = tmp.storeName;
+        if(storeName.length > 8){
+            storeName = storeName.substring(0, 8) + "...";
+        }
+        $('#food_li'+String(idx+1)).css("display", "");
+        $('#food_Image'+String(idx+1)).attr('name', tmp.storeName);
+        $('#food_Image'+String(idx+1)).attr('src', tmp.images[0]);
+        $('#food'+String(idx+1)).text(menu[0]+","+menu[1]);
+        $('#food_name'+String(idx+1)).text(storeName);
+        if(tmp.rate !== "평가중"){
+            $('#food_rate'+String(idx+1)).text(tmp.rate.substring(0, tmp.rate.length-2));
+        }
+        else{
+            $('#food_rate'+String(idx+1)).text(tmp.rate);
+        }
+        idx += 1;
+    }
 }
 
+$('a').click(function () {
+    let nameAttr = $(this).find('img').attr('name');
+    for (let each of displayList) {
+        if (each.storeName == nameAttr) {
+            localStorage.setItem('selectedStoreInfo', JSON.stringify(each));
+            break;
+        }
+    }
+});
 
-if (localStorage.getItem('foodList') == null) {
-    /* 최초의 data를 foodList에 넣는 작업 */
-    localStorage.setItem('foodList', JSON.stringify([foodData1]));
-
-    /* 이후의 데이터  */
-    foodList = JSON.parse(localStorage.getItem('foodList'))
-    foodList.push(foodData2);
-    foodList.push(foodData3);
-    foodList.push(foodData4);
-    foodList.push(foodData5);
-    foodList.push(foodData6);
-    localStorage.setItem('foodList', JSON.stringify([foodList]));
-}

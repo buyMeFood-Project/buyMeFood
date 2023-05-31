@@ -137,7 +137,7 @@
 .like_img {
     margin-top: 10px;
     height: 270px;
-    background: url("../img/1.jpg") no-repeat;
+    width: 270px;
     /* height: contain; */
     background-size: contain;
 }
