@@ -233,6 +233,7 @@ $('#like_list').html(likeListContent);
 
 
 
+const imgUrl = '../img/ready_img.jpg';
 
 for(let myPost of currUserInfo.mypost){
     let currPost = null;
@@ -243,12 +244,13 @@ for(let myPost of currUserInfo.mypost){
         }
     }
     postListContent += '<div class="mypost">\
-    <img class="mypost_image" id="post_image" src="'+ currPost.imageList[0]+'"></img>\
+    <img class="mypost_image" id="post_image" src="'+ (currPost.imageList[0] || imgUrl) +'"></img>\
     <div class="mypost_title" id="post_name">'+ currPost.storeName +'</div>\
     <span class="start">⭐</span>\
     <span class="mypost_rate" id="post_rate">'+currPost.rate +'</span>\
     <div class="mypost_content" id="post_content3">'+currPost.content+'</div>\
     </div>';
+
 }
 $('#mypost_list').html(postListContent);
 
