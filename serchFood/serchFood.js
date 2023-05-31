@@ -8,8 +8,8 @@ const storeList = JSON.parse(localStorage.getItem('storeData'));
 const displayList = [];
 const addedStore = [];
 let start = 0, end = storeList.length-1;
-
-$('#comment1').text(keyword + " 맛집추천")
+if(keyword.length > 1){
+$('#menuTitle').text(keyword + "의 검색결과")
 
 while(start <= end){
     let lStore = storeList[start];
@@ -28,11 +28,11 @@ while(start <= end){
     }
     start += 1;
     end -= 1;
-}
+}}
 if(displayList.length === 0){
-    $('#field').html("\"" + keyword + "\" 관련 맛집이 없습니다.");
+    $('#container').html("\"" + keyword + "\" 관련 맛집이 없습니다.");
 }
-if(displayList.length != 0){
+if(displayList.length != 0 || keyword.trim() !== ''){
     let idx = 0;
     while(idx <= 8 || idx < displayList.length){
         let tmp = displayList[idx];

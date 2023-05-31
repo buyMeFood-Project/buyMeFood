@@ -1,19 +1,28 @@
 
+#menuTitle {
+    width: 1100px;
+    margin: 20px auto 5px auto;
+    font-size: 40px;
+    text-align: left;
+    font-family: 'TmoneyRoundWindExtraBold';
+    padding-right: 200px;
+}
+
 #container {
-    width: 1000px;
-    height: 1200px;
+    width: 1300px;
+    height: 100%;
     margin: 20px auto;
-    margin-bottom: 50px;
-    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-content: space-between;
+
+    
 }
-#container #comment1 {
-    margin-left: 35px;
-}
-.food_list {
-    list-style: none;
-}
-.food_list img {
-    width: 300px; height: 260px;
+#comment1 {
+    width: 1300px;
+    padding-left: 20px;
+    margin: 20px auto;
+    font-size: large;
 }
 
 .food_list li {
@@ -49,14 +58,6 @@ div.p1 {
     width: 100%;
 }
 
-th{
-    text-align: left;
-}
-
-td {
-    text-align: center;
-    width: 20%;
-}
 
 .center {
     width: 60%;
@@ -98,44 +99,23 @@ a {
     color: orangered;
 }
 
-footer {
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
+.food_list {
+    margin: 0 auto;
 }
-
-#footer_line {
-    margin: 3px 0px;
-    padding-left: 0px;
+.food_list img {
+    width: 290px; height: 260px;
+    padding-bottom: 2px;
 }
-
-#footer_line li {
-    list-style: none;
-    display: inline-block;
-    font-weight: bold;
+.food_list .food_type {
+    color: rgb(156, 156, 156);
+    font-size: small;
+    line-height: 1px;
 }
-
-#footer_info {
-    display: inline-block;
-    font-size: 14px;
-    text-align: left;
-    margin-left: 20px;
-    margin-bottom: 10px;
+.food_list .rest_info {
+    font-weight: 500;
+    font-size: larger;
+    margin-bottom: 50px;
 }
-#field{
-    width: 1040px;
-    border:3px solid #FA914B55;
-    border-radius: 10px;
-
-}
-legend {
-    background-color: #FA914B;
-    color: #fff;
-    padding: 3px 6px;
-    font-size: 30px;
-    padding: 10px;
-    border-radius: 16px;
-
+.food_list .rest_info .rest_rate {
+    color: rgb(255, 204, 34);
 }
