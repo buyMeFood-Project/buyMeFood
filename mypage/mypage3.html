@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="../footer/footer.css">
 </head>
 <body style="padding: 0px">
-    <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
     <header id="GNB"></header>
     
     <div id="mypage_top"> <!-- 상단은 flex로 -->
@@ -68,15 +67,38 @@
                         <div class="like_img" id="rest_img3"></div>
                     </div>
                 </div>
+                <div class="paging" id="mylike_paging">
+                    <span>
+                        <button type="button" class="pages" value="prePage"><</button>
+                        <span id="pagination"> 
+                            <button type="button" class="pages" value="1">1</button> 
+                        </span>
+                        <button type="button" class="pages" value="nextPage">></button>
+                    </span>
+                </div>
             </div>
+            
             <div id="myPostForm" style="display:none;">
                 <h2 id="title2">내 게시글</h2>
                 <div id="mypost_list">
                 </div>
+                <div class="paging" id="mypost_paging">
+                    <span>
+                        <button type="button" class="pages" value="prePage"><</button>
+                        <span id="pagination"> 
+                            <button type="button" class="pages" value="1">1</button> 
+                        </span>
+                        <button type="button" class="pages" value="nextPage">></button>
+                    </span>
+                </div>            
             </div>
         </div>
     </div>
+
+    
+
     <footer id="footer"></footer>
+    <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="mypage3.js" type="module"></script>
 </body>

@@ -98,7 +98,8 @@ $('#signUp').click(function(){
                 phonenum: phonenum,
                 email: emailid + "@" + emaildomin,
                 mystore: [],
-                mypost: []
+                mypost: [],
+                useremoji: '🍔'
             }
             confirmModalControl("회원가입을 진행하시겠습니까?", '../login/login.html', function(result){
                 if(result){
