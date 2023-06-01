@@ -1,6 +1,5 @@
 // $(document).ready(function(){ 
-
-let currUser = sesssionStorage.getItem('currUser');
+let currUser = sessionStorage.getItem('currUser');
 let userList = JSON.parse(localStorage.getItem('userList'));
 let postList = JSON.parse(localStorage.getItem('postList'));
 let storeList = JSON.parse(localStorage.getItem('storeData'));
@@ -9,168 +8,62 @@ let postListContent = '';
 let likeListContent = '';
 
 for(let each of userList){
-    if(each.userid === currUser){
+    if(each.username === currUser){
         currUserInfo = each;
         break;
     }
 }
-let currUsername = currUserInfo.username; //바꿔줄 닉네임 username
-let currUserEmoji = currUserInfo.useremoji; //바꿔줄 이모지 useremoji
-
 $(function() {
     $('#GNB').load('../gnb/gnb.html');
     $('#footer').load('../footer/footer.html');
 });
-
-/* 이모지 버튼 */
-const btn = document.getElementById("emoji_btn");
 const picker = new EmojiButton({
-     position: 'top',
-     rootElement: document.getElementById("emoji_btn_area") // user_emoji 요소를 picker의 위치로 지정
- });
-
- $(document).on("click", "#emoji_btn", function(){
-     picker.togglePicker("#emoji_btn");
- });
-
- picker.on('emoji', emoji => {
-     const text_box = document.querySelector('#user_emoji');
-     text_box.innerHTML = emoji;
- });
-
-/* username 수정하는 부분 */
-let infoArea = document.getElementById("myinfo");
-
-// 현재 로그인한 유저 정보
-userId:document.getElementById("userId").innerHTML = currUsername;
-
-//현재 이모지 정보를 html에
-user_emoji:document.getElementById("user_emoji").innerHTML = currUserEmoji;
-
-//수정 버튼 누르기
-$(document).on('click', '#editbtn', function() {
-    currUsername = currUserInfo.username; //바꿔줄 닉네임 username
-    currUserEmoji = currUserInfo.useremoji;
-
-    // value="' + currUsername + '">
-    infoArea.innerHTML = '\
-        <form id="edit_inform">\
-        <div id="user_emoji"></div>\
-        <dl>\
-            <dt><h2>마이 페이지</h2></dt>\
-            <dd>\
-                <input id="userId" type="text">\
-                <button id="emoji_btn" type="button">이모지</button>\
-                <button id="donebtn" type="submit">확인</button>\
-            </dd>\
-        </dl>\
-        </form>\
-    ';
-/*
-    const userEmoji = document.getElementById("user_emoji");
-    const emojiBtnShow = document.getElementById("emoji_btn_show");
-    const picker = new EmojiButton({
-        position: 'top',
-        rootElement: emojiBtnShow
-    });
-
-    picker.on('emoji', emoji => {
-        // const text_box = document.querySelector('#user_emoji');
-        // text_box.innerHTML = emoji;
-        userEmoji.innerHTML = emoji;
-    });
-
-    $(document).on("click", "#emoji_btn", function(){
-        picker.togglePicker("#emoji_btn");
-    });
-
-    userEmoji.innerHTML = currUserEmoji;
-*/  
-    user_emoji:document.getElementById("user_emoji").innerHTML = currUserEmoji;
-    userId:document.getElementById("userId").value = currUsername;
+    position: 'top',
+    rootElement: document.getElementById("emoji_btn_area") // user_emoji 요소를 picker의 위치로 지정
 });
 
-$(document).on('submit', 'form', function(event) {
-    event.preventDefault(); // 기본 폼 제출 동작 방지
+$(document).on("click", "#emoji_btn", function(){
+    picker.togglePicker("#emoji_btn");
+});
 
-    const userEmojiValue = $('#user_emoji').html();
-    const usernameValue = $(this).find('input[type="text"]').val();
-    //$('#userId').text(usernameValue);
+picker.on('emoji', emoji => {
+    $('#user_emoji').text(emoji);
+});
 
-    //user_emoji:document.getElementById("user_emoji").innerHTML = 
+$("#userId").text(currUserInfo.username);
+$("#user_emoji").text(currUserInfo.useremoji);
 
-    // 기존 폼 요소 및 버튼 등을 변경하기 위해 infoArea.innerHTML 대신 다음과 같이 코드를 작성합니다:
-    if(userEmojiValue != currUserEmoji ||
-        usernameValue != currUsername) {
-            currUserEmoji = userEmojiValue;
-            currUsername = usernameValue;
+$('#editbtn').click(function() {
+    $('#edit_inform').css('display', "");
+    $('#default').hide();
+    $("#user_emoji").text(currUserInfo.useremoji);
+    $('#edit_inform').find("#userId").val(currUserInfo.username);
+});
 
-            for (let each of userList) {
-                if (each.userid === currUser) {
-                    each.username = currUsername;
-                    each.useremoji = currUserEmoji;
+$('#donebtn').click(function(event) {
+    event.preventDefault();
+    let editedName = $('#edit_inform').find('#userId').val();
+    let editedEmoji = $('#user_emoji').text();
+    if(editedName !== currUserInfo.username ||
+        editedEmoji !== currUserInfo.useremoji) {       
+            for(let each of userList){
+                if(each.username === currUser){
+                    each.username = editedName;
+                    each.useremoji = editedEmoji;
                     break;
                 }
             }
-            //const userId = (JSON.parse(localStorage.getItem('userList'))[idx].userid);
-            
-
-            // userList[i].username = currUsername;
-            // userList[i].useremoji = currUserEmoji;
-
+            sessionStorage.setItem('currUser', editedName);
             localStorage.setItem('userList', JSON.stringify(userList));
-
-        //currUser, userList
     }
-    
-
-    infoArea.innerHTML = '\
-        <div id="user_emoji"></div>\
-        <dl>\
-            <dt><h2>마이 페이지</h2></dt>\
-            <dd>\
-            <span id="userId"></span>\
-            <button id="editbtn">✏️</button>\
-            </dd>\
-        </dl>\
-    ';
-
-    user_emoji:document.getElementById("user_emoji").innerHTML = currUserEmoji;
-    userId:document.getElementById("userId").innerHTML = currUsername;
-    localStorage.setItem('currUser',  currUsername);
-    //localStorage.getItem()
-
-    
-    window.location.reload;
+    localStorage.removeItem('emojiPicker.recent');
+    window.location.reload();
 });
-
-/* localStorage에 저장된 찜 목록을 불러와서 띄워주기 
-1. likeList 리스트 찾기
-2. 불러와서 html로 보내주기
-*/
 
 $('#myPost').click(function(){
     $('#myPostForm').css("display", "");
     $('#myStoreForm').hide();
-    
-    // for(let myPost of currUserInfo.mypost){
-    //     let currPost = null;
-    //     for(let post of postList){
-    //         if(postList.postToken === myPost){
-    //             currPost = post;
-    //             break;
-    //         }
-    //     }
-    //     $('#like_list')
-    // }
 });
-
-{/* <div class="mypost">
-    <div class="mypost_title" id="post_name"></div>
-    <span class="start">⭐</span>
-    <span class="mypost_rate" id="post_rate"></span>
-    <div class="mypost_content" id="post_content3"></div>
-</div> */}
 $('#likeList').click(function(){
     $('#myStoreForm').css("display", "");
     $('#myPostForm').hide();
@@ -222,12 +115,10 @@ for(let myPost of currUserInfo.mypost){
     <span class="mypost_rate" id="post_rate">'+currPost.rate +'</span>\
     <div class="mypost_content" id="post_content3">'+currPost.content+'</div>\
     </div>';
-
 }
+
 $('#mypost_list').html(postListContent);
-
 $('a').attr('target', '_blank');
-
 $('a').click(function(){
     let nameAttr = $(this).find('img').attr('name');
     for(let each of storeList){

@@ -12,23 +12,28 @@
 <body style="padding: 0px">
     <header id="GNB"></header>
     
-    <div id="mypage_top"> <!-- 상단은 flex로 -->
+    <div id="mypage_top"> 
         <div id="myinfo">
             <div id="user_emoji"></div>
-            <dl>
-                <dt><h2>마이 페이지</h2></dt>
-                <dd><span id="userId"></span>
-                    <button id="editbtn">✏️</button>
-                </dd>
-            </dl>
-            <!-- <h2 id="top">마이페이지</h2>
-            <span id="userId">백연정</span>
-            <button id="editbtn" onclick="changeInfo()">✏️</button> -->
+            <div id="default">
+                <dl>
+                    <dt><h2>마이 페이지</h2></dt>
+                    <dd><span id="userId"></span>
+                        <button id="editbtn">✏️</button>
+                    </dd>
+                </dl>
+            </div>
+            <form id="edit_inform" style="display: none">
+                <dl>
+                    <dt><h2>마이 페이지</h2></dt>
+                    <dd>
+                        <input id="userId" type="text">
+                        <button id="emoji_btn" type="button">이모지</button>
+                        <button id="donebtn" type="submit">확인</button>
+                    </dd>
+                </dl>
+            </form>
         </div>
-        <!-- <div id="util">
-            <a href="">로그아웃</a>
-            <a href="">마이페이지</a>
-        </div> -->
     </div>
     <div id="emoji_btn_area"></div>
     <div id="mypageImg"></div>

@@ -41,11 +41,10 @@ $('#byEmail').click(function(){
 
 // Find Id Function
 $('#findId').click(function(){
-    const searchName = $('#searchName').val();
     let phoneNumOption = $('#byPhoneNum');
     let findOption = phoneNumOption.prop('checked') ? $('.find__box.byPhone').find('#findOption').val() : $('.find__box.byMail').find('#findOption').val();
     
-    if(searchName === '' || findOption === ''){
+    if(findOption === ''){
         alertModalControl('공란이 존재합니다. <br> 확인 후 다시 입력해주세요.');
     }
     else{
@@ -89,11 +88,10 @@ $('#findId').click(function(){
 
 // Find Password Function
 $('#findPW').click(function() {
-    const searchName = $('#searchName2').val();
     const searchID = $('#searchID').val();
     const searchEmail = $('#searchEmail').val();
 
-    if(searchName === '' || searchID === '' || searchEmail === ''){
+    if(searchID === '' || searchEmail === ''){
         alertModalControl('공란이 존재합니다. <br> 확인 후 다시 입력해주세요.');
     }
     else{
@@ -103,9 +101,7 @@ $('#findPW').click(function() {
         else{
             let isExist = false;
             for(let user of userList){
-                if(user.username === searchName
-                    && user.userid === searchID
-                    && user.email === searchEmail){
+                if(user.userid === searchID && user.email === searchEmail){
                         isExist = true;
                         $('#beforePW').css('display', 'none');
                         $('#afterPW').css('display', 'block');

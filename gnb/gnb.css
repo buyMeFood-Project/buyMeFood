@@ -70,6 +70,9 @@ header h1 img {
 i {
   color: #FA914B;
 }
+#gnbIcon{
+  font-size: 3rem;
+}
 #util {
   width: 300px;
   height: 100px;

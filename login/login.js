@@ -22,16 +22,15 @@ $('#login').click(function(){
             for(let user of userList){
                 if(user.userid === userid && user.password === userPw){
                     isOkay = true;
+                    sessionStorage.setItem('currUser', user.username);
                     break;
                 }
             }
-        
             if(isOkay){
-                sessionStorage.setItem('currUser', userid);
                 window.location.href = "../main.html";
             }
             else{
-                alertModalControl("일치하는 정보가 없습니다.<br>아이디 혹은 비밀번호를<br>확인 후 다시 로그인해주세요.")
+                alertModalControl("일치하는 정보가 없습니다.<br>아이디 혹은 비밀번호를<br>확인 후 다시 로그인해주세요.");
             }
         }
     }

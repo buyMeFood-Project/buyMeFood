@@ -5,10 +5,17 @@ window.onload = function(){
     });
 }
 var currUser = localStorage.getItem('currUser') ? localStorage.getItem('currUser') : sessionStorage.getItem('currUser');
-
-if(currUser !== null){
+let currUserInfo = null;
+for(let user of JSON.parse(localStorage.getItem('userList'))){
+    if(user.username === currUser){
+        currUserInfo = user;
+        break;
+    }
+}
+if(currUser){
     $('#util').hide();
     $('#util_afterLogin').css('display', 'flex');
+    $('#gnbIcon').text(currUserInfo.useremoji);
     $('#nickname').text(" " + currUser);
 }
 else{
