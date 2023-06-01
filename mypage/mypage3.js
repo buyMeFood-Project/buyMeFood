@@ -58,7 +58,7 @@ $(document).on('click', '#editbtn', function() {
 
     // value="' + currUsername + '">
     infoArea.innerHTML = '\
-        <form>\
+        <form id="edit_inform">\
         <div id="user_emoji"></div>\
         <dl>\
             <dt><h2>마이 페이지</h2></dt>\
@@ -129,48 +129,6 @@ $(document).on('submit', 'form', function(event) {
     
     window.location.reload;
 });
-/*
-$(document).on('click', '#donebtn', function() {
-    const usernameValue = $(this).find('input[type="text"]').val();
-    // 가져온 값(usernameValue)을 이용하여 원하는 동작 수행
-
-    $('#userId').text(usernameValue);
-
-    alert(usernameValue);
-
-    infoArea.innerHTML = '\
-        <div id="user_emoji"></div>\
-        <dl>\
-            <dt><h2>마이 페이지</h2></dt>\
-            <dd>\
-            <span id="userId">' + usernameValue + '</span>\
-            <button id="editbtn">✏️</button>\
-            </dd>\
-        </dl>\
-    ';
-    /*
-    if(username != usernameValue) {
-        localStorage.setItem('user_emojiInfo'.userId, JSON.stringify(usernameValue));
-        username = usernameValue;
-    }
-    //userId:document.getElementById("userId").innerHTML = username;
-
-    let new_emoji = document.getElementById("user_emoji").innerHTML;
-    localStorage.setItem('user_emojiInfo'.userEmoji, JSON.stringify(new_emoji));
-    
-});
-*/
-
-/*
-if (localStorage.getItem('userList') == null) {
-        localStorage.setItem('userList', JSON.stringify([data]));   
-    }
-    else {
-        userList = JSON.parse(localStorage.getItem('userList'));
-        userList.push(data);
-        localStorage.setItem('userList', JSON.stringify(userList));
-    }
-*/
 
 /* localStorage에 저장된 찜 목록을 불러와서 띄워주기 
 1. likeList 리스트 찾기
