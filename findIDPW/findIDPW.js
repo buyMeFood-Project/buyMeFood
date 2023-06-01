@@ -8,12 +8,16 @@ $(function() {
 // Display input form for find id info
 $("#idInfo").click(function(){
     $('#forID').css('display', '');
+    $(this).css('background-color', '#FC6B0A');
+    $('#pwInfo').css('background-color', '#FA914B')
     $('#forPW').css('display', 'none');
     $('input').val('');
 });
 
 // Display input form for find pwd info
 $('#pwInfo').click(function(){
+    $(this).css('background-color', '#FC6B0A');
+    $('#idInfo').css('background-color', '#FA914B')
     $('#forID').css('display', 'none');
     $('#forPW').css('display', '');
     $('input').val('');
@@ -21,23 +25,26 @@ $('#pwInfo').click(function(){
 
 // Change option between phoneNum and email for find id
 $('#byPhoneNum').click(function(){
-    $('#changeable').html("휴대폰: ");
-    $('#findOption').attr('type', 'number');
+    $('.find__box.byPhone').css('display', '');
+    $('.find__box.byMail').css('display', 'none');
+    $('.find__box.byPhone').find('#findOption').attr('type', 'number');
     $('input').val('');
     
 });
 
 $('#byEmail').click(function(){
-    $('#changeable').html("이메일: ");
-    $('#findOption').attr('type', 'text');
+    $('.find__box.byPhone').css('display', 'none');
+    $('.find__box.byMail').css('display', '');
+    $('.find__box.byMail').find('#findOption').attr('type', 'text');
     $('input').val('');
 });
 
 // Find Id Function
 $('#findId').click(function(){
     const searchName = $('#searchName').val();
-    const findOption = $('#findOption').val();
     let phoneNumOption = $('#byPhoneNum');
+    let findOption = phoneNumOption.prop('checked') ? $('.find__box.byPhone').find('#findOption').val() : $('.find__box.byMail').find('#findOption').val();
+    
     if(searchName === '' || findOption === ''){
         alertModalControl('공란이 존재합니다. <br> 확인 후 다시 입력해주세요.');
     }
