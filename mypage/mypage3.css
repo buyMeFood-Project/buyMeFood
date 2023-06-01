@@ -28,6 +28,12 @@
 }
 #myinfo dl dt h2 {
     display: inline;
+    font-size: 30px;
+}
+#userId {
+    font-family: 'Pretendard-Regular';
+    font-size: 17px;
+    margin-right: 4px;
 }
 #editbtn {
     position: relative;
@@ -36,12 +42,13 @@
     padding: 0px;
     cursor: pointer;
     position: absolute;
-    top: 38px;
+    top: 39px;
 }
 #emoji_btn_area {
     position: absolute;
     top: 250px;
     left: 300px;
+    z-index: 5;
 }
 #mypageImg:not(div .emoji-picker) {
     left: 0; right: 0;
@@ -72,13 +79,6 @@
     height: 162px;
     border-radius: 10px;
 }
-/*#mypage_nav {
-    /* border: 2px solid #FA914B;
-    background-color: #FA914B;
-    border-radius: 10px;
-    width: 150px;
-    margin-right: 10px;
-} */
 #mypage_nav > div {
     font-family: 'TmoneyRoundWindExtraBold';
     text-align: center;
@@ -206,24 +206,6 @@
 #myinfo #donebtn:hover {
     background: #FC6B0A;
 }
-
-.paging {
-    margin: 0 auto;
-    margin-top: 10px;
-    text-align: center;
-    font-size: 15px;
-}
-.pages{ 
-    color: gray;
-    background-color: white;
-    border: transparent;
-    font-weight: bolder;
-}
-#pagination button { 
-    cursor: pointer;
-    border-radius: 5px;
-}
-
 form #user_emoji {
     margin-top: -16px;
 }
