@@ -3,8 +3,6 @@ $(document).ready(function(){
     $('#footer').load('footer/footer.html');
     const data = JSON.parse(localStorage.getItem('storeData'));
     localStorage.setItem('selectedStoreInfo', '');
-    localStorage.setItem('postCurrPage', "1");
-    localStorage.setItem('searchKeyword', '');
     let displayed = [];
     for(let i = 1; i <= 12; i++){
         var index = String(i);
@@ -32,8 +30,9 @@ $(document).ready(function(){
         $('#food_name'+index).html(storeName);
     }
 
+    $('a').attr('target', '_blank');
     $('a').click(function(){
-        var nameAttr = $(this).find('img').attr('name');
+        let nameAttr = $(this).find('img').attr('name');
         for(let each of data){
             if(each.storeName === nameAttr){
                 localStorage.setItem('selectedStoreInfo', JSON.stringify(each));

@@ -212,6 +212,7 @@ for(let myPost of currUserInfo.mypost){
 }
 $('#mypost_list').html(postListContent);
 
+$('a').attr('target', '_blank');
 
 $('a').click(function(){
     let nameAttr = $(this).find('img').attr('name');
