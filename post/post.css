@@ -1,5 +1,5 @@
 #menuTitle {
-    width: 1100px;
+    width: 1000px;
     margin: 20px auto 5px auto;
     font-size: 40px;
     text-align: left;
@@ -7,7 +7,7 @@
 }
 
 #container {
-    width: 1100px;
+    width: 1000px;
     margin: 10px auto;
     border-radius: 10px;
     display: flex;
@@ -39,16 +39,18 @@
     display: inline;
     padding: 5px 20px 5px 20px; */
     border-radius: 10px;
-    font-size: 32px;
-    font-weight: 650; 
+    font-size: 30px;
+
 }
 .post #info {
     font-size: 14px;
     border-bottom: 2px solid #e3e3e3;
+    font-family: 'Pretendard-Regular';
 }
 .post #content {
     margin-top: 10px;
     font-size: 17px;
+    font-family: 'Pretendard-Regular';
 }
 .post #images {
     margin-top: 15px;
@@ -57,8 +59,8 @@
     flex-direction: row;
 }
 .post #images img {
-    margin: 5px;
-    height: 200px;
+    margin: 10px;
+    height: 150px;
     background-size: contain;
 }
 .post #info {
@@ -84,11 +86,13 @@
     cursor: pointer;
 }
 .commentArea {
+    font-family: 'Pretendard-Regular';
     border-top: 2px solid #d0d0d0;
     margin-top: 10px;
     padding: 10px;
     background-color: #f9f9f9;
-    font-size: 18px;
+    font-size: 15px;
+    color: rgb(56, 56, 56);
 }
 .commentArea label {
     height: 50px;
@@ -120,6 +124,7 @@
 }
 #paging {
     text-align: center;
+    margin-bottom: 20px;
 }
 #addPost {
     font-size: large;
