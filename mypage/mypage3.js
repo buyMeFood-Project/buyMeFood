@@ -26,7 +26,7 @@ $(function() {
 const btn = document.getElementById("emoji_btn");
 const picker = new EmojiButton({
      position: 'top',
-     rootElement: document.getElementById("emoji_btn_area")//.parentElement // user_emoji 요소를 picker의 위치로 지정
+     rootElement: document.getElementById("emoji_btn_area") // user_emoji 요소를 picker의 위치로 지정
  });
 
  $(document).on("click", "#emoji_btn", function(){
