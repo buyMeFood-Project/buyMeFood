@@ -25,22 +25,18 @@ $(function() {
 /* 이모지 버튼 */
 const btn = document.getElementById("emoji_btn");
 const picker = new EmojiButton({
-    position: 'top'
-});
+     position: 'top',
+     rootElement: document.getElementById("emoji_btn_area")//.parentElement // user_emoji 요소를 picker의 위치로 지정
+ });
 
-$(document).on("click", "#emoji_btn", function(){
-    picker.togglePicker(btn);
-});
+ $(document).on("click", "#emoji_btn", function(){
+     picker.togglePicker("#emoji_btn");
+ });
 
-picker.on('emoji', emoji => {
-    const text_box = document.querySelector('#user_emoji');
-
-    text_box.innerHTML = emoji;
-});
-
-$(document).on('click', '#emoji_btn', function() {
-    picker.togglePicker('#emoji_btn');
-});
+ picker.on('emoji', emoji => {
+     const text_box = document.querySelector('#user_emoji');
+     text_box.innerHTML = emoji;
+ });
 
 /* username 수정하는 부분 */
 let infoArea = document.getElementById("myinfo");
@@ -64,16 +60,34 @@ $(document).on('click', '#editbtn', function() {
             <dt><h2>마이 페이지</h2></dt>\
             <dd>\
                 <input id="userId" type="text">\
-                <button id="emoji_btn" type="button">이모지 수정</button>\
+                <button id="emoji_btn" type="button">이모지</button>\
                 <button id="donebtn" type="submit">확인</button>\
             </dd>\
         </dl>\
         </form>\
     ';
+/*
+    const userEmoji = document.getElementById("user_emoji");
+    const emojiBtnShow = document.getElementById("emoji_btn_show");
+    const picker = new EmojiButton({
+        position: 'top',
+        rootElement: emojiBtnShow
+    });
 
+    picker.on('emoji', emoji => {
+        // const text_box = document.querySelector('#user_emoji');
+        // text_box.innerHTML = emoji;
+        userEmoji.innerHTML = emoji;
+    });
+
+    $(document).on("click", "#emoji_btn", function(){
+        picker.togglePicker("#emoji_btn");
+    });
+
+    userEmoji.innerHTML = currUserEmoji;
+*/  
     user_emoji:document.getElementById("user_emoji").innerHTML = currUserEmoji;
     userId:document.getElementById("userId").value = currUsername;
-
 });
 
 $(document).on('submit', 'form', function(event) {

@@ -35,8 +35,13 @@
     background-color: transparent;
     padding: 0px;
     cursor: pointer;
+    position: absolute;
+    top: 38px;
 }
-
+#emoji_btn_area {
+    position: absolute;
+    margin-left: 50px;
+}
 #mypageImg {
     left: 0; right: 0;
     height: 300px;
@@ -44,6 +49,7 @@
     background-size: 1800px;
     /* background-size: contain; */
     opacity: 0.55;
+    pointer-events: none;
     /* border-top: 5px solid #FA914B; */
 }
 #imgText {
@@ -53,19 +59,7 @@
     width: 100%;
     text-align: center;
 }
-#imgText span {
-    color: #565656a8;
-    font-size: 20px;
-    font-weight: 550;
-    font-family: 'TmoneyRoundWindExtraBold';  
-}
-#imgText div {
-    margin-top: 10px;
-    font-size: 45px;
-    font-weight: 580;
-    letter-spacing: 5px;
-    font-family: 'TmoneyRoundWindExtraBold';
-}
+
 #container {
     margin: 40px auto;
     width: 1000px;
@@ -155,8 +149,10 @@
 .like_shop .like_rate {
     color: rgb(255, 204, 34);
 }
-#myStoreForm #mylike_paging {
-
+#myStoreForm, #myPostForm {
+    border: 3px solid #FA914B55;
+    padding: 10px 25px 10px 25px;
+    border-radius: 5px;
 }
 #mypost_list {
     display: flex;
@@ -184,13 +180,47 @@
 .mypost .mypost_content {
 
     margin: 5px;
-    color: rgb(104, 104, 104);
+    color: rgb(133, 133, 133);
 }
 
 #myinfo #emoji_btn {
     border: transparent;
-    background: transparent;
+    background: #FA914B;
+    border-radius: 5px;
+    font-size: 10px;
+    color: white;
+    padding: 5px;
     cursor: pointer;
+}
+#myinfo #donebtn {
+    border: transparent;
+    background: #FA914B;
+    border-radius: 5px;
+    font-size: 10px;
+    color: white;
+    padding: 5px 10px 5px 10px;
+    cursor: pointer;
+}
+#myinfo #emoji_btn:hover,
+#myinfo #donebtn:hover {
+    background: #FC6B0A;
+}
+
+.paging {
+    margin: 0 auto;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 15px;
+}
+.pages{ 
+    color: gray;
+    background-color: white;
+    border: transparent;
+    font-weight: bolder;
+}
+#pagination button { 
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 form #user_emoji {
