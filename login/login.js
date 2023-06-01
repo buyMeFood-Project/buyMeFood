@@ -16,7 +16,7 @@ $('#login').click(function(){
     }
     else{
         if(userList === null){
-            alertModalControl("존재하지 않는 정보입니다. 회원가입을 먼저 진행해주세요.");
+            alertModalControl("존재하지 않는 정보입니다.<br>회원가입을 먼저 진행해주세요.");
         }
         else{
             for(let user of userList){
@@ -31,7 +31,7 @@ $('#login').click(function(){
                 window.location.href = "../main.html";
             }
             else{
-                alertModalControl("일치하는 정보가 없습니다. 아이디 혹은 비밀번호를 확인 후 다시 로그인해주세요.")
+                alertModalControl("일치하는 정보가 없습니다.<br>아이디 혹은 비밀번호를<br>확인 후 다시 로그인해주세요.")
             }
         }
     }

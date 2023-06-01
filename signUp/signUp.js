@@ -87,7 +87,7 @@ $('#signUp').click(function(){
     let emaildomin = $('#emaildomain').val();
     if(username === '' || userid === '' || password === '' ||
         phonenum === '' || emailid === '' || emaildomin === ''){
-            alertModalControl("공란이 존재합니다. 확인 후 입력해주세요.");
+            alertModalControl("공란이 존재합니다.<br>확인 후 입력해주세요.");
     }
     else{
         if(validationCheck(password)){
@@ -112,7 +112,7 @@ $('#signUp').click(function(){
 });
 
 $('#back').click(function(){
-    confirmModalControl("회원가입을 취소하고 로그인 페이지로 이동하시겠습니까?", '../login/login.html', function(result){
+    confirmModalControl("회원가입을 취소하고<br>로그인 페이지로 이동하시겠습니까?", '../login/login.html', function(result){
         
     });
 })
