@@ -39,6 +39,7 @@ $('#search_input').keypress(function(event){
     if(event.keyCode === 13){
         var search_keyword = $(this).val();
         localStorage.setItem('searchKeyword', search_keyword);
+        localStorage.setItem('searchCurrPage', '1');
         window.location.href = "../serchFood/serchFood.html";
         
     }
@@ -46,5 +47,10 @@ $('#search_input').keypress(function(event){
 $('#search_btn').click(function(){
     let keyword = $(this).parent().find('#search_input').val();
     localStorage.setItem('searchKeyword', keyword);
+    localStorage.setItem('searchCurrPage', '1');
     window.location.href = "../serchFood/serchFood.html";
+})
+
+$('#nav2').click(function(){
+    localStorage.setItem('postCurrPage', 1);
 })

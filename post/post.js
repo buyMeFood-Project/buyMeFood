@@ -69,16 +69,17 @@ $(".likeBtn").click(function() {
             if(post.postToken === token){
                 if(!post.likes.includes(currUser)){
                     post.likes.push(currUser);
+                    $(this).find('.likeIcon').text('❤️');
                 }
                 else{
                     post.likes.splice(post.likes.indexOf(currUser), 1);
-                    $(this).parent().find('.likeIcon').html('♡');
+                    $(this).find('.likeIcon').text('🤍');
                 }        
-                $(this).parent().find('#likeCounts').html(post.likes.length);
+                $(this).parent().find('#likeCounts').text(post.likes.length);
                 localStorage.setItem('postList', JSON.stringify(postList));
+                break;
             }
         }
-        window.location.reload();
     }
 });
 
