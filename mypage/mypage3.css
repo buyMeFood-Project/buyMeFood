@@ -40,9 +40,10 @@
 }
 #emoji_btn_area {
     position: absolute;
-    margin-left: 50px;
+    top: 250px;
+    left: 300px;
 }
-#mypageImg {
+#mypageImg:not(div .emoji-picker) {
     left: 0; right: 0;
     height: 300px;
     background: url("../img/mypage.jpg") no-repeat center;
