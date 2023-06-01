@@ -1,6 +1,6 @@
 // $(document).ready(function(){ 
 
-let currUser = sessionStorage.getItem('currUser');
+let currUser = sesssionStorage.getItem('currUser');
 let userList = JSON.parse(localStorage.getItem('userList'));
 let postList = JSON.parse(localStorage.getItem('postList'));
 let storeList = JSON.parse(localStorage.getItem('storeData'));

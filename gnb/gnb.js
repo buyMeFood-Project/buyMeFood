@@ -4,7 +4,7 @@ window.onload = function(){
         localStorage.setItem('search_keyword', search_keyword);
     });
 }
-var currUser = sessionStorage.getItem('currUser');
+var currUser = localStorage.getItem('currUser') ? localStorage.getItem('currUser') : sessionStorage.getItem('currUser');
 
 if(currUser !== null){
     $('#util').hide();

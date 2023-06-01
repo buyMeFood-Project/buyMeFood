@@ -1,7 +1,7 @@
 import { alertModalControl } from "../alertModal/modal.js";
 const selectedStore = JSON.parse(localStorage.getItem('selectedStoreInfo'));
-let currUser = sessionStorage.getItem('currUser');
 let currUserInfo = null;
+let currUser = localStorage.getItem('currUser');
 let userList = JSON.parse(localStorage.getItem('userList'));
 let isAdded = false;
 
@@ -32,13 +32,6 @@ $(document).ready(function () {
 
     $(".heart_icon").click(function () {
       if(isAdded){
-
-        // $('#Like').hover(function() {
-        //   $(this).css("color", "#FC6B0A");
-        // }, function(){
-        //   $(this).css("color", "black");
-        // });
-
         $(".heart_icon").text("♡");
         $("#Like").css("color","black");
         let storeIdx = currUserInfo.mystore.indexOf(selectedStore.storeName);
@@ -80,4 +73,8 @@ $(document).ready(function () {
   $('#menu').text(selectedStore.menu);
   $('#parking').text(selectedStore.parking);
 $('#moreInfo').html('<a href="'+ selectedStore.storeLink + '" target="blank" style="color:#FA914B">자세히 보기</a>');
+});
+
+$(window).on('unload', function() {
+      localStorage.removeItem('currUser');
 });

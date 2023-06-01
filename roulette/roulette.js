@@ -1,3 +1,5 @@
+import { searchFunction } from "../commonFunc.js";
+
 const menu = ["족발", "한식", "중식", "일식", "양식", "분식", "베트남 음식", "태국 음식", "돈까스", "햄버거", "우동", "칼국수", "국밥", "백반", "피자", "파스타", "마라탕", "쌀국수", "떡볶이", "덮밥", "샌드위치", "카페"];
 const total = menu.length;
 const storeList = JSON.parse(localStorage.getItem('storeData'));
@@ -13,7 +15,6 @@ $(document).ready(function(){
     document.querySelector('#menu_btn').addEventListener("click", function(){
         // Clear any ongoing slot animation
         clearInterval(slotAnimation);
-        let addedStore = [];
         let displayList = [];
         let placeArea = document.getElementById('place_list');
         placeArea.innerHTML = '';
@@ -35,27 +36,7 @@ $(document).ready(function(){
             var rand_num = Math.floor(Math.random() * total);
             var selected_menu = menu[rand_num];
             document.getElementById('menu_btn').innerHTML = selected_menu;
-    
-            let start = 0, end = storeList.length - 1;
-            while(start <= end){
-                let lStore = storeList[start];
-                let rStore = storeList[end];
-    
-                if(!addedStore.includes(lStore.storeName)){
-                    if(lStore.menu.includes(selected_menu) || lStore.storeName.includes(selected_menu)){
-                        displayList.push(lStore);
-                        addedStore.push(lStore.storeName);
-                    }
-                }
-                if(!addedStore.includes(rStore.storeName)){
-                    if(rStore.menu.includes(selected_menu) || rStore.storeName.includes(selected_menu)){
-                        displayList.push(rStore);
-                        addedStore.push(rStore.storeName);
-                    }
-                }
-                start++;
-                end--;
-            }
+            displayList = searchFunction(selected_menu);
             let displayedStore = [];
             for (var i = 0; i < 4; i++) {
                 let randStore = displayList[Math.floor(Math.random() * displayList.length)];

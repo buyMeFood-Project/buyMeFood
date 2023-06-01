@@ -1,4 +1,4 @@
-import { searchFunction } from "../searchFunc.js";
+import { searchFunction } from "../commonFunc.js";
 let displayList = [];
 let pagingArea = "";
 
@@ -54,7 +54,7 @@ $(document).ready(function(){
     }
     
     $('a').attr('target', '_blank');
-    $('a').click(function () {
+    $('.food_list').on('click', 'a', function(){
         let nameAttr = $(this).find('img').attr('name');
         for (let each of displayList) {
             if (each.storeName == nameAttr) {
@@ -62,6 +62,7 @@ $(document).ready(function(){
                 break;
             }
         }
+        localStorage.setItem('currUser', sessionStorage.getItem('currUser'));
     });
 
     $('.pages').click(function(){
