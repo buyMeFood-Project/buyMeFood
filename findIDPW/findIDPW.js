@@ -1,5 +1,4 @@
 import { alertModalControl } from "../alertModal/modal.js";
-const userList = JSON.parse(localStorage.getItem('userList'));
 
 $(function() {
     $("#modalContainer").load("../alertModal/modal.html");

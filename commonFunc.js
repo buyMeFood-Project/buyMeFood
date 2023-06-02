@@ -136,3 +136,21 @@ export function returnPost(postToken, postList){
     }
     return null;
 }
+
+// 마지막 방문시간과 현재 방문 시간 비교하여 1분 초과 시 자동로그아웃
+$(window).on('load', function(){
+    if(localStorage.getItem('lastVisit')){
+        var lastVisit = parseInt(localStorage.getItem('lastVisit'), 10);
+        var currVisit = parseInt(new Date().getTime());
+        if((currVisit - lastVisit) / (1000 * 60) >= 1){
+            localStorage.removeItem('currUser');
+        }
+    }
+});
+
+//로그인 상태에서 브라우저 종료 시 방문시간 기록
+$(window).on('unload', function() {
+    if(localStorage.getItem('currUser')){
+        localStorage.setItem('lastVisit', new Date().getTime());
+    }
+});

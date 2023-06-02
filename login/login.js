@@ -20,7 +20,7 @@ $(document).ready(function(){
             else{
                 var isOkay = loginFunc(userid, userpw);
                 if(isOkay !== null){
-                    sessionStorage.setItem('currUser', isOkay)
+                    localStorage.setItem('currUser', isOkay);
                     window.location.href = "../main.html";
                 }
                 else{

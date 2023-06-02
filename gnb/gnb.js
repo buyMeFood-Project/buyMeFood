@@ -50,7 +50,7 @@ $(document).ready(function(){
         $("#" + selectedMenuItem).closest("li").addClass("on");
     }
     $('#logout').click(function(){
-        sessionStorage.removeItem('currUser');
+        localStorage.removeItem('currUser');
         window.location.href("../main.html");
     });
     $('#nav2').click(function(){

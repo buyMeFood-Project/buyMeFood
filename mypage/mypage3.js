@@ -56,7 +56,7 @@ $(document).ready(function(){
                         break;
                     }
                 }
-                sessionStorage.setItem('currUser', editedName);
+                localStorage.setItem('currUser', editedName);
                 localStorage.setItem('userList', JSON.stringify(userList));
                 localStorage.removeItem('emojiPicker.recent');
                 window.location.reload();
