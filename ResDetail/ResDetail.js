@@ -6,16 +6,9 @@ let userList = JSON.parse(localStorage.getItem('userList'));
 let isAdded = false;
 
 $(document).ready(function () {
-  $(function () {
-    $("#GNB").load("../gnb/gnb.html");
-    $("#footer").load("../footer/footer.html");  
-    $('#modalContainer').load("../alertModal/modal.html");
-  });
-  $(".heart_icon").click(function () {
-    if(!currUser){
-      alertModalControl("로그인 후 이용해주세요.");
-    }
-  });
+  $("#GNB").load("../gnb/gnb.html");
+  $("#footer").load("../footer/footer.html");  
+  $('#modalContainer').load("../alertModal/modal.html");
   
   if(userList){
     for(let each of userList){
@@ -29,22 +22,26 @@ $(document).ready(function () {
       }
     }
 
-
     $(".heart_icon").click(function () {
-      if(isAdded){
-        $(".heart_icon").text("♡");
-        $("#Like").css("color","black");
-        let storeIdx = currUserInfo.mystore.indexOf(selectedStore.storeName);
-        currUserInfo.mystore.splice(storeIdx, 1);
-        isAdded = false;
+      if(!currUser){
+        alertModalControl("로그인 후 이용해주세요.");
       }
       else{
-        $(".heart_icon").text("♥");
-        $("#Like").css("color","#FA914B");
-        currUserInfo.mystore.push(selectedStore.storeName);
-        isAdded = true;
+        if(isAdded){
+          $(".heart_icon").text("♡");
+          $("#Like").css("color","black");
+          let storeIdx = currUserInfo.mystore.indexOf(selectedStore.storeName);
+          currUserInfo.mystore.splice(storeIdx, 1);
+          isAdded = false;
+        }
+        else{
+          $(".heart_icon").text("♥");
+          $("#Like").css("color","#FA914B");
+          currUserInfo.mystore.push(selectedStore.storeName);
+          isAdded = true;
+        }
+        localStorage.setItem('userList', JSON.stringify(userList));
       }
-      localStorage.setItem('userList', JSON.stringify(userList));
     });
   }
 

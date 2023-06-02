@@ -30,6 +30,7 @@ $(document).ready(function(){
         }
     })
 
+    //입력된 ID/PW와 일치하는 계정 탐색
     function loginFunc(userId, userPw){
         var start = 0, end = userList.length-1;    
         while(start <= end){

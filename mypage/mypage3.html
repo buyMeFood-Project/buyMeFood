@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>맛난거사조</title>
     <link rel="stylesheet" href="mypage3.css">
     <link rel="stylesheet" href="../gnb/gnb.css">
     <link rel="stylesheet" href="../footer/footer.css">
+    <link rel="stylesheet" href="../alertModal/modal.css">
 </head>
 <body style="padding: 0px">
     <header id="GNB"></header>
@@ -27,7 +28,7 @@
                 <dl>
                     <dt><h2>마이 페이지</h2></dt>
                     <dd>
-                        <input id="userId" type="text">
+                        <input id="userId" type="text" maxlength="8">
                         <button id="emoji_btn" type="button">이모지</button>
                         <button id="donebtn" type="submit">확인</button>
                     </dd>
@@ -78,9 +79,11 @@
         </div>
     </div>
 
+    <div id="modalContainer"></div>
     <footer id="footer"></footer>
     
     <script src="mypage3.js" type="module"></script>
+    <script src="../alertModal/modal.js" type="module"></script>
     <script src="../commonVars.js"></script>
     <script src="../commonFunc.js" type="module"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

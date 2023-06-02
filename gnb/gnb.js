@@ -9,7 +9,7 @@ $(document).ready(function(){
         }
     }
     // 현재 유저의 이모지 및 닉네임 GNB에 표시
-    if(currUser){
+    if(currUser && currUser !== "null"){
         $('#util').hide();
         $('#util_afterLogin').css('display', 'flex');
         $('#gnbIcon').text(currUserInfo.useremoji);

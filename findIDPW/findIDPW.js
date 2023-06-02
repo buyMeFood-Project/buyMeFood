@@ -31,7 +31,6 @@ $('#byPhoneNum').click(function(){
     $('input').val('');
     
 });
-
 $('#byEmail').click(function(){
     $('.find__box.byPhone').css('display', 'none');
     $('.find__box.byMail').css('display', '');
@@ -115,6 +114,7 @@ $('#findPW').click(function() {
     }
 });
 
+// login/mainpage button of each form
 $('#forID').find('#loginPage').click(function(){
     window.location.href = "../login/login.html";
 });

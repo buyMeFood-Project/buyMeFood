@@ -106,7 +106,7 @@ export function getCurrUserInfo(username, userList){
     return null;
 }
 
-// 게시글의 쉽게 구별하기 위해 게시글 고유 토큰 생성
+// 게시글을 구별하기 위한 고유 토큰 생성
 export function generateToken(length) {
     var result = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -117,4 +117,22 @@ export function generateToken(length) {
         counter += 1;
     }
     return result;
+}
+
+// 게시글 토큰을 활용해 게시글 리턴
+export function returnPost(postToken, postList){
+    var start = 0, end = postList.length-1;    
+    while(start <= end){
+        var lPost = postList[start];
+        var rPost = postList[end];
+        if(lPost.postToken === postToken){
+            return lPost;
+        }
+        else if(rPost.postToken === postToken){
+            return rPost;
+        }
+        start++;
+        end--;
+    }
+    return null;
 }

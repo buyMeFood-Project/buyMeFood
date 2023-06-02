@@ -7,7 +7,6 @@ $(document).ready(function(){
     $("#footer").load("../footer/footer.html");
     
     const keyword = localStorage.getItem('searchKeyword');
-    
     if(keyword.length < 1){
         $('#container').css('height', '500px');
         $('#container').html("\"" + keyword + "\" 관련 맛집이 없습니다.");

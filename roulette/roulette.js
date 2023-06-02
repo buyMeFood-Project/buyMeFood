@@ -6,12 +6,9 @@ let slotAnimation;
 let counter = 0;
 
 $(document).ready(function(){
-    $(function(){
-        $('#GNB').load('../gnb/gnb.html');
-        $('#footer').load('../footer/footer.html');
-    });
-    
-    document.querySelector('#menu_btn').addEventListener("click", function(){
+    $('#GNB').load('../gnb/gnb.html');
+    $('#footer').load('../footer/footer.html');
+    $('#menu_btn').click(function(){
         // Clear any ongoing slot animation
         clearInterval(slotAnimation);
         let displayList = [];
@@ -31,10 +28,9 @@ $(document).ready(function(){
         var duration = 1000;
         setTimeout(function() {
             clearInterval(slotAnimation);
-            
             var rand_num = Math.floor(Math.random() * total);
             var selected_menu = menu[rand_num];
-            document.getElementById('menu_btn').innerHTML = selected_menu;
+            $('#menu_btn').html(selected_menu);
             displayList = commonFunc.searchStore(selected_menu, storeList);
             let displayedStore = [];
             for (var i = 0; i < 4; i++) {
