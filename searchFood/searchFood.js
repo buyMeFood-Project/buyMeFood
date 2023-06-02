@@ -56,7 +56,9 @@ $(document).ready(function(){
         let nameAttr = $(this).find('img').attr('name');
         let selectedStore = commonFunc.getStoreInfo(nameAttr, storeList);
         localStorage.setItem('selectedStoreInfo', JSON.stringify(selectedStore));
-        localStorage.setItem('currUser', sessionStorage.getItem('currUser'));
+        if(currUser){ 
+            localStorage.setItem('currUser', currUser);
+        }
     });
 
     $('.pages').click(function(){
