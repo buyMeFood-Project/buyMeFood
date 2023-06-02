@@ -49,13 +49,13 @@ $(document).ready(function () {
   }
 
   let resImages = "";
-  if(selectedStore.images.length < 5){  
+  if(selectedStore.images.length < 4){  
     for(let img of selectedStore.images){
       resImages += "<img id='ex' src='" + img +"'/>\n";
     }
   }
   else{
-    for(let idx = 0; idx < 5; idx++){
+    for(let idx = 0; idx < 4; idx++){
       resImages += "<img id='ex' src='" + selectedStore.images[idx] +"'/>\n";
     }
   }

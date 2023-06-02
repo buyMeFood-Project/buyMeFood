@@ -105,3 +105,16 @@ export function getCurrUserInfo(username, userList){
     }
     return null;
 }
+
+// 게시글의 쉽게 구별하기 위해 게시글 고유 토큰 생성
+export function generateToken(length) {
+    var result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    let counter = 0;
+    while (counter < length) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        counter += 1;
+    }
+    return result;
+}
