@@ -19,7 +19,7 @@ $(document).ready(function () {
   
   if(userList){
     for(let each of userList){
-      if(each.userid === currUser){
+      if(each.username === currUser){
         currUserInfo = each;
         if(currUserInfo.mystore.includes(selectedStore.storeName)){
           $(".heart_icon").text("♥");
@@ -77,4 +77,5 @@ $('#moreInfo').html('<a href="'+ selectedStore.storeLink + '" target="blank" sty
 
 $(window).on('unload', function() {
       localStorage.removeItem('currUser');
+      localStorage.removeItem('selectedStoreInfo');
 });

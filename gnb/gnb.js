@@ -1,63 +1,59 @@
-window.onload = function(){
-    document.querySelector('#search_btn').addEventListener("click", function(){
-        var search_keyword = document.getElementById("search_input").value;
-        localStorage.setItem('search_keyword', search_keyword);
+$(document).ready(function(){
+    let currUserInfo = null;
+    var selectedMenuItem = localStorage.getItem('selectedMenu');
+    
+    for(let user of userList){
+        if(user.username === currUser){
+            currUserInfo = user;
+            break;
+        }
+    }
+    // 현재 유저의 이모지 및 닉네임 GNB에 표시
+    if(currUser){
+        $('#util').hide();
+        $('#util_afterLogin').css('display', 'flex');
+        $('#gnbIcon').text(currUserInfo.useremoji);
+        $('#nickname').text(" " + currUser);
+    }
+    else{
+        $('#util').css('display', 'flex');
+        $('#util_afterLogin').hide();
+    }
+    
+    //검색 버튼 기능
+    $('#search_btn').click(function() {
+        var searchKeyword = $('#search_input').val();
+        localStorage.setItem('searchKeyword', searchKeyword);
+        localStorage.setItem('searchCurrPage', 1);
+        window.location.href = "../searchFood/searchFood.html";
     });
-}
-var currUser = localStorage.getItem('currUser') ? localStorage.getItem('currUser') : sessionStorage.getItem('currUser');
-let currUserInfo = null;
-for(let user of JSON.parse(localStorage.getItem('userList'))){
-    if(user.username === currUser){
-        currUserInfo = user;
-        break;
+    // 검색어 Enter버튼으로 검색
+    $('#search_input').keypress(function(event){
+        if(event.keyCode === 13){
+            var searchKeyword = $(this).val();
+            localStorage.setItem('searchKeyword', searchKeyword);
+            localStorage.setItem('searchCurrPage', 1);
+            window.location.href = "../searchFood/searchFood.html";
+        }
+    });
+
+    $(".menu").click(function(){
+        localStorage.setItem("selectedMenu", $(this).attr('id'));
+    });
+    $("#toMain").click(function(){
+        $("li").removeClass("on");
+        $('#nav1').closest("li").addClass("on");
+        localStorage.setItem("selectedMenu", "nav1");
+    });
+    if (selectedMenuItem) {
+        $("li").removeClass("on");
+        $("#" + selectedMenuItem).closest("li").addClass("on");
     }
-}
-if(currUser){
-    $('#util').hide();
-    $('#util_afterLogin').css('display', 'flex');
-    $('#gnbIcon').text(currUserInfo.useremoji);
-    $('#nickname').text(" " + currUser);
-}
-else{
-    $('#util').css('display', 'flex');
-    $('#util_afterLogin').hide();
-}
-
-$(".menu").click(function(){
-    localStorage.setItem("selectedMenu", $(this).attr('id'));
-})
-$("#toMain").click(function(){
-    $("li").removeClass("on");
-    $('#nav1').closest("li").addClass("on");
-    localStorage.setItem("selectedMenu", "nav1");
-})
-var selectedMenuItem = localStorage.getItem('selectedMenu');
-if (selectedMenuItem) {
-    $("li").removeClass("on");
-    $("#" + selectedMenuItem).closest("li").addClass("on");
-}
-
-$('#logout').click(function(){
-    sessionStorage.removeItem('currUser');
-});
-
-
-$('#search_input').keypress(function(event){
-    if(event.keyCode === 13){
-        var search_keyword = $(this).val();
-        localStorage.setItem('searchKeyword', search_keyword);
-        localStorage.setItem('searchCurrPage', '1');
-        window.location.href = "../serchFood/serchFood.html";
-        
-    }
-});
-$('#search_btn').click(function(){
-    let keyword = $(this).parent().find('#search_input').val();
-    localStorage.setItem('searchKeyword', keyword);
-    localStorage.setItem('searchCurrPage', '1');
-    window.location.href = "../serchFood/serchFood.html";
-})
-
-$('#nav2').click(function(){
-    localStorage.setItem('postCurrPage', 1);
+    $('#logout').click(function(){
+        sessionStorage.removeItem('currUser');
+        window.location.href("../main.html");
+    });
+    $('#nav2').click(function(){
+        localStorage.setItem('postCurrPage', 1);
+    })
 })

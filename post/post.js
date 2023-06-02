@@ -1,4 +1,4 @@
-import { alertModalControl, confirmModalControl} from "../alertModal/modal.js";
+import * as modalControl from "../alertModal/modal.js";
 
 $(function() {
     $("#modalContainer").load("../alertModal/modal.html");
@@ -59,7 +59,7 @@ else{
 // Like Button
 $(".likeBtn").click(function() {
     if(!currUser){
-        alertModalControl("로그인 후 이용해주세요");
+        modalControl.alertModalControl("로그인 후 이용해주세요");
     }
     else{
         let token = $(this).attr('name');
@@ -94,7 +94,7 @@ $(".replyBtn").click(function() {
 // Add New Comment Button
 $(".newComment").click(function() {
     if(!currUser){
-        alertModalControl("로그인 후 이용해주세요");
+        modalControl.alertModalControl("로그인 후 이용해주세요");
     }
     else{
         let token = $(this).attr('name');
@@ -102,7 +102,7 @@ $(".newComment").click(function() {
         let postList = JSON.parse(localStorage.getItem('postList'));
         
         if(comment === ''){
-            alertModalControl("댓글을 작성한 후 등록해주세요.");
+            modalControl.alertModalControl("댓글을 작성한 후 등록해주세요.");
         }
         else{
             for(let post of postList){
@@ -167,9 +167,9 @@ function displayComments(token){
 
 $('#addPost').click(function (){
     if(!currUser){
-        alertModalControl("로그인 후 이용해주세요");
+        modalControl.alertModalControl("로그인 후 이용해주세요");
     }
-    else{      
+    else{
         window.location.href = "../addpost/feature_addPost_bslee.html";
     }
 });

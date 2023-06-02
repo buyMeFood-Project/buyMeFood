@@ -1,37 +1,49 @@
-import { alertModalControl } from "../alertModal/modal.js";
-$(function() {
-    $("#modalContainer").load("../alertModal/modal.html");
-});
-
-$('#login').click(function(){
-    const userList = JSON.parse(localStorage.getItem('userList'));
-    const userid = $('#userId').val();
-    const userPw = $('#userPw').val();
-    let isOkay = false;
-    if(userid === ''){
-        alertModalControl("아이디를 입력해주세요.");
-    }
-    else if(userPw === ''){
-        alertModalControl("비밀번호를 입력해주세요");
-    }
-    else{
-        if(userList === null){
-            alertModalControl("존재하지 않는 정보입니다.<br>회원가입을 먼저 진행해주세요.");
+import * as modalControl from "../alertModal/modal.js";
+$(document).ready(function(){
+    $(function() {
+        $("#modalContainer").load("../alertModal/modal.html");
+    });
+    // 로그인 버튼 기능
+    $('#login').click(function(){
+        const userid = $('#userId').val();
+        const userpw = $('#userPw').val();
+        if(userid === ''){
+            modalControl.alertModalControl("아이디를 입력해주세요.");
+        }
+        else if(userpw === ''){
+            modalControl.alertModalControl("비밀번호를 입력해주세요");
         }
         else{
-            for(let user of userList){
-                if(user.userid === userid && user.password === userPw){
-                    isOkay = true;
-                    sessionStorage.setItem('currUser', user.username);
-                    break;
-                }
-            }
-            if(isOkay){
-                window.location.href = "../main.html";
+            if(userList === null){
+                modalControl.alertModalControl("존재하지 않는 정보입니다.<br>회원가입을 먼저 진행해주세요.");
             }
             else{
-                alertModalControl("일치하는 정보가 없습니다.<br>아이디 혹은 비밀번호를<br>확인 후 다시 로그인해주세요.");
+                var isOkay = loginFunc(userid, userpw);
+                if(isOkay !== null){
+                    sessionStorage.setItem('currUser', isOkay)
+                    window.location.href = "../main.html";
+                }
+                else{
+                    modalControl.alertModalControl("일치하는 정보가 없습니다.<br>아이디 혹은 비밀번호를<br>확인 후 다시 로그인해주세요.");
+                }
             }
         }
+    })
+
+    function loginFunc(userId, userPw){
+        var start = 0, end = userList.length-1;    
+        while(start <= end){
+            var lUser = userList[start];
+            var rUser = userList[end];
+            if(lUser.userid === userId && lUser.password === userPw){
+                return lUser.username;
+            }
+            if(rUser.userid === userId && rUser.password === userPw){
+                return rUser.username;
+            }
+            start++;
+            end--;
+        }
+        return null;
     }
-})
+});

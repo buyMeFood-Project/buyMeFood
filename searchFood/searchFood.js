@@ -1,12 +1,10 @@
-import { searchFunction } from "../commonFunc.js";
+import * as commonFunc from "../commonFunc.js";
 let displayList = [];
 let pagingArea = "";
 
 $(document).ready(function(){
-    $(function () {
-        $("#GNB").load("../gnb/gnb.html");
-        $("#footer").load("../footer/footer.html");
-    });
+    $("#GNB").load("../gnb/gnb.html");
+    $("#footer").load("../footer/footer.html");
     
     const keyword = localStorage.getItem('searchKeyword');
     
@@ -15,7 +13,7 @@ $(document).ready(function(){
         $('#container').html("\"" + keyword + "\" 관련 맛집이 없습니다.");
     }
     else{
-        displayList = searchFunction(keyword);
+        displayList = commonFunc.searchStore(keyword, storeList);
         if(displayList.length == 0){
             $('#container').css('height', '500px');
             $('#container').html("\"" + keyword + "\" 관련 맛집이 없습니다.");
@@ -56,12 +54,8 @@ $(document).ready(function(){
     $('a').attr('target', '_blank');
     $('.food_list').on('click', 'a', function(){
         let nameAttr = $(this).find('img').attr('name');
-        for (let each of displayList) {
-            if (each.storeName == nameAttr) {
-                localStorage.setItem('selectedStoreInfo', JSON.stringify(each));
-                break;
-            }
-        }
+        let selectedStore = commonFunc.getStoreInfo(nameAttr, storeList);
+        localStorage.setItem('selectedStoreInfo', JSON.stringify(selectedStore));
         localStorage.setItem('currUser', sessionStorage.getItem('currUser'));
     });
 

@@ -84,7 +84,7 @@ $('#addPost').click(function(event){
       
         let currUserInfo = null;
         for(let each of userList){
-          if(each.userid === currUser){
+          if(each.username === currUser){
             currUserInfo = each;
             break;
           }

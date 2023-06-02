@@ -1,8 +1,7 @@
-import { searchFunction } from "../commonFunc.js";
+import * as commonFunc from "../commonFunc.js";
 
 const menu = ["족발", "한식", "중식", "일식", "양식", "분식", "베트남 음식", "태국 음식", "돈까스", "햄버거", "우동", "칼국수", "국밥", "백반", "피자", "파스타", "마라탕", "쌀국수", "떡볶이", "덮밥", "샌드위치", "카페"];
 const total = menu.length;
-const storeList = JSON.parse(localStorage.getItem('storeData'));
 let slotAnimation;
 let counter = 0;
 
@@ -36,7 +35,7 @@ $(document).ready(function(){
             var rand_num = Math.floor(Math.random() * total);
             var selected_menu = menu[rand_num];
             document.getElementById('menu_btn').innerHTML = selected_menu;
-            displayList = searchFunction(selected_menu);
+            displayList = commonFunc.searchStore(selected_menu, storeList);
             let displayedStore = [];
             for (var i = 0; i < 4; i++) {
                 let randStore = displayList[Math.floor(Math.random() * displayList.length)];
@@ -76,11 +75,8 @@ $(document).ready(function(){
     
     $('#place_list').on('click', 'a', function(){
         let nameAttr = $(this).find('img').attr('name');
-        for(let each of storeList){
-            if(each.storeName === nameAttr){
-                localStorage.setItem('selectedStoreInfo', JSON.stringify(each));
-                break;
-            }
-        }
+        let selectedStore = commonFunc.getStoreInfo(nameAttr, storeList);
+        localStorage.setItem('selectedStoreInfo', JSON.stringify(selectedStore));
+        localStorage.setItem('currUser', sessionStorage.getItem('currUser'));
     });
 });
