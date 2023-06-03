@@ -55,9 +55,7 @@ $(document).ready(function(){
             postToken: postToken
           };
           postList.push(newPost);
-          tokenList.push(postToken);
           localStorage.setItem("postList", JSON.stringify(postList));
-          localStorage.setItem("tokenList", JSON.stringify(tokenList));
         
           let currUserInfo = commonFunc.getCurrUserInfo(currUser, userList);
           currUserInfo.mypost.push(postToken);

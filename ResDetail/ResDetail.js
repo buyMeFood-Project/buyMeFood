@@ -73,6 +73,5 @@ $('#moreInfo').html('<a href="'+ selectedStore.storeLink + '" target="blank" sty
 });
 
 $(window).on('unload', function() {
-      localStorage.removeItem('currUser');
       localStorage.removeItem('selectedStoreInfo');
 });

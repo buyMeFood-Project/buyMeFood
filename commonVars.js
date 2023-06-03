@@ -5,4 +5,3 @@ var userList = localStorage.getItem('userList') ? JSON.parse(localStorage.getIte
 var currUser = localStorage.getItem('currUser') ? localStorage.getItem('currUser') : null;
 var postList = localStorage.getItem('postList') ? JSON.parse(localStorage.getItem('postList')) : [];
 var storeList = localStorage.getItem('storeData') ? JSON.parse(localStorage.getItem('storeData')) : [];
-var tokenList = localStorage.getItem('tokenList') ? JSON.parse(localStorage.getItem('tokenList')) : [];

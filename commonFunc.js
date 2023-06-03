@@ -139,10 +139,11 @@ export function returnPost(postToken, postList){
 
 // 마지막 방문시간과 현재 방문 시간 비교하여 1분 초과 시 자동로그아웃
 $(window).on('load', function(){
-    if(localStorage.getItem('lastVisit')){
+    if(localStorage.getItem('lastVisit') && localStorage.getItem('currUser')){
         var lastVisit = parseInt(localStorage.getItem('lastVisit'), 10);
         var currVisit = parseInt(new Date().getTime());
-        if((currVisit - lastVisit) / (1000 * 60) >= 1){
+        if((currVisit - lastVisit) / (1000 * 60) >= 5){
+            localStorage.removeItem('lastVisit');
             localStorage.removeItem('currUser');
         }
     }
