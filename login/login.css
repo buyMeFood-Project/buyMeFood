@@ -63,7 +63,7 @@ img {
 
 .login__content {
     display: grid;
-    grid-template-rows: 320px 500px;
+    grid-template-rows: 280px 500px;
 }
 
 .login__img {
@@ -178,14 +178,6 @@ img {
 
 .bottom_label {
     margin-bottom: 10px;
-}
-#byGoogle .bx.bxl-google::before {
-    color: var(--color);
-    background-color: #fff;
-    border-radius: 20px;
-    border: 1px solid var(--color);
-    padding: 3px;
-    vertical-align: middle;
 }
 
 .login__signin,

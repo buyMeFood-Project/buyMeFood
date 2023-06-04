@@ -10,6 +10,8 @@ $(document).ready(function () {
   $("#footer").load("../footer/footer.html");  
   $('#modalContainer').load("../alertModal/modal.html");
   
+  localStorage.setItem("selectedMenu", "nav0");
+
   if(userList){
     for(let each of userList){
       if(each.username === currUser){

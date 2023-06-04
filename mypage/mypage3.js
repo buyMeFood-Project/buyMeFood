@@ -6,6 +6,8 @@ $(document).ready(function(){
     $('#footer').load('../footer/footer.html');
     $("#modalContainer").load("../alertModal/modal.html");
 
+    localStorage.setItem("selectedMenu", "nav0");
+    
     let currUserInfo = commonFunc.getCurrUserInfo(currUser, userList);
     let postListContent = '';
     let likeListContent = '';

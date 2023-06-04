@@ -57,7 +57,7 @@ $(document).ready(function(){
 
                 var place_label = document.createElement('span');
                 var rating = document.createElement('span');
-                rating.innerHTML = ' ★' + randStore.rate;
+                rating.innerHTML = ' ★' + randStore.rate.substr(0,3);
                 rating.className = 'rating';
                 place_label.innerHTML = randStore.storeName;
                 place_label.className = 'place_label';

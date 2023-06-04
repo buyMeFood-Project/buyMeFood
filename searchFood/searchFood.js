@@ -6,6 +6,8 @@ $(document).ready(function(){
     $("#GNB").load("../gnb/gnb.html");
     $("#footer").load("../footer/footer.html");
     
+    localStorage.setItem("selectedMenu", "nav0");
+
     const keyword = localStorage.getItem('searchKeyword');
     if(keyword.length < 1){
         $('#container').css('height', '500px');
