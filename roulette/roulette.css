@@ -14,7 +14,18 @@
 body {
     font-family: 'TmoneyRoundWindExtraBold';
 }
-
+#wrapper {
+    height: auto;
+    min-height: 100%;
+    padding-bottom: 120px;
+    display: grid;
+    grid-template-rows: 40% 60%;
+}
+footer {
+    height: 120px;
+    position: relative;
+    /* transform: translateY(-100%); */
+}
 a {
     text-decoration: none;
     font-weight: bold;

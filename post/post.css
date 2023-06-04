@@ -1,3 +1,13 @@
+#wrapper {
+    height: auto;
+    min-height: 100%;
+    padding-bottom: 120px;
+}
+footer {
+    height: 120px;
+    position: relative;
+    /* transform: translateY(-100%); */
+}
 #menuTitle {
     width: 1000px;
     margin: 20px auto 5px auto;
