@@ -12,6 +12,17 @@
     background: #fa914b93;
   }
 } */
+#wrapper {
+  height: auto;
+  min-height: 100%;
+  /* padding-bottom: 120px; */
+}
+footer {
+  height: 120px;
+  position: relative;
+  /* transform: translateY(-100%); */
+}
+
 #ResDetail_page {
   margin-top: 20px;
 }

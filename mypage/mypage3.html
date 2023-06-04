@@ -12,74 +12,75 @@
 </head>
 <body style="padding: 0px">
     <header id="GNB"></header>
-    
-    <div id="mypage_top"> 
-        <div id="myinfo">
-            <div id="user_emoji"></div>
-            <div id="default">
-                <dl>
-                    <dt><h2>마이 페이지</h2></dt>
-                    <dd><span id="userId"></span>
-                        <button id="editbtn">✏️</button>
-                    </dd>
-                </dl>
+    <div id="wrapper">
+        <div id="mypage_top"> 
+            <div id="myinfo">
+                <div id="user_emoji"></div>
+                <div id="default">
+                    <dl>
+                        <dt><h2>마이 페이지</h2></dt>
+                        <dd><span id="userId"></span>
+                            <button id="editbtn">✏️</button>
+                        </dd>
+                    </dl>
+                </div>
+                <form id="edit_inform" style="display: none">
+                    <dl>
+                        <dt><h2>마이 페이지</h2></dt>
+                        <dd>
+                            <input id="userId" type="text" maxlength="8">
+                            <button id="emoji_btn" type="button">이모지</button>
+                            <button id="donebtn" type="submit">확인</button>
+                        </dd>
+                    </dl>
+                </form>
             </div>
-            <form id="edit_inform" style="display: none">
-                <dl>
-                    <dt><h2>마이 페이지</h2></dt>
-                    <dd>
-                        <input id="userId" type="text" maxlength="8">
-                        <button id="emoji_btn" type="button">이모지</button>
-                        <button id="donebtn" type="submit">확인</button>
-                    </dd>
-                </dl>
-            </form>
         </div>
-    </div>
-    <div id="emoji_btn_area"></div>
-    <div id="mypageImg"></div>
-    <div id="container">    
-        <div class="mypage" id="mypage_nav">
-            <div> 마이 페이지 </div>
-            <ul id="mypage_list">
-                <li><div id="likeList">찜 목록</div></li>
-                <li><div id="myPost">내 게시글</div></li>
-            </ul>
-        </div>
-        <div class="mypage" id="mypage_content">
-            <div id="myStoreForm">
-                <h2 id="title1">찜 목록</h2>
-                <div id="like_list" class="on">
-                    <div class="like_shop">
-                        <div class="like_title" id="rest_name"></div>
-                        <span class="start">⭐</span>
-                        <span class="like_rate" id="rest_rate"></span>
-                        <div class="like_img" id="rest_img"></div>
-                    </div>
-                    <div class="like_shop">
-                        <div class="like_title" id="rest_name2"></div>
-                        <span class="start">⭐</span>
-                        <span class="like_rate" id="rest_rate2"></span>
-                        <div class="like_img" id="rest_img2"></div>
-                    </div>
-                    <div class="like_shop">
-                        <div class="like_title" id="rest_name3"></div>
-                        <span class="start">⭐</span>
-                        <span class="like_rate" id="rest_rate3"></span>
-                        <div class="like_img" id="rest_img3"></div>
+        <div id="emoji_btn_area"></div>
+        <div id="mypageImg"></div>
+        <div id="container">    
+            <div class="mypage" id="mypage_nav">
+                <div> 마이 페이지 </div>
+                <ul id="mypage_list">
+                    <li><div id="likeList">찜 목록</div></li>
+                    <li><div id="myPost">내 게시글</div></li>
+                </ul>
+            </div>
+            <div class="mypage" id="mypage_content">
+                <div id="myStoreForm">
+                    <h2 id="title1">찜 목록</h2>
+                    <div id="like_list" class="on">
+                        <div class="like_shop">
+                            <div class="like_title" id="rest_name"></div>
+                            <span class="start">⭐</span>
+                            <span class="like_rate" id="rest_rate"></span>
+                            <div class="like_img" id="rest_img"></div>
+                        </div>
+                        <div class="like_shop">
+                            <div class="like_title" id="rest_name2"></div>
+                            <span class="start">⭐</span>
+                            <span class="like_rate" id="rest_rate2"></span>
+                            <div class="like_img" id="rest_img2"></div>
+                        </div>
+                        <div class="like_shop">
+                            <div class="like_title" id="rest_name3"></div>
+                            <span class="start">⭐</span>
+                            <span class="like_rate" id="rest_rate3"></span>
+                            <div class="like_img" id="rest_img3"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div id="myPostForm" style="display:none;">
-                <h2 id="title2">내 게시글</h2>
-                <div id="mypost_list">
-                </div>            
+                
+                <div id="myPostForm" style="display:none;">
+                    <h2 id="title2">내 게시글</h2>
+                    <div id="mypost_list">
+                    </div>            
+                </div>
             </div>
         </div>
-    </div>
 
-    <div id="modalContainer"></div>
+        <div id="modalContainer"></div>
+    </div>
     <footer id="footer"></footer>
     
     <script src="mypage3.js" type="module"></script>

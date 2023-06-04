@@ -1,4 +1,17 @@
-
+#wrapper {
+    height: auto;
+    min-height: 100%;
+    /* padding-bottom: 120px; */
+    /* display: grid;
+    grid-template-rows: 30% 60%;
+    align-content: start; */
+    padding: 30px 80px;
+}
+footer {
+    height: 120px;
+    position: relative;
+    /* transform: translateY(-100%); */
+}
 #menuTitle {
     width: 1100px;
     margin: 20px auto 5px auto;

@@ -1,4 +1,13 @@
-
+#wrapper {
+    height: auto;
+    min-height: 100%;
+    /* padding-bottom: 120px; */
+}
+footer {
+    height: 120px;
+    position: relative;
+    /* transform: translateY(-100%); */
+}
 #container {
     width: 1300px;
     height: 100%;

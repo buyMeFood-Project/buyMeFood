@@ -17,9 +17,11 @@ body {
 #wrapper {
     height: auto;
     min-height: 100%;
-    padding-bottom: 120px;
-    display: grid;
-    grid-template-rows: 40% 60%;
+    /* padding-bottom: 120px; */
+    /* display: grid;
+    grid-template-rows: 30% 60%;
+    align-content: start; */
+    padding: 30px 80px;
 }
 footer {
     height: 120px;

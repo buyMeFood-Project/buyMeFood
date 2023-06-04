@@ -10,12 +10,15 @@
     font-weight: normal;
     font-style: normal;
 }
-
+html, body {
+    height: 100%;
+}
 footer {
     font-family: 'Pretendard-Regular';
     background-color: rgba(250, 145, 75, 0.1);
     width: 100%;
     clear: both;
+    pointer-events: none;
 }
 hr {
     border-color: rgba(250, 145, 75, 0.1);

@@ -58,7 +58,9 @@ header h1 img {
   font-weight: 500;
 }
 #search_container input:focus {
-  border-color: white;
+  font-family: 'Pretendard-Regular';
+  outline: none;
+  font-size: 17px;
 }
 #search_container a {
   width: 40px;

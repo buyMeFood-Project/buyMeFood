@@ -12,55 +12,57 @@
   </head>
   <body>
     <header id="GNB"></header>
-    <div id="ResDetail_page">
-        <div id="resImage"> </div>
-    <div id="container">
-        <div class="detail_contents">
-          <div class="resaurant_title_wrap">
-            <!-- 가게명, 별점, 좋아요 라인 -->
-            <span class="restaurant_title">
-              <span><h1 class="restaurant_name"></h1></span>
-              <span class="Score"></span>
-              <!-- <div id="resInfo">가게정보</div> -->
-            </span>
-            <div id="Like">
-              <p class="heart_icon" >♡</p>
-              <p class="heart_text">찜하기</p>
+    <div id="wrapper">
+      <div id="ResDetail_page">
+          <div id="resImage"> </div>
+      <div id="container">
+          <div class="detail_contents">
+            <div class="resaurant_title_wrap">
+              <!-- 가게명, 별점, 좋아요 라인 -->
+              <span class="restaurant_title">
+                <span><h1 class="restaurant_name"></h1></span>
+                <span class="Score"></span>
+                <!-- <div id="resInfo">가게정보</div> -->
+              </span>
+              <div id="Like">
+                <p class="heart_icon" >♡</p>
+                <p class="heart_text">찜하기</p>
+              </div>
             </div>
-          </div>
-          <!-- 클릭시 빈 하트 -> 꽉 찬 하트 (이미지화해서 넣어놓기) -->
+            <!-- 클릭시 빈 하트 -> 꽉 찬 하트 (이미지화해서 넣어놓기) -->
 
-          <!-- <hr /> -->
-          <table id="detail">
-            <tr>
-              <th align="left" id="label">주소</th>
-              <td id="address"></td>
-            </tr>
-            <tr>
-              <th align="left" id="label">전화번호</th>
-              <td id="contact"></td>
-            </tr>
-            <tr>
-              <th align="left" id="label">음식 종류</th>
-              <td id="menu"></td>
-            </tr>
-            <tr>
-              <th align="left" id="label">주차</th>
-              <td id="parking"></td>
-            </tr>
-            <tr>
-              <th align="left" id="label">자세한 정보</th>
-              <td id="moreInfo"></td>
-            </tr>
-          </table>
-        </div>
-      </Res>
-      <iframe id = "map" src width="350" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-     
+            <!-- <hr /> -->
+            <table id="detail">
+              <tr>
+                <th align="left" id="label">주소</th>
+                <td id="address"></td>
+              </tr>
+              <tr>
+                <th align="left" id="label">전화번호</th>
+                <td id="contact"></td>
+              </tr>
+              <tr>
+                <th align="left" id="label">음식 종류</th>
+                <td id="menu"></td>
+              </tr>
+              <tr>
+                <th align="left" id="label">주차</th>
+                <td id="parking"></td>
+              </tr>
+              <tr>
+                <th align="left" id="label">자세한 정보</th>
+                <td id="moreInfo"></td>
+              </tr>
+            </table>
+          </div>
+        </Res>
+        <iframe id = "map" src width="350" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      
+      </div>
     </div>
-  </div>
-    
-    <div id="modalContainer"></div>
+      
+      <div id="modalContainer"></div>
+    </div>
     <footer id="footer"></footer>
 
     <script src="ResDetail.js" type="module"></script>
