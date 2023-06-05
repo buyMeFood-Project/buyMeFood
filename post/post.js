@@ -16,11 +16,11 @@ $(document).ready(function(){
         }
         $('#pagination').html(pagingArea);
         
-        for(let i = (currPage-1) * 3; i < limit; i++){
+        for(let i = limit - 1; i >= (currPage-1) * 3; i--){
             let postToken = postList[i].postToken;
             let imgList = postList[i].imageList;
             let imgSrc = generateImages(imgList);
-            let targetPost = $('#post'+String(i%3 + 1));
+            let targetPost = $('#post'+String((i%3) + 1));
 
             targetPost.css('display', '');
             targetPost.find('#storeName').html(postList[i].storeName);
@@ -41,9 +41,9 @@ $(document).ready(function(){
             targetPost.find('.commentArea').attr('id', postToken);
         }
     }
-    else{
-        $('#postArea').html("<div><p style='text-align:center;'> 등록된 게시글이 없습니다.</p></div>");
-    }
+    // else{
+    //     $('#postArea').html("<div><p style='text-align:center;'> 등록된 게시글이 없습니다.</p></div>");
+    // }
 
     // Like Button
     $(".likeBtn").click(function() {
