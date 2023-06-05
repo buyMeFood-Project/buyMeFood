@@ -46,7 +46,7 @@ $(document).ready(function(){
         else if(!nicknamePattern.test(editedName)){
             modalControl.alertModalControl("닉네임 규칙: 2~8자 한글,영문,숫자,공백x");
         }
-        else if(!commonFunc.isUserInfoExist("userName", editedName, userList)){
+        else if(!commonFunc.isUserInfoExist("userName", editedName, userList) && editedName !== currUser){
             modalControl.alertModalControl("중복되는 닉네임입니다.");
         }
         else if(editedName !== currUserInfo.username ||
@@ -62,6 +62,9 @@ $(document).ready(function(){
                 localStorage.setItem('userList', JSON.stringify(userList));
                 localStorage.removeItem('emojiPicker.recent');
                 window.location.reload();
+        }
+        else{
+            window.location.reload();
         }
     });
 
