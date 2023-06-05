@@ -54,7 +54,7 @@ $(document).ready(function(){
             date: new Date().toJSON().slice(0, 10),
             postToken: postToken
           };
-          postList.push(newPost);
+          postList.unshift(newPost);
           localStorage.setItem("postList", JSON.stringify(postList));
         
           let currUserInfo = commonFunc.getCurrUserInfo(currUser, userList);
