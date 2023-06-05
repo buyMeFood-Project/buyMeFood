@@ -8,6 +8,8 @@ let counter = 0;
 $(document).ready(function(){
     $('#GNB').load('../gnb/gnb.html');
     $('#footer').load('../footer/footer.html');
+
+    localStorage.setItem("selectedMenu", "nav3");
     $('#menu_btn').click(function(){
         // Clear any ongoing slot animation
         clearInterval(slotAnimation);

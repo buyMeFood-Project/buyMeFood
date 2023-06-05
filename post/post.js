@@ -5,6 +5,7 @@ $(document).ready(function(){
     $('#GNB').load('../gnb/gnb.html');
     $('#footer').load('../footer/footer.html');
     
+    localStorage.setItem("selectedMenu", "nav2");
     // load posts from postList
     if(postList.length !== 0){
         let pagingArea = "";

@@ -3,6 +3,7 @@ import * as commonFunc from "./commonFunc.js";
 $(document).ready(function(){
     $('#GNB').load('gnb/gnb.html');
     $('#footer').load('footer/footer.html');
+    localStorage.setItem("selectedMenu", "nav1");
     let displayed = [];
     
     for(let i = 1; i <= 12; i++){
